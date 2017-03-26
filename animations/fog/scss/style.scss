@@ -1,0 +1,121 @@
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.sky {
+  height: 100%;
+  background: #567;
+
+}
+
+.foreground {
+  color: #fff;
+  position: absolute;
+  bottom: -4rem;
+  height: 100%;
+  width: 100%;
+//  background-color: crimson;
+  opacity: .25;
+  overflow: hidden;
+//  animation: rolling-fog 40s linear infinite;
+
+  .fog-1, .fog-2, .fog-3 {
+    position: absolute;
+    background-position: top left;
+    background-repeat: repeat-x;
+    height: 100%;
+    width: 1200px;
+//    background-color: pink;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="425" viewBox="0 0 307 425"><path d="m0 425 307 0 0-425C242.5 0 216.4 45.5 153.5 45.5 90.6 45.5 62.9 0 0 0Z" fill="#989"/></svg>');
+    animation: rolling-fog 40s linear infinite;
+
+  }
+
+  .fog-1 {
+    left: 0;
+  }
+
+  .fog-2 {
+    left: 1200px;
+  }
+
+  .fog-3 {
+    left: -1200px;
+  }
+}
+
+.midground {
+  color: #fff;
+  position: absolute;
+  bottom: -3rem;
+  height: 100%;
+  width: 100%;
+//  background-color: crimson;
+  opacity: .5;
+  overflow: hidden;
+//  animation: rolling-fog 40s linear infinite;
+
+  .fog-1, .fog-2, .fog-3 {
+    position: absolute;
+    background-position: top left;
+    height: 100%;
+    width: 1200px;
+//    background-color: pink;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="425" viewBox="0 0 307 425"><path d="m0 425 307 0 0-425C242.5 0 216.4 45.5 153.5 45.5 90.6 45.5 62.9 0 0 0Z" fill="#878"/></svg>');
+    animation: rolling-fog 50s linear infinite;
+
+  }
+
+  .fog-1 {
+    left: 0px;
+  }
+
+  .fog-2 {
+    left: 1200px;
+  }
+
+  .fog-3 {
+    left: -1200px;
+  }
+}
+
+.background {
+  color: #fff;
+  position: absolute;
+  bottom: -2rem;
+  height: 100%;
+  width: 100%;
+//  background-color: crimson;
+  opacity: .6;
+  overflow: hidden;
+//  animation: rolling-fog 40s linear infinite;
+
+  .fog-1, .fog-2, .fog-3 {
+    position: absolute;
+    background-position: top left;
+    height: 100%;
+    width: 1200px;
+//    background-color: pink;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="425" viewBox="0 0 307 425"><path d="m0 425 307 0 0-425C242.5 0 216.4 45.5 153.5 45.5 90.6 45.5 62.9 0 0 0Z" fill="#767"/></svg>');
+    animation: rolling-fog 60s linear infinite;
+
+  }
+
+  .fog-1 {
+    left: 0;
+  }
+
+  .fog-2 {
+    left: 1200px;
+  }
+
+  .fog-3 {
+    left: -1200px;
+  }
+}
+
+@keyframes rolling-fog {
+  to {transform: translatex(1200px);}
+}

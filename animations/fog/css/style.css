@@ -1,0 +1,81 @@
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0; }
+
+.sky {
+  height: 100%;
+  background: #567; }
+
+.foreground {
+  color: #fff;
+  position: absolute;
+  bottom: -4rem;
+  height: 100%;
+  width: 100%;
+  opacity: .25;
+  overflow: hidden; }
+  .foreground .fog-1, .foreground .fog-2, .foreground .fog-3 {
+    position: absolute;
+    background-position: top left;
+    background-repeat: repeat-x;
+    height: 100%;
+    width: 1200px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="425" viewBox="0 0 307 425"><path d="m0 425 307 0 0-425C242.5 0 216.4 45.5 153.5 45.5 90.6 45.5 62.9 0 0 0Z" fill="#989"/></svg>');
+    animation: rolling-fog 40s linear infinite; }
+  .foreground .fog-1 {
+    left: 0; }
+  .foreground .fog-2 {
+    left: 1200px; }
+  .foreground .fog-3 {
+    left: -1200px; }
+
+.midground {
+  color: #fff;
+  position: absolute;
+  bottom: -3rem;
+  height: 100%;
+  width: 100%;
+  opacity: .5;
+  overflow: hidden; }
+  .midground .fog-1, .midground .fog-2, .midground .fog-3 {
+    position: absolute;
+    background-position: top left;
+    height: 100%;
+    width: 1200px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="425" viewBox="0 0 307 425"><path d="m0 425 307 0 0-425C242.5 0 216.4 45.5 153.5 45.5 90.6 45.5 62.9 0 0 0Z" fill="#878"/></svg>');
+    animation: rolling-fog 50s linear infinite; }
+  .midground .fog-1 {
+    left: 0px; }
+  .midground .fog-2 {
+    left: 1200px; }
+  .midground .fog-3 {
+    left: -1200px; }
+
+.background {
+  color: #fff;
+  position: absolute;
+  bottom: -2rem;
+  height: 100%;
+  width: 100%;
+  opacity: .6;
+  overflow: hidden; }
+  .background .fog-1, .background .fog-2, .background .fog-3 {
+    position: absolute;
+    background-position: top left;
+    height: 100%;
+    width: 1200px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="425" viewBox="0 0 307 425"><path d="m0 425 307 0 0-425C242.5 0 216.4 45.5 153.5 45.5 90.6 45.5 62.9 0 0 0Z" fill="#767"/></svg>');
+    animation: rolling-fog 60s linear infinite; }
+  .background .fog-1 {
+    left: 0; }
+  .background .fog-2 {
+    left: 1200px; }
+  .background .fog-3 {
+    left: -1200px; }
+
+@keyframes rolling-fog {
+  to {
+    transform: translatex(1200px); } }
+
+/*# sourceMappingURL=style.css.map */
