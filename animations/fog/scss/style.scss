@@ -1,135 +1,144 @@
 html, body {
   height: 100%;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
-.sky {
-  height: 100%;
-  background: #89a;
+body {
+  background-color: #9ac;
+}
 
+.sky.fog {
+  height: 100%;
+  background-color: inherit;
+}
+
+/*.redline {
+  border-top: 1px solid crimson;
+  border-bottom: 1px solid chartreuse;
+  position: absolute;
+  bottom: 13.85rem;
+  height: .75rem;
+  width: 100%;
+  opacity: .75;
+}*/
+
+.background, .midground, .foreground, .sub, .sup {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+//  animation-name: fog-roll;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  overflow: hidden;
 }
 
 .fog-1, .fog-2, .fog-3 {
+  min-width: 1200px;
+//  overflow: visible;
   position: absolute;
-  background-position: bottom left;
   height: 100%;
-  width: 1204px;
-  animation-name: rolling-fog;
+  width: 100%;
+  background-position: bottom left;
+  background-repeat: no-repeat;
+//  animation-name: fog-walk;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
 
 .fog-1 {
-  left: -1200px;
+  left: -1193px;
 }
 
 .fog-3 {
-  left: 1200px;
+  left: 1193px;
 }
 
-.foreground {
-  color: #fff;
-  position: absolute;
-  bottom: -4rem;
-  height: 100%;
-  width: 100%;
-  opacity: .25;
-  overflow: hidden;
-
-/*  .fog-1, .fog-2, .fog-3 {
-    position: absolute;
-    background-position: bottom left;
-    background-repeat: repeat-x;
-    height: 100%;
-    width: 1200px;
-    background-color: pink;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="425" viewBox="0 0 600 425"><path transform="scale(2)" d="m0 425 307 0 0-425C242.5 0 216.4 45.5 153.5 45.5 90.6 45.5 62.9 0 0 0Z" fill="#989"/></svg>');
-    animation: rolling-fog 40s linear infinite;
-
-  }
-
-  .fog-1 {
-    left: 0;
-  }
-
-  .fog-2 {
-    left: 1200px;
-  }
-
-  .fog-3 {
-    left: -1200px;
-  }*/
-}
-
-.midground {
-  color: #fff;
-  position: absolute;
-/*  bottom: -3rem;
-  height: 100%;
-  width: 100%;
-  opacity: .5;
-  overflow: hidden;
-
+.sub {
+  left: 0;
+  bottom: -3.85rem;
+  opacity: .4;
+  animation-duration: 15s;
+  animation-name: fog-roll;
+  
   .fog-1, .fog-2, .fog-3 {
-    position: absolute;
-    background-position: bottom left;
-    background-repeat: repeat-x;
-    height: 100%;
-    width: 1350px;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="450" height="425" viewBox="0 0 450 425"><path transform="scale(1.5)" d="m0 425 307 0 0-425C242.5 0 216.4 45.5 153.5 45.5 90.6 45.5 62.9 0 0 0Z" fill="#878"/></svg>');
-    animation: rolling-fog 50s linear infinite;
-
+    background-image: url('data:image/svg+xml;utf8,<svg width="1200" height="300" xmlns="http://www.w3.org/2000/svg"><path filter="url(#fog-blur)" d="m0,0c49.66667,0 92.33333,44 142,44c50.33333,0 123.66667,-42 174,-42c50,0 81,33 131,33c50,0 107,-29 157,-29c50,0 91,37 141,37c50,0 123,-40 173,-40c50,0 75,35 125,35c50,0 107,-38 157,-38l0,300l-1200,0l0,-300z" fill="#b9c0f0"/><defs><filter height="200%" width="200%" y="-50%" x="-50%" id="fog-blur"><feGaussianBlur stdDeviation="6" in="SourceGraphic"/></filter></defs></svg>');
+    animation-duration: 60s;
+    animation-name: fog-walk;
   }
-
-  .fog-1 {
-    border-right: .25rem solid yellow;
-    left: -1350px;
-  }
-
-  .fog-2 {
-    border-right: .25rem solid purple;
-    left: 0px;
-  }
-
-  .fog-3 {
-    border-right: .25rem solid green;
-    left: 1350px;
-  }*/
 }
 
 .background {
-  color: #fff;
-  position: absolute;
-  overflow: hidden;
-  bottom: -2rem;
-  height: 100%;
-  width: 100%;
-  opacity: .85;
-
-/*  & svg {
-    overflow: visible;
-    height: 18rem;
-  }*/
-
+//  left: 1.5rem;
+  bottom: -4rem;
+  opacity: .4;
+  animation-duration: 7s;
+  animation-name: fog-roll;
+  
+  //this guy may be too overlapped. mess with its timing
   .fog-1, .fog-2, .fog-3 {
-    animation-duration: 50s;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="512" viewBox="0 0 1200 512"><path fill="#ccddff" d="m0,14.364427c50,0 69.415179,33.745769 122.224507,32.809327c52.809329,-0.936442 109.983085,-40.429516 209.614543,-39.49154c99.631457,0.937977 103.745769,32 149.999999,32c46.25423,0 75.652492,-28.444902 125.652492,-28.444902c50,0 91.555098,25.970279 151.855967,25.033836c60.300869,-0.936443 73.796525,-22.525377 154.699131,-23.46182c80.902606,-0.936443 107.190672,20.635574 157.190672,20.635574c50,0 78.762689,-19.080475 128.762689,-19.080475l0,110.635573c-50,-10 -35.033836,39.063557 -115,40c-79.966164,0.936443 -105.033836,-39.432098 -185,-39.432098c-79.966164,0 -114.699131,31.622771 -175,33.495656c-60.300869,1.872885 -113.728852,-13.703247 -163.728852,-13.703247c-50,0 -66.889803,32.732968 -131.872886,32.732968c-64.983083,0 -80.970279,-44.732967 -149.699131,-44.732967c-68.728852,0 -81.588935,41.605853 -146.572017,41.605853c-64.983082,0 -83.127114,-49.966165 -133.127114,-49.966165l0,-110.635573z"/></svg>');
+    background-image: url('data:image/svg+xml;utf8,<svg width="1200" height="300" xmlns="http://www.w3.org/2000/svg"><path filter="url(#fog-blur)" d="m0,0c49.66667,0 92.33333,44 142,44c50.33333,0 123.66667,-42 174,-42c50,0 81,33 131,33c50,0 107,-29 157,-29c50,0 91,37 141,37c50,0 123,-40 173,-40c50,0 75,35 125,35c50,0 107,-38 157,-38l0,300l-1200,0l0,-300z" fill="#bbc9f0"/><defs><filter height="200%" width="200%" y="-50%" x="-50%" id="fog-blur"><feGaussianBlur stdDeviation="5" in="SourceGraphic"/></filter></defs></svg>');
+    animation-duration: 80s;
+    animation-name: fog-walk;
   }
-/*
-  .fog-1 {
-    left: 0;
-  }
-
-  .fog-2 {
-    left: 1200px;
-  }
-
-  .fog-3 {
-    left: -1200px;
-  }*/
 }
 
-@keyframes rolling-fog {
-  to {transform: translatex(1200px);}
+.midground {
+  left: 0;
+  bottom: -4rem;
+  opacity: .4;
+  animation-duration: 18s;
+  animation-delay: .5s;
+  animation-name: fog-roll;
+  
+  .fog-1, .fog-2, .fog-3 {
+    background-image: url('data:image/svg+xml;utf8,<svg width="1200" height="300" xmlns="http://www.w3.org/2000/svg"><path filter="url(#fog-blur)" d="m0,0c49.66667,0 92.33333,44 142,44c50.33333,0 123.66667,-42 174,-42c50,0 81,33 131,33c50,0 107,-29 157,-29c50,0 91,37 141,37c50,0 123,-40 173,-40c50,0 75,35 125,35c50,0 107,-38 157,-38l0,300l-1200,0l0,-300z" fill="#c0ccf0"/><defs><filter height="200%" width="200%" y="-50%" x="-50%" id="fog-blur"><feGaussianBlur stdDeviation="4" in="SourceGraphic"/></filter></defs></svg>');
+//    animation-duration: 100s;
+  }
+}
+
+.foreground {
+//  left: 2rem;
+  bottom: -4rem;
+  opacity: .4;
+  animation-duration: 21s;
+//  animation-delay: .5s;
+  animation-name: fog-roll;
+  animation-delay: .25s;
+  
+    .fog-1, .fog-2, .fog-3 {
+      background-image: url('data:image/svg+xml;utf8,<svg width="1200" height="300" xmlns="http://www.w3.org/2000/svg"><path filter="url(#fog-blur)" d="m0,0c49.66667,0 92.33333,44 142,44c50.33333,0 123.66667,-42 174,-42c50,0 81,33 131,33c50,0 107,-29 157,-29c50,0 91,37 141,37c50,0 123,-40 173,-40c50,0 75,35 125,35c50,0 107,-38 157,-38l0,300l-1200,0l0,-300z" fill="#c9d0f0"/><defs><filter height="200%" width="200%" y="-50%" x="-50%" id="fog-blur"><feGaussianBlur stdDeviation="3" in="SourceGraphic"/></filter></defs></svg>');
+      animation-duration: 50s;
+      animation-name: fog-walk;
+  }
+}
+
+.sup {
+//  left: -2rem;
+  bottom: -4.25rem;
+  opacity: .4;
+  animation-duration: 9s;
+//  animation-delay: .5s;
+  animation-name: fog-roll;
+  
+  .fog-1, .fog-2, .fog-3 {
+    background-image: url('data:image/svg+xml;utf8,<svg width="1200" height="300" xmlns="http://www.w3.org/2000/svg"><path filter="url(#fog-blur)" d="m0,0c49.66667,0 92.33333,44 142,44c50.33333,0 123.66667,-42 174,-42c50,0 81,33 131,33c50,0 107,-29 157,-29c50,0 91,37 141,37c50,0 123,-40 173,-40c50,0 75,35 125,35c50,0 107,-38 157,-38l0,300l-1200,0l0,-300z" fill="#cce0f0"/><defs><filter height="200%" width="200%" y="-50%" x="-50%" id="fog-blur"><feGaussianBlur stdDeviation="2" in="SourceGraphic"/></filter></defs></svg>');
+    animation-duration: 90s;
+    animation-name: fog-walk;
+  }
+}
+
+@keyframes fog-walk {
+  to{transform: translatex(1200px)}
+}
+
+@keyframes fog-roll {
+  50%{
+    transform: translateY(.5rem);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(0);
+    opacity: .4;
+  }
 }
