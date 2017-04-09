@@ -8,7 +8,7 @@ body {
   background-color: #9ac;
 }
 
-.sky {
+.sky.fog {
   height: 100%;
   background-color: inherit;
 }
@@ -22,15 +22,17 @@ body {
   width: 100%;
   opacity: .75;
 }*/
-.background, .midground, .foreground, .sub, .super {
+.background, .midground, .foreground, .sub, .sup {
   position: absolute;
   height: 100%;
   width: 100%;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
+  overflow: hidden;
 }
 
 .fog-1, .fog-2, .fog-3 {
+  min-width: 1200px;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -62,7 +64,6 @@ body {
 }
 
 .background {
-  left: 1.5rem;
   bottom: -4rem;
   opacity: .4;
   animation-duration: 7s;
@@ -87,7 +88,6 @@ body {
 }
 
 .foreground {
-  left: 2rem;
   bottom: -4rem;
   opacity: .4;
   animation-duration: 21s;
@@ -100,14 +100,13 @@ body {
   animation-name: fog-walk;
 }
 
-.super {
-  left: -2rem;
+.sup {
   bottom: -4.25rem;
   opacity: .4;
   animation-duration: 9s;
   animation-name: fog-roll;
 }
-.super .fog-1, .super .fog-2, .super .fog-3 {
+.sup .fog-1, .sup .fog-2, .sup .fog-3 {
   background-image: url('data:image/svg+xml;utf8,<svg width="1200" height="300" xmlns="http://www.w3.org/2000/svg"><path filter="url(#fog-blur)" d="m0,0c49.66667,0 92.33333,44 142,44c50.33333,0 123.66667,-42 174,-42c50,0 81,33 131,33c50,0 107,-29 157,-29c50,0 91,37 141,37c50,0 123,-40 173,-40c50,0 75,35 125,35c50,0 107,-38 157,-38l0,300l-1200,0l0,-300z" fill="#cce0f0"/><defs><filter height="200%" width="200%" y="-50%" x="-50%" id="fog-blur"><feGaussianBlur stdDeviation="2" in="SourceGraphic"/></filter></defs></svg>');
   animation-duration: 90s;
   animation-name: fog-walk;

@@ -8,7 +8,7 @@ body {
   background-color: #9ac;
 }
 
-.sky {
+.sky.fog {
   height: 100%;
   background-color: inherit;
 }
@@ -23,16 +23,19 @@ body {
   opacity: .75;
 }*/
 
-.background, .midground, .foreground, .sub, .super {
+.background, .midground, .foreground, .sub, .sup {
   position: absolute;
   height: 100%;
   width: 100%;
 //  animation-name: fog-roll;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
+  overflow: hidden;
 }
 
 .fog-1, .fog-2, .fog-3 {
+  min-width: 1200px;
+//  overflow: visible;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -66,7 +69,7 @@ body {
 }
 
 .background {
-  left: 1.5rem;
+//  left: 1.5rem;
   bottom: -4rem;
   opacity: .4;
   animation-duration: 7s;
@@ -95,7 +98,7 @@ body {
 }
 
 .foreground {
-  left: 2rem;
+//  left: 2rem;
   bottom: -4rem;
   opacity: .4;
   animation-duration: 21s;
@@ -110,8 +113,8 @@ body {
   }
 }
 
-.super {
-  left: -2rem;
+.sup {
+//  left: -2rem;
   bottom: -4.25rem;
   opacity: .4;
   animation-duration: 9s;
