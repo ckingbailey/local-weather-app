@@ -3,100 +3,75 @@
 -_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*/
 @keyframes rain-fall {
   to {
-    margin-top: 1000px;
-  }
-}
+    margin-top: 1000px; } }
 @keyframes lightning {
   25% {
-    background-image: radial-gradient(rgba(74, 85, 106, 0), rgba(74, 85, 106, 0) 45%);
-  }
+    background-image: radial-gradient(rgba(74, 85, 106, 0), rgba(74, 85, 106, 0) 45%); }
   30% {
-    background-image: radial-gradient(#7987a2, rgba(74, 85, 106, 0) 45%);
-  }
+    background-image: radial-gradient(#7987a2, rgba(74, 85, 106, 0) 45%); }
   32% {
-    background-image: radial-gradient(rgba(74, 85, 106, 0), rgba(74, 85, 106, 0) 45%);
-  }
+    background-image: radial-gradient(rgba(74, 85, 106, 0), rgba(74, 85, 106, 0) 45%); }
   34% {
-    background-image: radial-gradient(#7987a2, rgba(74, 85, 106, 0) 45%);
-  }
+    background-image: radial-gradient(#7987a2, rgba(74, 85, 106, 0) 45%); }
   36% {
-    background-image: radial-gradient(rgba(74, 85, 106, 0), rgba(74, 85, 106, 0) 45%);
-  }
+    background-image: radial-gradient(rgba(74, 85, 106, 0), rgba(74, 85, 106, 0) 45%); }
   40% {
-    background-image: radial-gradient(#7987a2, rgba(74, 85, 106, 0) 45%);
-  }
+    background-image: radial-gradient(#7987a2, rgba(74, 85, 106, 0) 45%); }
   100% {
-    background-image: radial-gradient(rgba(74, 85, 106, 0), rgba(74, 85, 106, 0) 45%);
-  }
-}
+    background-image: radial-gradient(rgba(74, 85, 106, 0), rgba(74, 85, 106, 0) 45%); } }
 @keyframes cloud-walk {
   to {
-    transform: translateX(100vw);
-  }
-}
+    transform: translateX(100vw); } }
 html {
-  height: 100%;
-}
+  height: 100%; }
 
 body {
   font-family: sans-serif;
   color: #e0ecf9;
-  height: 100%;
-}
+  height: 100%; }
 
 h1, h2, h3, h4, h5 {
-  margin: 0 0 1rem 0;
-}
+  margin: 0 0 1rem 0; }
 
 .flex-parent {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  justify-content: center;
-}
+  justify-content: center; }
 
 .flex-container {
   flex: 1 0 auto;
   background: rgba(57, 64, 76, 0.3);
   border-radius: 1rem;
   padding: .25rem;
-  box-sizing: border-box;
-}
-.flex-container .content-container {
-  border: 0.1rem solid #e4e2c3;
-  padding: 2rem;
-  border-radius: 1rem;
-  background: rgba(90, 100, 120, 0.3);
-}
+  box-sizing: border-box; }
+  .flex-container .content-container {
+    border: 0.1rem solid #e4e2c3;
+    padding: 2rem;
+    border-radius: 1rem;
+    background: rgba(90, 100, 120, 0.3); }
 
 .switch-container {
-  position: relative;
-}
+  position: relative; }
 
 .switch {
   position: absolute;
   top: 0;
-  right: 0;
-}
+  right: 0; }
 
 @media screen and (max-width: 480px) {
   .flex-container {
-    width: 100%;
-  }
-}
+    width: 100%; } }
 @media screen and (min-width: 481px) {
   .flex-container {
-    width: 30rem;
-  }
-}
+    width: 30rem; } }
 /*-_-*-_-*-_-*-_-*-_-*-_-*-_-
   weather-specific styles
 -_-*-_-*-_-*-_-*-_-*-_-*-_-*/
 .sky-feature {
   position: absolute;
   top: 0;
-  right: 0;
-}
+  right: 0; }
 
 .sky {
   background: #aac8ff;
@@ -106,281 +81,241 @@ h1, h2, h3, h4, h5 {
   height: 120%;
   width: 100%;
   overflow: hidden;
-  z-index: -1;
-}
-.sky.thunder2xx {
-  background: #445066;
-}
-.sky.thunder2xx .sky-feature {
-  width: 100%;
-  background: #4a556a;
-}
-.sky.thunder2xx .sky-feature .lightning {
-  position: absolute;
-  top: 2.3rem;
-  left: 1rem;
-  height: 4.5rem;
-  width: 25rem;
-  border-radius: 50%;
-  background-image: radial-gradient(rgba(74, 85, 106, 0), rgba(74, 85, 106, 0) 45%);
-  animation: lightning 3.5s infinite;
-}
-.sky.thunder2xx .sky-feature .lightning:before {
-  content: '';
-  background-image: inherit;
-  position: absolute;
-  top: 1.5rem;
-  left: 2rem;
-  height: 2rem;
-  width: 7rem;
-  animation: lightning 3.5s infinite;
-  animation-delay: .5s;
-}
-.sky.thunder2xx .sky-feature .lightning:after {
-  content: '';
-  background-image: inherit;
-  position: absolute;
-  top: 1.6rem;
-  left: 18rem;
-  height: 2rem;
-  width: 7rem;
-  animation: lightning 3.5s infinite;
-  animation-delay: .75s;
-}
-.sky.thunder2xx .sky-feature .foreground {
-  background: #535d70;
-  position: absolute;
-  top: 0;
-  height: 4rem;
-  width: 100%;
-}
-.sky.thunder2xx .sky-feature .puff {
-  display: inline-block;
-  background: inherit;
-  position: absolute;
-  top: 2.25rem;
-  border-radius: 50%;
-  border: none;
-}
-.sky.thunder2xx .sky-feature .puff:before {
-  content: '';
-  display: inline-block;
-  background: inherit;
-  position: relative;
-  border-radius: 50%;
-  height: 2.8rem;
-  width: 7vw;
-  right: 4vw;
-}
-.sky.thunder2xx .sky-feature .puff:after {
-  content: '';
-  display: inherit;
-  background: inherit;
-  position: relative;
-  border-radius: 50%;
-  border: none;
-  height: 2.8rem;
-  width: 7vw;
-  top: -3rem;
-  left: 4vw;
-}
-.sky.thunder2xx .sky-feature .puff.one {
-  height: 2.8rem;
-  width: 7vw;
-  right: 90.75vw;
-}
-.sky.thunder2xx .sky-feature .puff.two {
-  height: 2.8rem;
-  width: 7vw;
-  right: 78vw;
-}
-.sky.thunder2xx .sky-feature .puff.three {
-  height: 2.8rem;
-  width: 7vw;
-  right: 65.25vw;
-}
-.sky.thunder2xx .sky-feature .puff.four {
-  height: 2.8rem;
-  width: 7vw;
-  right: 52.5vw;
-}
-.sky.thunder2xx .sky-feature .puff.five {
-  height: 2.8rem;
-  width: 7vw;
-  right: 39.75vw;
-}
-.sky.thunder2xx .sky-feature .puff.six {
-  height: 2.8rem;
-  width: 7vw;
-  right: 27vw;
-}
-.sky.thunder2xx .sky-feature .puff.seven {
-  height: 2.8rem;
-  width: 7vw;
-  right: 14.25vw;
-}
-.sky.thunder2xx .sky-feature .puff.eight {
-  height: 2.8rem;
-  width: 7vw;
-  right: 1.5vw;
-}
-.sky.thunder2xx .sky-feature .midground {
-  background: inherit;
-  position: relative;
-  height: 5.5rem;
-}
-.sky.thunder2xx .sky-feature .midground .puff {
-  background-color: #4a556a;
-  top: 5rem;
-  animation-duration: 5s;
-  animation-timing-function: ease-out;
-  animation-iteration-count: infinite;
-}
-.sky.drizzle3xx {
-  background: #7394d0;
-}
-.sky.drizzle3xx .rain-drop {
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(115, 148, 208, 0.9));
-  width: .1rem;
-  height: 2rem;
-  border-radius: .5rem;
-  position: absolute;
-  top: 0;
-  right: 5rem;
-  animation: rain-fall 1s linear infinite;
-}
-.sky.rain5xx {
-  background: #53668a;
-}
-.sky.rain5xx .rain-drop {
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(102, 102, 138, 0.9));
-  width: .15rem;
-  height: 3rem;
-  border-radius: .5rem;
-  position: absolute;
-  top: 0;
-  right: 5rem;
-  animation: rain-fall 1s linear infinite;
-}
-.sky.snow6xx {
-  background: #aac8ff;
-}
-.sky.snow6xx .snow-flake {
-  position: absolute;
-  top: 1rem;
-  right: 5rem;
-  height: .25rem;
-  width: .25rem;
-  background: #fff;
-  box-shadow: 0 0 .25rem .1rem #fff;
-}
-.sky.clear800 {
-  background: #aac8ff;
-}
-.sky.clear800 .sky-feature {
-  top: 3rem;
-  right: 10%;
-  border-radius: 50%;
-  border: 0.25rem solid #aac8ff;
-  height: 6rem;
-  width: 6rem;
-  background: #fffd86;
-  box-shadow: 0 0 1rem 0.35rem #fffc60;
-}
-.sky.clouds80x {
-  background: #aac8ff;
-}
-.sky.clouds80x .sky-feature {
-  top: 0;
-  left: 0;
-}
-.sky.clouds80x .sky-feature .sun {
-  position: absolute;
-  top: 3rem;
-  right: 10%;
-  border-radius: 50%;
-  border: 0.25rem solid #aac8ff;
-  height: 6rem;
-  width: 6rem;
-  background: #fffd86;
-  box-shadow: 0 0 1rem 0.35rem #fffc60;
-}
-.sky.clouds80x .sky-feature .cloud1, .sky.clouds80x .sky-feature .cloud2, .sky.clouds80x .sky-feature .cloud3 {
-  font-family: serif;
-  color: blue;
-  text-align: center;
-  line-height: 1.8rem;
-  opacity: .9;
-  position: absolute;
-  border-radius: 1rem;
-  background-color: white;
-  box-shadow: 0 0 .5rem .25rem white;
-  border: none;
-}
-.sky.clouds80x .sky-feature .cloud1:before, .sky.clouds80x .sky-feature .cloud1:after, .sky.clouds80x .sky-feature .cloud2:before, .sky.clouds80x .sky-feature .cloud2:after, .sky.clouds80x .sky-feature .cloud3:before, .sky.clouds80x .sky-feature .cloud3:after {
-  content: '';
-  position: absolute;
-  background: inherit;
-  opacity: inherit;
-  border-radius: 50%;
-  background-color: inherit;
-  box-shadow: inherit;
-  border: inherit;
-}
-.sky.clouds80x .sky-feature .cloud1 {
-  top: 6.75rem;
-  left: 15rem;
-  height: 2.75rem;
-  width: 7rem;
-  animation: cloud-walk 300s linear infinite;
-}
-.sky.clouds80x .sky-feature .cloud1:before {
-  top: -2rem;
-  left: .6rem;
-  height: 4.5rem;
-  width: 4.5rem;
-}
-.sky.clouds80x .sky-feature .cloud1:after {
-  top: -1rem;
-  right: .65rem;
-  height: 2rem;
-  width: 2rem;
-}
-.sky.clouds80x .sky-feature .cloud2 {
-  top: 8.5rem;
-  left: 7.5rem;
-  height: 2.35rem;
-  width: 11rem;
-  animation: cloud-walk 180s linear infinite;
-}
-.sky.clouds80x .sky-feature .cloud2:before {
-  top: -3.15rem;
-  left: 1.4rem;
-  height: 5.5rem;
-  width: 6rem;
-}
-.sky.clouds80x .sky-feature .cloud2:after {
-  top: -1.5rem;
-  right: 2rem;
-  height: 2.5rem;
-  width: 2.5rem;
-}
-.sky.clouds80x .sky-feature .cloud3 {
-  top: 2.75rem;
-  left: 4.25rem;
-  height: 3rem;
-  width: 5rem;
-  animation: cloud-walk 240s linear infinite;
-}
-.sky.clouds80x .sky-feature .cloud3:before {
-  top: -1rem;
-  left: .5rem;
-  height: 3rem;
-  width: 3rem;
-}
-.sky.clouds80x .sky-feature .cloud3:after {
-  top: -.75rem;
-  right: .65rem;
-  height: 1rem;
-  width: 1rem;
-}
+  z-index: -1; }
+  .sky.thunder2xx {
+    background: #445066; }
+    .sky.thunder2xx .sky-feature {
+      width: 100%;
+      background: #4a556a; }
+      .sky.thunder2xx .sky-feature .lightning {
+        position: absolute;
+        top: 2.3rem;
+        left: 1rem;
+        height: 4.5rem;
+        width: 25rem;
+        border-radius: 50%;
+        background-image: radial-gradient(rgba(74, 85, 106, 0), rgba(74, 85, 106, 0) 45%);
+        animation: lightning 3.5s infinite; }
+        .sky.thunder2xx .sky-feature .lightning:before {
+          content: '';
+          background-image: inherit;
+          position: absolute;
+          top: 1.5rem;
+          left: 2rem;
+          height: 2rem;
+          width: 7rem;
+          animation: lightning 3.5s infinite;
+          animation-delay: .5s; }
+        .sky.thunder2xx .sky-feature .lightning:after {
+          content: '';
+          background-image: inherit;
+          position: absolute;
+          top: 1.6rem;
+          left: 18rem;
+          height: 2rem;
+          width: 7rem;
+          animation: lightning 3.5s infinite;
+          animation-delay: .75s; }
+      .sky.thunder2xx .sky-feature .foreground {
+        background: #535d70;
+        position: absolute;
+        top: 0;
+        height: 4rem;
+        width: 100%; }
+      .sky.thunder2xx .sky-feature .puff {
+        display: inline-block;
+        background: inherit;
+        position: absolute;
+        top: 2.25rem;
+        border-radius: 50%;
+        border: none; }
+        .sky.thunder2xx .sky-feature .puff:before {
+          content: '';
+          display: inline-block;
+          background: inherit;
+          position: relative;
+          border-radius: 50%;
+          height: 2.8rem;
+          width: 7vw;
+          right: 4vw; }
+        .sky.thunder2xx .sky-feature .puff:after {
+          content: '';
+          display: inherit;
+          background: inherit;
+          position: relative;
+          border-radius: 50%;
+          border: none;
+          height: 2.8rem;
+          width: 7vw;
+          top: -3rem;
+          left: 4vw; }
+        .sky.thunder2xx .sky-feature .puff.one {
+          height: 2.8rem;
+          width: 7vw;
+          right: 90.75vw; }
+        .sky.thunder2xx .sky-feature .puff.two {
+          height: 2.8rem;
+          width: 7vw;
+          right: 78vw; }
+        .sky.thunder2xx .sky-feature .puff.three {
+          height: 2.8rem;
+          width: 7vw;
+          right: 65.25vw; }
+        .sky.thunder2xx .sky-feature .puff.four {
+          height: 2.8rem;
+          width: 7vw;
+          right: 52.5vw; }
+        .sky.thunder2xx .sky-feature .puff.five {
+          height: 2.8rem;
+          width: 7vw;
+          right: 39.75vw; }
+        .sky.thunder2xx .sky-feature .puff.six {
+          height: 2.8rem;
+          width: 7vw;
+          right: 27vw; }
+        .sky.thunder2xx .sky-feature .puff.seven {
+          height: 2.8rem;
+          width: 7vw;
+          right: 14.25vw; }
+        .sky.thunder2xx .sky-feature .puff.eight {
+          height: 2.8rem;
+          width: 7vw;
+          right: 1.5vw; }
+      .sky.thunder2xx .sky-feature .midground {
+        background: inherit;
+        position: relative;
+        height: 5.5rem; }
+        .sky.thunder2xx .sky-feature .midground .puff {
+          background-color: #4a556a;
+          top: 5rem;
+          animation-duration: 5s;
+          animation-timing-function: ease-out;
+          animation-iteration-count: infinite; }
+  .sky.drizzle3xx {
+    background: #7394d0; }
+    .sky.drizzle3xx .rain-drop {
+      background: linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(115, 148, 208, 0.9));
+      width: .1rem;
+      height: 2rem;
+      border-radius: .5rem;
+      position: absolute;
+      top: 0;
+      right: 5rem;
+      animation: rain-fall 1s linear infinite; }
+  .sky.rain5xx {
+    background: #53668a; }
+    .sky.rain5xx .rain-drop {
+      background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(102, 102, 138, 0.9));
+      width: .15rem;
+      height: 3rem;
+      border-radius: .5rem;
+      position: absolute;
+      top: 0;
+      right: 5rem;
+      animation: rain-fall 1s linear infinite; }
+  .sky.snow6xx {
+    background: #aac8ff; }
+    .sky.snow6xx .snow-flake {
+      position: absolute;
+      top: 1rem;
+      right: 5rem;
+      height: .25rem;
+      width: .25rem;
+      background: #fff;
+      box-shadow: 0 0 .25rem .1rem #fff; }
+  .sky.clear800 {
+    background: #aac8ff; }
+    .sky.clear800 .sky-feature {
+      top: 3rem;
+      right: 10%;
+      border-radius: 50%;
+      border: 0.25rem solid #aac8ff;
+      height: 6rem;
+      width: 6rem;
+      background: #fffd86;
+      box-shadow: 0 0 1rem 0.35rem #fffc60; }
+  .sky.clouds80x {
+    background: #aac8ff; }
+    .sky.clouds80x .sky-feature {
+      top: 0;
+      left: 0; }
+      .sky.clouds80x .sky-feature .sun {
+        position: absolute;
+        top: 3rem;
+        right: 10%;
+        border-radius: 50%;
+        border: 0.25rem solid #aac8ff;
+        height: 6rem;
+        width: 6rem;
+        background: #fffd86;
+        box-shadow: 0 0 1rem 0.35rem #fffc60; }
+      .sky.clouds80x .sky-feature .cloud1, .sky.clouds80x .sky-feature .cloud2, .sky.clouds80x .sky-feature .cloud3 {
+        font-family: serif;
+        color: blue;
+        text-align: center;
+        line-height: 1.8rem;
+        opacity: .9;
+        position: absolute;
+        border-radius: 1rem;
+        background-color: white;
+        box-shadow: 0 0 .5rem .25rem white;
+        border: none; }
+        .sky.clouds80x .sky-feature .cloud1:before, .sky.clouds80x .sky-feature .cloud1:after, .sky.clouds80x .sky-feature .cloud2:before, .sky.clouds80x .sky-feature .cloud2:after, .sky.clouds80x .sky-feature .cloud3:before, .sky.clouds80x .sky-feature .cloud3:after {
+          content: '';
+          position: absolute;
+          background: inherit;
+          opacity: inherit;
+          border-radius: 50%;
+          background-color: inherit;
+          box-shadow: inherit;
+          border: inherit; }
+      .sky.clouds80x .sky-feature .cloud1 {
+        top: 6.75rem;
+        left: 15rem;
+        height: 2.75rem;
+        width: 7rem;
+        animation: cloud-walk 300s linear infinite; }
+        .sky.clouds80x .sky-feature .cloud1:before {
+          top: -2rem;
+          left: .6rem;
+          height: 4.5rem;
+          width: 4.5rem; }
+        .sky.clouds80x .sky-feature .cloud1:after {
+          top: -1rem;
+          right: .65rem;
+          height: 2rem;
+          width: 2rem; }
+      .sky.clouds80x .sky-feature .cloud2 {
+        top: 8.5rem;
+        left: 7.5rem;
+        height: 2.35rem;
+        width: 11rem;
+        animation: cloud-walk 180s linear infinite; }
+        .sky.clouds80x .sky-feature .cloud2:before {
+          top: -3.15rem;
+          left: 1.4rem;
+          height: 5.5rem;
+          width: 6rem; }
+        .sky.clouds80x .sky-feature .cloud2:after {
+          top: -1.5rem;
+          right: 2rem;
+          height: 2.5rem;
+          width: 2.5rem; }
+      .sky.clouds80x .sky-feature .cloud3 {
+        top: 2.75rem;
+        left: 4.25rem;
+        height: 3rem;
+        width: 5rem;
+        animation: cloud-walk 240s linear infinite; }
+        .sky.clouds80x .sky-feature .cloud3:before {
+          top: -1rem;
+          left: .5rem;
+          height: 3rem;
+          width: 3rem; }
+        .sky.clouds80x .sky-feature .cloud3:after {
+          top: -.75rem;
+          right: .65rem;
+          height: 1rem;
+          width: 1rem; }
+
+/*# sourceMappingURL=style.css.map */

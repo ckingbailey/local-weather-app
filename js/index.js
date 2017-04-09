@@ -5,8 +5,7 @@ var temperature;
 -_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*/
 
 function units(){
-  var C;
-  var F;
+  var C, F;
   if($(".temp").hasClass("degF")){
     C = Math.round((temperature - 32) * 5 / 9);
     console.log(C);
@@ -57,10 +56,10 @@ function requestWeather(loc){
     success function
   -_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*/
     success: function publishWeather(api){
-      console.log("weather object: ", api);
-      console.log("api.main.temp = ", api.main.temp);
+      //console.log("weather object: ", api);
+      //console.log("api.main.temp = ", api.main.temp);
       temperature = Math.round(api.main.temp);
-      console.log("rounded 'temperature' = ", temperature);
+      //console.log("rounded 'temperature' = ", temperature);
       $(".temp").text(temperature + "\xb0 F").addClass("degF");
       $(".weather").text(api.weather[0].description);
       //animateWeather(api.weather[0].id);
@@ -69,7 +68,7 @@ function requestWeather(loc){
       withCredentials: true
     },
     error: function(api,errorText) {
-      console.log(api);
+      //console.log(api);
       $(".temp").text("There was a problem with the weather request<br>" + errorText);
     }
   });
@@ -99,6 +98,36 @@ function getLocalWeather(locURL){
     }
   });
 }
+
+function animateWeather(weatherId) {
+  if weatherId >= 200 && weatherId < 300 {
+    thunder();
+  }
+  else if weatherId >= 300 && weatherId < 400 {
+    drizzle();
+  }
+  else if weatherId >= 500 && weatherId < 600 {
+    rain();
+  }
+  else if weatherId >= 600 && weatherId < 700 {
+    snow();
+  }
+  else if weatherId >= 700 && weatherId < 800 {
+    atmosphere();
+  }
+  else if weatherId === 800 {
+    clear();
+  }
+  else if weatherId > 800 && weatherId < 900 {
+    clouds();
+  }
+  else if weatherId >= 900 && weatherId <= 950 {
+    extreme();
+  }
+  else if weatherId > 950 && weatherId < 1000 {
+    other();
+  }
+};
 
 $(document).ready(getLocalWeather('http://ip-api.com/json'));
 
