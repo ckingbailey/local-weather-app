@@ -99,7 +99,6 @@ function getLocalWeather(locURL){
   });
 }
 
-//why is this function firing when I'm merely trying to define it?
 function animateWeather(weatherId) {
   if (weatherId >= 200 && weatherId < 300) {
     thunder();
@@ -128,6 +127,7 @@ function animateWeather(weatherId) {
   else if (weatherId > 950 && weatherId < 1000) {
     other();
   }
+  else clear();
 }
 
 $(document).ready(getLocalWeather('http://ip-api.com/json'));

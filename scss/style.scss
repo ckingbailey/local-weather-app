@@ -22,38 +22,17 @@ $puff-vert-offset: 2.25rem;
   border-radius: 1rem;
 }
 
-@keyframes rain-fall {
-  to {
-    margin-top: 1000px;
-  }
-}
-
-@keyframes snow-fall {
-  
-}
-
-@keyframes lightning {
-  25%{background-image: radial-gradient(rgba($thunder-mid-color,0), rgba($thunder-mid-color,0) 45%);}
-  30%{background-image: radial-gradient(lighten($thunder-mid-color,20%), rgba($thunder-mid-color,0) 45%);}
-  32%{background-image: radial-gradient(rgba($thunder-mid-color,0), rgba($thunder-mid-color,0) 45%);}
-  34%{background-image: radial-gradient(lighten($thunder-mid-color,20%), rgba($thunder-mid-color,0) 45%);}
-  36%{background-image: radial-gradient(rgba($thunder-mid-color,0), rgba($thunder-mid-color,0) 45%);}
-  40%{background-image: radial-gradient(lighten($thunder-mid-color,20%), rgba($thunder-mid-color,0) 45%);}
-  100%{background-image: radial-gradient(rgba($thunder-mid-color,0), rgba($thunder-mid-color,0) 45%);}
-}
-
 @keyframes cloud-walk {
   to {transform: translateX(100vw);}
 }
 
-html {
+html, body {
   height: 100%;
 }
 
 body {
   font-family: sans-serif;
   color: $main-color;
-  height: 100%;
 //  background: $background-color;
 }
 
@@ -75,7 +54,7 @@ h1,h2,h3,h4,h5 {
   @include rounded-corners;
   padding: .25rem;
   box-sizing: border-box;
-  
+
   .content-container {
     border: .1rem solid lighten(darkKhaki,25%);
     padding: 2rem;
@@ -125,348 +104,18 @@ h1,h2,h3,h4,h5 {
   overflow: hidden;
   z-index: -1;
 
-  &.thunder2xx{
-    background: $thunder-bg-color;
-    
-    .sky-feature {
-      width: 100%;
-//      height: 5rem;
-      background: $thunder-mid-color;
-      
-      .lightning {
-        position: absolute;
-        top: 2.3rem;
-        left: 1rem;
-        height: 4.5rem;
-        width: 25rem;
-        border-radius: 50%;
-        background-image: radial-gradient(rgba($thunder-mid-color,0), rgba($thunder-mid-color,0) 45%);
-        animation: lightning 3.5s infinite;
-        
-        &:before {
-          content: '';
-          background-image: inherit;
-          position: absolute;
-          top: 1.5rem;
-          left: 2rem;
-          height: 2rem;
-          width: 7rem;
-          animation: lightning 3.5s infinite;
-          animation-delay: .5s;
-        }
-
-        &:after {
-          content: '';
-          background-image: inherit;
-          position: absolute;
-          top: 1.6rem;
-          left: 18rem;
-          height: 2rem;
-          width: 7rem;
-          animation: lightning 3.5s infinite;
-          animation-delay: .75s;
-        }
-      }
-          
       .foreground {
-        background: $thunder-foreground-color;
         position: absolute;
         top: 0;
         height: 4rem;
         width: 100%;
       }
-      
-      .puff {
-        display: inline-block;
-        background: inherit;
-        position: absolute;
-        top: $puff-vert-offset;
-        border-radius: 50%;
-        border: none;
-        
-        &:before {
-          content:'';
-          display: inline-block;
-          background: inherit;
-          position: relative;
-          border-radius: 50%;
-          height: 2.8rem;
-          width: 7vw;
-          right: $before-r-offset;
-        }
-        
-        &:after {
-          content:'';
-          display: inherit;
-          background: inherit;
-          position: relative;
-          border-radius: 50%;
-          border: none;
-          height: 2.8rem;
-          width: 7vw;
-          top: -3rem;
-          left: $after-l-offset;
-        }
-      
-        &.one {
-          height: 2.8rem;
-          width: $puff-wd;
-//          top: $puff-vert-offset;
-          right: $puff-initial-offset + (7 * $puff-offset);
-        }
 
-        &.two {
-          height: 2.8rem;
-          width: $puff-wd;
-//          top: $puff-vert-offset;
-          right: $puff-initial-offset + (6 * $puff-offset);
-        }
-
-        &.three {
-          height: 2.8rem;
-          width: $puff-wd;
-//          top: $puff-vert-offset;
-          right: $puff-initial-offset + (5 * $puff-offset);
-        }
-
-        &.four {
-          height: 2.8rem;
-          width: $puff-wd;
-//          top: $puff-vert-offset;
-          right: $puff-initial-offset + (4 * $puff-offset);
-        }
-
-        &.five {
-          height: 2.8rem;
-          width: $puff-wd;
-//          top: $puff-vert-offset;
-          right: $puff-initial-offset + (3 * $puff-offset);
-        }
-
-        &.six {
-          height: 2.8rem;
-          width: $puff-wd;
-//          top: $puff-vert-offset;
-          right: $puff-initial-offset + (2 * $puff-offset);
-        }
-
-        &.seven {
-          height: 2.8rem;
-          width: $puff-wd;
-//          top: $puff-vert-offset;
-          right: $puff-initial-offset + $puff-offset;
-        }
-
-        &.eight {
-          height: 2.8rem;
-          width: $puff-wd;
-//          top: $puff-vert-offset;
-          right: $puff-initial-offset;
-        }
-      }
       .midground {
         background: inherit;
         position: relative;
 //        top: 2.5rem;
 //        right: .5vw;
         height: 5.5rem;
-        
-        .puff {
-//          background-image: $lightning-bg-grad;
-          background-color: $thunder-mid-color;
-          top: 5rem;
-          //animation-delay: 3s;
-          //animation-name: lightning;
-          animation-duration: 5s;
-          animation-timing-function: ease-out;
-          animation-iteration-count: infinite;
-        }
       }
-    }
-  }
-
-  &.drizzle3xx{
-    background: darken(desaturate($background-color,50%),20%);
-    
-    .rain-drop {
-      background: linear-gradient(0deg, rgba(255,255,255,.3), rgba(115,148,208,.9));
-//      background:-webkit-gradient(linear,0% 0%,0% 100%, from(rgba(13,52,58,1) ), to(rgba(255,255,255,0.6))  );
-//      background: -moz-linear-gradient(top, rgba(13,52,58,1) 0%, rgba(255,255,255,.6) 100%);
-      width: .1rem;
-      height: 2rem;
-      border-radius: .5rem;
-      position: absolute;
-      top: 0;
-      right: 5rem;
-      animation: rain-fall 1s linear infinite;
-    }
-
-  }
-
-  &.rain5xx{
-    background: darken(desaturate($background-color,75%),40%);
-
-    .rain-drop {
-      background: linear-gradient(0deg, rgba(255,255,255,.6), rgba(102,102,138,.9));
-//      background:-webkit-gradient(linear,0% 0%,0% 100%, from(rgba(13,52,58,1) ), to(rgba(255,255,255,0.6))  );
-//      background: -moz-linear-gradient(top, rgba(13,52,58,1) 0%, rgba(255,255,255,.6) 100%);
-      width: .15rem;
-      height: 3rem;
-      border-radius: .5rem;
-      position: absolute;
-      top: 0;
-      right: 5rem;
-      animation: rain-fall 1s linear infinite;
-    }
-    
-  }
-
-  &.snow6xx{
-    background: $background-color;
-    
-    .snow-flake{
-      position: absolute;
-      top: 1rem;
-      right: 5rem;
-      height: .25rem;
-      width: .25rem;
-      background: #fff;
-      box-shadow: 0 0 .25rem .1rem #fff;
-    }
-  }
-
-  &.atmo7xx{}
-
-  &.clear800{
-    background: $background-color;
-    
-    .sky-feature {
-      top: 3rem;
-      right: 10%;
-      border-radius: 50%;
-      border: .25rem solid $background-color;
-      height: 6rem;
-      width: 6rem;
-      background: lighten($sun-yellow,7.5%);
-      box-shadow: 0 0 1rem .35rem $sun-yellow;
-    }
-  }
-
-  &.clouds80x{
-    background: $background-color;
-    
-    .sky-feature {
-      //border: .25rem solid purple;
-      top: 0;
-      left: 0;
-      
-      .sun {
-        position: absolute;
-        top: 3rem;
-        right: 10%;
-        border-radius: 50%;
-        border: .25rem solid $background-color;
-        height: 6rem;
-        width: 6rem;
-        background: lighten($sun-yellow,7.5%);
-        box-shadow: 0 0 1rem .35rem $sun-yellow;
-      }
-      
-      .cloud1, .cloud2, .cloud3 {
-          //font-size: large;
-          font-family: serif;
-          color: blue;
-          text-align: center;
-          line-height: 1.8rem;
-        opacity: .9;
-        position: absolute;
-        border-radius: 1rem;
-        background-color: white;
-        box-shadow: 0 0 .5rem .25rem white;
-        border: none;
-        
-        &:before, &:after {
-          content: '';
-          position: absolute;
-          background:inherit;
-          opacity: inherit;
-          border-radius: 50%;
-          background-color: inherit;
-          box-shadow: inherit;
-          border: inherit;          
-        }
-      }
-      
-      .cloud1{
-        top: 6.75rem;
-        left: 15rem;
-        height: 2.75rem;
-        width: 7rem;
-        animation: cloud-walk 300s linear infinite;
-        
-        &:before {
-          top: -2rem;
-          left: .6rem;
-          height: 4.5rem;
-          width: 4.5rem;
-        }
-        
-        &:after {
-          top: -1rem;
-          right: .65rem;
-          height: 2rem;
-          width: 2rem;
-        }
-      }
-      
-      .cloud2{
-        top: 8.5rem;
-        left: 7.5rem;
-        height: 2.35rem;
-        width: 11rem;
-        animation: cloud-walk 180s linear infinite;
-        
-        &:before {
-          top: -3.15rem;
-          left: 1.4rem;
-          height: 5.5rem;
-          width: 6rem;
-        }
-        
-        &:after {
-          top: -1.5rem;
-          right: 2rem;
-          height: 2.5rem;
-          width: 2.5rem;
-        }
-      }
-      
-      .cloud3{
-        top: 2.75rem;
-        left: 4.25rem;
-        height: 3rem;
-        width: 5rem;
-        animation: cloud-walk 240s linear infinite;
-        
-        &:before{
-          top: -1rem;
-          left: .5rem;
-          height: 3rem;
-          width: 3rem;
-        }
-        
-        &:after{
-          top: -.75rem;
-          right: .65rem;
-          height: 1rem;
-          width: 1rem;
-        }
-      }
-    }
-  }
-
-  &.extreme90x{}
-
-  &.other9xx{}
-
 }
