@@ -1,29 +1,7 @@
-/*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*
-  color variables
--_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*/
-
-$container-bg: rgba(90,100,120,.3);
-$background-color: rgba(170,200,255,1);
-$main-color: #e0ecf9;
-$sun-yellow: #fffc60;
-$thunder-bg-color: darken(desaturate($background-color,80%),50%);;
-$thunder-mid-color: darken(desaturate($background-color,82%),48%);
-$lightning-bg-grad: radial-gradient(lighten($thunder-mid-color,20%), rgba($thunder-mid-color,0) 45%);
-$thunder-foreground-color: darken(desaturate($background-color,85%),45%);
-
-$before-r-offset: 4vw;
-$after-l-offset: 4vw;
-$puff-wd: 7vw;
-$puff-initial-offset: 1.5vw;
-$puff-offset: 12.75vw;
-$puff-vert-offset: 2.25rem;
+@import '_colors';
 
 @mixin rounded-corners{
   border-radius: 1rem;
-}
-
-@keyframes cloud-walk {
-  to {transform: translateX(100vw);}
 }
 
 html, body {
@@ -32,8 +10,8 @@ html, body {
 
 body {
   font-family: sans-serif;
-  color: $main-color;
-//  background: $background-color;
+  color: $text-color;
+  padding: 0; margin: 0;
 }
 
 h1,h2,h3,h4,h5 {
@@ -89,12 +67,6 @@ h1,h2,h3,h4,h5 {
   weather-specific styles
 -_-*-_-*-_-*-_-*-_-*-_-*-_-*/
 
-.sky-feature{
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
 .sky{
   background: $background-color;
   position: absolute;
@@ -105,17 +77,14 @@ h1,h2,h3,h4,h5 {
   z-index: -1;
 
       .foreground {
-        position: absolute;
-        top: 0;
-        height: 4rem;
         width: 100%;
       }
 
       .midground {
-        background: inherit;
-        position: relative;
-//        top: 2.5rem;
-//        right: .5vw;
-        height: 5.5rem;
+        width: 100%;
+      }
+
+      .background {
+        width: 100%;
       }
 }
