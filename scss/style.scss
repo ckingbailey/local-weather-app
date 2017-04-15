@@ -3,6 +3,7 @@
 @import '_drizzle';
 @import '_fog';
 @import '_rain';
+@import '_snow';
 
 html, body {
   height: 100%;
@@ -73,20 +74,14 @@ h1,h2,h3,h4,h5 {
   background: $main-sky-color;
   position: absolute;
   top: 0; left: 0;
-  height: 120%;
+  height: 100%; //previously I had this as 120%. interesting. sthing to try.
   width: 100%;
   overflow: hidden;
   z-index: -1;
 
-      .foreground {
-        width: 100%;
-      }
-
-      .midground {
-        width: 100%;
-      }
-
-      .background {
+      .foreground, .midground, .background {
+        position: absolute;
+        top: 0; left: 0;
         width: 100%;
       }
 }
