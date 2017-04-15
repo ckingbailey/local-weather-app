@@ -100,34 +100,35 @@ function getLocalWeather(locURL){
 }
 
 function animateWeather(weatherId) {
-  if weatherId >= 200 && weatherId < 300 {
+  if (weatherId >= 200 && weatherId < 300) {
     thunder();
   }
-  else if weatherId >= 300 && weatherId < 400 {
+  else if (weatherId >= 300 && weatherId < 400) {
     drizzle();
   }
-  else if weatherId >= 500 && weatherId < 600 {
+  else if (weatherId >= 500 && weatherId < 600) {
     rain();
   }
-  else if weatherId >= 600 && weatherId < 700 {
+  else if (weatherId >= 600 && weatherId < 700) {
     snow();
   }
-  else if weatherId >= 700 && weatherId < 800 {
+  else if (weatherId >= 700 && weatherId < 800) {
     atmosphere();
   }
-  else if weatherId === 800 {
+  else if (weatherId === 800) {
     clear();
   }
-  else if weatherId > 800 && weatherId < 900 {
+  else if (weatherId > 800 && weatherId < 900) {
     clouds();
   }
-  else if weatherId >= 900 && weatherId <= 950 {
+  else if (weatherId >= 900 && weatherId <= 950) {
     extreme();
   }
-  else if weatherId > 950 && weatherId < 1000 {
+  else if (weatherId > 950 && weatherId < 1000) {
     other();
   }
-};
+  else clear();
+}
 
 $(document).ready(getLocalWeather('http://ip-api.com/json'));
 
