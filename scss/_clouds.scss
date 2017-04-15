@@ -1,11 +1,11 @@
 @import _colors;
 
-.sky.clouds80x {
+.sky.clouds {
   position: relative;
   background-color: $main-sky-color;
 }
 
-.sky.clouds80x .sun {
+.sky.clouds .sun {
   position: absolute;
   top: 3rem;
   right: 10%;

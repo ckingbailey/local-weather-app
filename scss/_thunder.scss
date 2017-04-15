@@ -44,7 +44,7 @@
   animation-delay: .5s;*/
 }
 
-.lightning:after {
+&:after {
   content: '';
   background-image: inherit;
   position: absolute;

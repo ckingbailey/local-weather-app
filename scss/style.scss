@@ -1,8 +1,9 @@
 @import '_colors';
-
-@mixin rounded-corners{
-  border-radius: 1rem;
-}
+@import '_clouds';
+@import '_drizzle';
+@import '_fog';
+@import '_rain';
+@import '_snow';
 
 html, body {
   height: 100%;
@@ -12,6 +13,7 @@ body {
   font-family: sans-serif;
   color: $text-color;
   padding: 0; margin: 0;
+  overflow: hidden;
 }
 
 h1,h2,h3,h4,h5 {
@@ -23,20 +25,21 @@ h1,h2,h3,h4,h5 {
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
+  margin-top: 1rem;
 }
 
 .flex-container {
   flex: 1 0 auto;
   background: darken($container-bg,15%);
 //  border: .1rem solid lighten(yellow, 35%);
-  @include rounded-corners;
+  border-radius: 1.25rem;
   padding: .25rem;
   box-sizing: border-box;
 
   .content-container {
-    border: .1rem solid lighten(darkKhaki,25%);
+    border: .1rem solid $container-border;
     padding: 2rem;
-    @include rounded-corners;
+    border-radius: 1rem;
     background: $container-bg;
   }
 }
@@ -68,23 +71,17 @@ h1,h2,h3,h4,h5 {
 -_-*-_-*-_-*-_-*-_-*-_-*-_-*/
 
 .sky{
-  background: $background-color;
+  background: $main-sky-color;
   position: absolute;
   top: 0; left: 0;
-  height: 120%;
+  height: 100%; //previously I had this as 120%. interesting. sthing to try.
   width: 100%;
   overflow: hidden;
   z-index: -1;
 
-      .foreground {
-        width: 100%;
-      }
-
-      .midground {
-        width: 100%;
-      }
-
-      .background {
+      .foreground, .midground, .background {
+        position: absolute;
+        top: 0; left: 0;
         width: 100%;
       }
 }

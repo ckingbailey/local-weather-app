@@ -1,26 +1,8 @@
-html {
-  height: 100%;
-}
-
-body {
-  padding: 0;
-  margin: 0;
-  height: 100%;
-  overflow: hidden;
-}
-
 .sky.rain5xx{
   background-color: #568;
   height: 100%;
-}
 
-.foreground, .midground, .background {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.sky.rain5xx .foreground .rain-drop {
+.foreground .rain-drop {
   background: linear-gradient(0deg, rgba(255,255,255,.6), rgba(102,102,138,0));
   width: .15rem;
   height: 3rem;

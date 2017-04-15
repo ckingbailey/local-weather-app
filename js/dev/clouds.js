@@ -1,24 +1,22 @@
-(function clouds(){
+export default function clouds(){
   var appendHere = document.querySelector('.sky');
   var appendMe = document.createElement('div');
-  var text = document.createTextNode('1');
 
-  appendHere.setAttribute('class','sky clouds80x');
+  appendHere.classList += ' clouds');
 
-  appendMe.setAttribute('class','sun');
+  appendMe.classList += 'sun';
   appendHere.appendChild(appendMe);
 
   appendMe = document.createElement('div');
-  appendMe.setAttribute('class','cloud1');
-  appendMe.appendChild(text);
+  appendMe.classList += ' cloud1';
   appendHere.appendChild(appendMe);
 
   appendMe = document.createElement('div');
-  appendMe.setAttribute('class','cloud2');
+  appendMe.classList += ' cloud2';
   appendHere.appendChild(appendMe);
 
   appendMe = document.createElement('div');
-  appendMe.setAttribute('class','cloud3');
+  appendMe.classList += ' cloud3';
   appendHere.appendChild(appendMe);
 
-}());
+}
