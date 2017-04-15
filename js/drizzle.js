@@ -7,7 +7,7 @@ function drizzle(){
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
-  appendHere.setAttribute('class', 'sky rain5xx');
+  appendHere.classList += 'drizzle';
 
   for(i=1; i<dropsCount; i++){
     var dropTop = randomRoll(-120,129) + 'vh';

@@ -10,9 +10,9 @@ appendHere.classList += 'thunder';
 appendMe = document.createElement('div');
 
 //make cloud puffs
-cloudPuffs('div.foreground');
+cloudPuffs('.foreground');
 
-cloudPuffs('div.midground');
+cloudPuffs('.midground');
 
 //make lightning (static for the mo')
 appendMe = document.createElement('div');
@@ -20,6 +20,7 @@ appendMe.setAttribute('class','lightning');
 
 appendHere.insertAdjacentElement('afterend', appendMe);
 
+//clouds puffs maker function
 function cloudPuffs(selector) {
   l = -1;
   appendHere = document.querySelector(selector);
@@ -27,7 +28,7 @@ function cloudPuffs(selector) {
   for(viewW = 100; viewW > 0; viewW -= (w - 1)){
     appendMe = document.createElement('div');
 
-    appendMe.setAttribute('class','puff');
+    appendMe.classList += 'puff';
 
     w = (Math.floor(Math.random() * (36 - 12) + 12))/4;
     b = -1 - (Math.floor(Math.random() * 2))/8;

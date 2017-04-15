@@ -1,4 +1,17 @@
+/*import clouds from './';
+import drizzle from './';
+import fog from './';
+import rain from './';*/
+
 var temperature;
+
+function randomInt(min, max) {
+  return Math.floor(Math.random * (max - min + 1) + min);
+}
+
+function randomFlt(min, max) {
+  return Math.random * (max - min + 1) + min;
+}
 
 /*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_
   button to switch temperature units

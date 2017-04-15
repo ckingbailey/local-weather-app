@@ -1,15 +1,17 @@
-/*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*
-  color variables
--_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*/
-@keyframes cloud-walk {
-  to {
-    transform: translateX(100vw); } }
+/*
+$thunder-bg-color: darken(desaturate($background-color,80%),50%);
+$thunder-mid-color: darken(desaturate($background-color,82%),48%);
+$lightning-bg-grad: radial-gradient(lighten($thunder-mid-color,20%), rgba($thunder-mid-color,0) 45%);
+$thunder-foreground-color: darken(desaturate($background-color,85%),45%);
+*/
 html, body {
   height: 100%; }
 
 body {
   font-family: sans-serif;
-  color: #e0ecf9; }
+  color: #e0ecf9;
+  padding: 0;
+  margin: 0; }
 
 h1, h2, h3, h4, h5 {
   margin: 0 0 1rem 0; }
@@ -18,12 +20,13 @@ h1, h2, h3, h4, h5 {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  margin-top: 1rem; }
 
 .flex-container {
   flex: 1 0 auto;
   background: rgba(57, 64, 76, 0.3);
-  border-radius: 1rem;
+  border-radius: 1.25rem;
   padding: .25rem;
   box-sizing: border-box; }
   .flex-container .content-container {
@@ -43,19 +46,16 @@ h1, h2, h3, h4, h5 {
 @media screen and (max-width: 480px) {
   .flex-container {
     width: 100%; } }
+
 @media screen and (min-width: 481px) {
   .flex-container {
     width: 30rem; } }
+
 /*-_-*-_-*-_-*-_-*-_-*-_-*-_-
   weather-specific styles
 -_-*-_-*-_-*-_-*-_-*-_-*-_-*/
-.sky-feature {
-  position: absolute;
-  top: 0;
-  right: 0; }
-
 .sky {
-  background: #aac8ff;
+  background: #a0ccf9;
   position: absolute;
   top: 0;
   left: 0;
@@ -64,13 +64,8 @@ h1, h2, h3, h4, h5 {
   overflow: hidden;
   z-index: -1; }
   .sky .foreground {
-    position: absolute;
-    top: 0;
-    height: 4rem;
     width: 100%; }
   .sky .midground {
-    background: inherit;
-    position: relative;
-    height: 5.5rem; }
-
-/*# sourceMappingURL=style.css.map */
+    width: 100%; }
+  .sky .background {
+    width: 100%; }
