@@ -1,4 +1,4 @@
-function makeSnow(){
+export function snow(){
   var dropsCount = 70;
   var appendHere = document.('.sky');
   var appendMe = document.createElement('div');

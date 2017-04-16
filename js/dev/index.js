@@ -1,7 +1,9 @@
-/*import clouds from './';
+import clouds from './';
 import drizzle from './';
 import fog from './';
-import rain from './';*/
+import rain from './';
+import snow from './';
+import thunder from './';
 
 var temperature;
 

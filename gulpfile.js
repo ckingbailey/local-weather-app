@@ -1,5 +1,5 @@
 const gulp = require('gulp');
-const sass = require('gulp-sass');
+/*const sass = require('gulp-sass');
 const webpack = require('gulp-webpack');
 const rename = require('gulp-rename');
 
@@ -26,4 +26,4 @@ gulp.task('bundle', function() {
       }
     ))
     .pipe(gulp.dest('./js'));
-});
+});*/

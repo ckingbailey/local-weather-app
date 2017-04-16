@@ -1,4 +1,4 @@
-export default function rain(){
+export function rain(){
   var dropsCount = 200;
   var appendHere = document.querySelector('.sky');
   var appendMe = document.createElement('div');

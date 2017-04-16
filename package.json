@@ -3,17 +3,14 @@
   "version": "1.0.0",
   "description": "display local weather based on your IP address",
   "main": "gulpfile.js",
-  "dependencies": {
-    "gulp": "^3.9.1",
-    "gulp-webpack": "^1.5.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0"
+    "gulp": "^3.9.1",
+    "webpack": "^2.4.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --config mywebpack.config.js"
+    "build": "webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -21,14 +18,9 @@
   },
   "keywords": [
     "weather",
-    "local",
-    "weather",
-    "free",
-    "code",
-    "camp",
-    "open",
-    "weather",
-    "map",
+    "local-weather",
+    "free-code-camp",
+    "open-weather-map",
     "freecodecamp.com",
     "openweathermap.org"
   ],

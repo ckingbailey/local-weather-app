@@ -1,11 +1,11 @@
-function thunder() {
+export function thunder() {
 
 var appendHere = document.querySelector('.sky');
 var appendMe = document.createElement('div');
 var b, w, l, viewW;
 var styles;
 
-appendHere.classList += 'thunder';
+appendHere.classList += 'thunder2xx';
 
 appendMe = document.createElement('div');
 

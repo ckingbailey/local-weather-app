@@ -1,4 +1,4 @@
-function drizzle(){
+export function drizzle(){
   var dropsCount = 120;
   var appendHere = document.querySelector('.sky');
   var appendMe = document.createElement('div');
@@ -7,7 +7,7 @@ function drizzle(){
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
-  appendHere.classList += 'drizzle';
+  appendHere.classList += 'drizzle3xx';
 
   for(i=1; i<dropsCount; i++){
     var dropTop = randomRoll(-120,129) + 'vh';

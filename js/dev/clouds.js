@@ -1,8 +1,8 @@
-export default function clouds(){
+export function clouds(){
   var appendHere = document.querySelector('.sky');
   var appendMe = document.createElement('div');
 
-  appendHere.classList += ' clouds');
+  appendHere.classList += ' clouds8xx');
 
   appendMe.classList += 'sun';
   appendHere.appendChild(appendMe);
