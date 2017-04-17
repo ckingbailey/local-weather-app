@@ -1,22 +1,22 @@
-export function clouds(){
+export default function clouds(){
   var appendHere = document.querySelector('.sky');
   var appendMe = document.createElement('div');
 
-  appendHere.classList += ' clouds8xx');
+  appendHere.classList.add('clouds8xx');
 
-  appendMe.classList += 'sun';
+  appendMe.classList.add('sun');
   appendHere.appendChild(appendMe);
 
   appendMe = document.createElement('div');
-  appendMe.classList += ' cloud1';
+  appendMe.classList.add('cloud1');
   appendHere.appendChild(appendMe);
 
   appendMe = document.createElement('div');
-  appendMe.classList += ' cloud2';
+  appendMe.classList.add('cloud2');
   appendHere.appendChild(appendMe);
 
   appendMe = document.createElement('div');
-  appendMe.classList += ' cloud3';
+  appendMe.classList.add('cloud3');
   appendHere.appendChild(appendMe);
 
 }

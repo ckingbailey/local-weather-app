@@ -1,6 +1,6 @@
-export function snow(){
+export default function snow(){
   var dropsCount = 70;
-  var appendHere = document.('.sky');
+  var appendHere = document.querySelector('.sky');
   var appendMe = document.createElement('div');
   var layers = ['foreground', 'midground', 'background'];
 
@@ -12,7 +12,7 @@ export function snow(){
     return Math.random() * (max - min + 1) + min;
   }
 
-  appendHere.classList += ' snow6xx';
+  appendHere.classList.add('snow6xx');
 
   for(var i=0; i<layers.length; i++){
 

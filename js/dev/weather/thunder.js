@@ -1,11 +1,11 @@
-export function thunder() {
+export default function thunder() {
 
 var appendHere = document.querySelector('.sky');
 var appendMe = document.createElement('div');
 var b, w, l, viewW;
 var styles;
 
-appendHere.classList += 'thunder2xx';
+appendHere.classList += ' thunder2xx';
 
 appendMe = document.createElement('div');
 
@@ -16,9 +16,9 @@ cloudPuffs('.midground');
 
 //make lightning (static for the mo')
 appendMe = document.createElement('div');
-appendMe.setAttribute('class','lightning');
+appendMe.classList.add('lightning');
 
-appendHere.insertAdjacentElement('afterend', appendMe);
+appendHere.appendChild(appendMe);
 
 //clouds puffs maker function
 function cloudPuffs(selector) {

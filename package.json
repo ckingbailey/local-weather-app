@@ -2,7 +2,7 @@
   "name": "local-weather-app",
   "version": "1.0.0",
   "description": "display local weather based on your IP address",
-  "main": "gulpfile.js",
+  "main": "app.js",
   "dependencies": {},
   "devDependencies": {
     "gulp": "^3.9.1",

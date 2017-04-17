@@ -1,18 +1,16 @@
-export function rain(){
+export default function rain(){
   var dropsCount = 200;
   var appendHere = document.querySelector('.sky');
+  console.log(appendHere);
   var appendMe = document.createElement('div');
   var layers = ['foreground', 'midground', 'background'];
 
-  function randomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  }
+  appendHere.classList.add('rain5xx');
 
-  appendHere.setAttribute('class', 'sky rain5xx');
+  for(let i=0; i<layers.length; i++){
 
-  for(var i=0; i<layers.length; i++){
-
-    appendHere = document.querySelector(layers[i]);
+    appendHere = document.querySelector('.' + layers[i]);
+    console.log('appendHere: ', appendHere);
 
     for(let j=1; j<dropsCount; j++){
       var dropTop = randomInt(-120,99) + 'vh';
@@ -27,4 +25,12 @@ export function rain(){
       appendHere.appendChild(appendMe);
     }
   }
+}
+
+function randomInt(min, max) {
+  return Math.floor(Math.random * (max - min + 1) + min);
+}
+
+function randomFlt(min, max) {
+  return Math.random * (max - min + 1) + min;
 }

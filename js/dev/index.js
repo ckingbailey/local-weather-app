@@ -1,9 +1,9 @@
-import clouds from './';
-import drizzle from './';
-import fog from './';
-import rain from './';
-import snow from './';
-import thunder from './';
+import clouds from './weather/clouds';
+import drizzle from './weather/drizzle';
+import fog from './weather/fog';
+import rain from './weather/rain';
+import snow from './weather/snow';
+import thunder from './weather/thunder';
 
 var temperature;
 
@@ -23,7 +23,7 @@ function units(){
   var C, F;
   if($(".temp").hasClass("degF")){
     C = Math.round((temperature - 32) * 5 / 9);
-    console.log(C);
+    //console.log(C);
     $(".temp").removeClass("degF");
     $(".switch").text("F");
     $(".temp").text(Math.round(C) + " C")
@@ -32,13 +32,13 @@ function units(){
 
   else {
     F = Math.round((temperature * 9 / 5) + 32);
-    console.log(F);
+    //console.log(F);
     $(".temp").addClass("degF");
     $(".switch").text("C");
     $(".temp").text(Math.round(F) + "\xb0 F")
     temperature = F;
   }
-  console.log(temperature);
+  //console.log(temperature);
 }
 
 /*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-
@@ -57,7 +57,7 @@ function requestWeather(loc){
 
   url += lat + "&" + lon + key;
 
-  console.log("url =", url);
+  //console.log("url =", url);
 
 /*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-
   AJAX weather request
@@ -77,7 +77,7 @@ function requestWeather(loc){
       //console.log("rounded 'temperature' = ", temperature);
       $(".temp").text(temperature + "\xb0 F").addClass("degF");
       $(".weather").text(api.weather[0].description);
-      //animateWeather(api.weather[0].id);
+      animateWeather(api.weather[0].id);
     },
     xhrField: {
       withCredentials: true
@@ -100,7 +100,7 @@ function getLocalWeather(locURL){
     dataType: 'jsonp',
 
     success: function(json){
-      console.log("location object =", json);
+      //console.log("location object =", json);
       requestWeather(json);
       $(".locale").text(json.city + ", " + json.regionName + " " + json.zip + ", " + json.country);
     },
@@ -108,7 +108,7 @@ function getLocalWeather(locURL){
       withCredentials: true
     },
     error: function(json,errorText) {
-      console.log(json);
+      //console.log(json);
       $(".locale").text("There was a problem with the location request: ", errorText);
     }
   });
@@ -128,7 +128,7 @@ function animateWeather(weatherId) {
     snow();
   }
   else if (weatherId >= 700 && weatherId < 800) {
-    atmosphere();
+    fog();
   }
   else if (weatherId === 800) {
     clear();
@@ -147,6 +147,6 @@ function animateWeather(weatherId) {
 
 $(document).ready(getLocalWeather('http://ip-api.com/json'));
 
-console.log("temperature = ", temperature);
+//console.log("temperature = ", temperature);
 
 $(".switch").on("click", units);

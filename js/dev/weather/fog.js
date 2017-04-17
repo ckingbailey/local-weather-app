@@ -1,16 +1,20 @@
-export function fog() {
+export default function fog() {
   var appendMe = document.createElement('div');
   var appendHere = document.querySelector('.sky');
   var layers = ['sub', 'background','midground','foreground','sup'];
 
-  appendHere.classList += ' fog7xx';
+  appendHere.classList.add('fog7xx');
 
-  for(i=0; i<layers.length; i++){
-    appendMe.setAttribute('class',layers[i]);
-    appendHere.appendChild(appendMe);
-    appendHere = appendMe;
+  for(let i=0; i<layers.length; i++){
+    if(!document.querySelector(layers[i])){
+      appendMe.classList.add(layers[i]);
+      appendHere.appendChild(appendMe);
+      appendHere = appendMe;
+    }
 
-    for(j=1; j<=3; j++){
+    else appendHere = document.querySelector(layers[i]);
+
+    for(let j=1; j<=3; j++){
       appendMe = document.createElement('div');
       appendMe.classList += 'fog-' + j;
       appendHere.appendChild(appendMe);

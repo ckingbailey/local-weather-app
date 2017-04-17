@@ -1,4 +1,4 @@
-export function drizzle(){
+export default function drizzle(){
   var dropsCount = 120;
   var appendHere = document.querySelector('.sky');
   var appendMe = document.createElement('div');
