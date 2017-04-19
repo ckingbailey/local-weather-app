@@ -6,8 +6,10 @@ export default function fog() {
   appendHere.classList.add('fog7xx');
 
   for(let i=0; i<layers.length; i++){
-    if(!document.querySelector(layers[i])){
+    if(!document.querySelector('.' + layers[i])){
+      console.log(document.querySelector('.' + layers[i]));
       appendMe.classList.add(layers[i]);
+      console.log(document.querySelector('.' + layers[i]));
       appendHere.appendChild(appendMe);
       appendHere = appendMe;
     }
@@ -15,11 +17,13 @@ export default function fog() {
     else appendHere = document.querySelector(layers[i]);
 
     for(let j=1; j<=3; j++){
+      console.log('j =', j);
       appendMe = document.createElement('div');
-      appendMe.classList += 'fog-' + j;
+      appendMe.classList.add('fog-' + j);
       appendHere.appendChild(appendMe);
     }
     appendMe = document.createElement('div');
     appendHere = document.querySelector('.sky');
+    console.log('layer successfully built', appendHere);
   }
 }
