@@ -6,12 +6,14 @@ import snow from './weather/snow';
 import thunder from './weather/thunder';
 
 var temperature;
+var unitsBtn = document.querySelector('.switch');
+var tempDisp = document.querySelector('.temp');
 
-function randomInt(min, max) {
+export function randomInt(min, max) {
   return Math.floor(Math.random * (max - min + 1) + min);
 }
 
-function randomFlt(min, max) {
+export function randomFlt(min, max) {
   return Math.random * (max - min + 1) + min;
 }
 
@@ -19,23 +21,23 @@ function randomFlt(min, max) {
   button to switch temperature units
 -_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*/
 
-function units(){
+function convert(){
   var C, F;
-  if($(".temp").hasClass("degF")){
+  if(tempDisp.classList.contains('degF')){
     C = Math.round((temperature - 32) * 5 / 9);
     //console.log(C);
-    $(".temp").removeClass("degF");
-    $(".switch").text("F");
-    $(".temp").text(Math.round(C) + " C")
+    tempDisp.classList.remove('degF');
+    unitsBtn.innerHTML('F');
+    tempDisp.innerHTML(Math.round(C) + " C");
     temperature = C;
   }
 
   else {
     F = Math.round((temperature * 9 / 5) + 32);
     //console.log(F);
-    $(".temp").addClass("degF");
-    $(".switch").text("C");
-    $(".temp").text(Math.round(F) + "\xb0 F")
+    tempDisp.classList.remove("degF");
+    unitsBtn.classList.innerHTML("C");
+    tempDisp.innerHTML(Math.round(F) + "\xb0 F")
     temperature = F;
   }
   //console.log(temperature);
@@ -145,8 +147,8 @@ function animateWeather(weatherId) {
   else clear();
 }
 
-$(document).ready(getLocalWeather('http://ip-api.com/json'));
+getLocalWeather('http://ip-api.com/json');
 
 //console.log("temperature = ", temperature);
 
-$(".switch").on("click", units);
+unitsBtn.on("click", convert);

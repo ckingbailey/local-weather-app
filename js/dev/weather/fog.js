@@ -10,6 +10,7 @@ export default function fog() {
       console.log(document.querySelector('.' + layers[i]));
       appendMe.classList.add(layers[i]);
       console.log(document.querySelector('.' + layers[i]));
+      console.log(appendMe);
       appendHere.appendChild(appendMe);
       appendHere = appendMe;
     }
@@ -18,6 +19,7 @@ export default function fog() {
 
     for(let j=1; j<=3; j++){
       console.log('j =', j);
+      console.log(appendHere);
       appendMe = document.createElement('div');
       appendMe.classList.add('fog-' + j);
       appendHere.appendChild(appendMe);
