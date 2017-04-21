@@ -10,28 +10,27 @@ $thunder-mid-color: darken(desaturate($background-color,82%),48%);
 $lightning-bg-grad: radial-gradient(lighten($thunder-mid-color,20%), rgba($thunder-mid-color,0) 45%);
 $thunder-foreground-color: darken(desaturate($background-color,85%),45%);
 */
-.sky.clouds {
+.sky.clouds8xx {
   position: relative;
   background-color: #a0ccf9; }
-
-.sky.clouds .sun {
-  position: absolute;
-  top: 3rem;
-  right: 10%;
-  border-radius: 50%;
-  border: 0.25rem solid #a0ccf9;
-  height: 6rem;
-  width: 6rem;
-  background: #fffc60;
-  box-shadow: 0 0 1rem 0.35rem #fffc60; }
-  .sky.clouds .sun .cloud1, .sky.clouds .sun .cloud2, .sky.clouds .sun .cloud3 {
+  .sky.clouds8xx .sun {
+    position: absolute;
+    top: 3rem;
+    right: 10%;
+    border-radius: 50%;
+    border: 0.25rem solid #a0ccf9;
+    height: 6rem;
+    width: 6rem;
+    background: #fffc60;
+    box-shadow: 0 0 1rem 0.35rem #fffc60; }
+  .sky.clouds8xx .cloud1, .sky.clouds8xx .cloud2, .sky.clouds8xx .cloud3 {
     opacity: .9;
     position: absolute;
     border-radius: 1.5rem;
     background-color: white;
     box-shadow: 0 0 .5rem .25rem white;
     border: none; }
-    .sky.clouds .sun .cloud1:before, .sky.clouds .sun .cloud1:after, .sky.clouds .sun .cloud2:before, .sky.clouds .sun .cloud2:after, .sky.clouds .sun .cloud3:before, .sky.clouds .sun .cloud3:after {
+    .sky.clouds8xx .cloud1:before, .sky.clouds8xx .cloud1:after, .sky.clouds8xx .cloud2:before, .sky.clouds8xx .cloud2:after, .sky.clouds8xx .cloud3:before, .sky.clouds8xx .cloud3:after {
       content: '';
       position: absolute;
       opacity: inherit;
@@ -39,50 +38,50 @@ $thunder-foreground-color: darken(desaturate($background-color,85%),45%);
       background-color: inherit;
       box-shadow: inherit;
       border: inherit; }
-  .sky.clouds .sun .cloud1 {
+  .sky.clouds8xx .cloud1 {
     top: 6.75rem;
     left: 15rem;
     height: 2.75rem;
     width: 7rem;
     animation: cloud-walk 300s linear infinite; }
-    .sky.clouds .sun .cloud1:before {
+    .sky.clouds8xx .cloud1:before {
       top: -2rem;
       left: .6rem;
       height: 4.5rem;
       width: 4.5rem; }
-    .sky.clouds .sun .cloud1:after {
+    .sky.clouds8xx .cloud1:after {
       top: -1rem;
       right: .65rem;
       height: 2rem;
       width: 2rem; }
-  .sky.clouds .sun .cloud2 {
+  .sky.clouds8xx .cloud2 {
     top: 8.5rem;
     left: 7.5rem;
     height: 2.35rem;
     width: 11rem;
     animation: cloud-walk 180s linear infinite; }
-    .sky.clouds .sun .cloud2:before {
+    .sky.clouds8xx .cloud2:before {
       top: -3.15rem;
       left: 1.4rem;
       height: 5.5rem;
       width: 6rem; }
-    .sky.clouds .sun .cloud2:after {
+    .sky.clouds8xx .cloud2:after {
       top: -1.5rem;
       right: 2rem;
       height: 2.5rem;
       width: 2.5rem; }
-  .sky.clouds .sun .cloud3 {
+  .sky.clouds8xx .cloud3 {
     top: 2.75rem;
     left: 4.25rem;
     height: 3rem;
     width: 5rem;
     animation: cloud-walk 240s linear infinite; }
-    .sky.clouds .sun .cloud3:before {
+    .sky.clouds8xx .cloud3:before {
       top: -1rem;
       left: .5rem;
       height: 3rem;
       width: 3rem; }
-    .sky.clouds .sun .cloud3:after {
+    .sky.clouds8xx .cloud3:after {
       top: -.75rem;
       right: .65rem;
       height: 1rem;
