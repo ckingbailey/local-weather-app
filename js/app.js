@@ -141,24 +141,28 @@ function fog() {
 
   for(let i=0; i<layers.length; i++){
     if(!document.querySelector('.' + layers[i])){
-      console.log(document.querySelector('.' + layers[i]));
       appendMe.classList.add(layers[i]);
-      console.log(document.querySelector('.' + layers[i]));
+
+      if(i == 0){
+        appendHere.insertAdjacentElement('afterbegin', appendMe);
+      }
+
+      else {
       appendHere.appendChild(appendMe);
+      }
+      
       appendHere = appendMe;
     }
 
-    else appendHere = document.querySelector(layers[i]);
+    else appendHere = document.querySelector('.' + layers[i]);
 
     for(let j=1; j<=3; j++){
-      console.log('j =', j);
       appendMe = document.createElement('div');
       appendMe.classList.add('fog-' + j);
       appendHere.appendChild(appendMe);
     }
     appendMe = document.createElement('div');
     appendHere = document.querySelector('.sky');
-    console.log('layer successfully built', appendHere);
   }
 }
 
@@ -323,6 +327,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__weather_rain__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__weather_snow__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__weather_thunder__ = __webpack_require__(5);
+/* harmony export (immutable) */ __webpack_exports__["randomInt"] = randomInt;
+/* harmony export (immutable) */ __webpack_exports__["randomFlt"] = randomFlt;
 
 
 
@@ -331,6 +337,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 var temperature;
+var unitsBtn = document.querySelector('.switch');
+console.log(unitsBtn);
+var tempDisp = document.querySelector('.temp');
 
 function randomInt(min, max) {
   return Math.floor(Math.random * (max - min + 1) + min);
@@ -344,23 +353,23 @@ function randomFlt(min, max) {
   button to switch temperature units
 -_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*/
 
-function units(){
+function convert(){
   var C, F;
-  if($(".temp").hasClass("degF")){
+  if(tempDisp.classList.contains('degF')){
     C = Math.round((temperature - 32) * 5 / 9);
     //console.log(C);
-    $(".temp").removeClass("degF");
-    $(".switch").text("F");
-    $(".temp").text(Math.round(C) + " C")
+    tempDisp.classList.remove('degF');
+    unitsBtn.innerHTML = 'F';
+    tempDisp.innerHTML = C + ' C';
     temperature = C;
   }
 
   else {
-    F = Math.round((temperature * 9 / 5) + 32);
+    F = Math.floor((temperature * 9 / 5) + 32);
     //console.log(F);
-    $(".temp").addClass("degF");
-    $(".switch").text("C");
-    $(".temp").text(Math.round(F) + "\xb0 F")
+    tempDisp.classList.add("degF");
+    unitsBtn.innerHTML = 'C';
+    tempDisp.innerHTML = F + "\xb0 F";
     temperature = F;
   }
   //console.log(temperature);
@@ -470,11 +479,11 @@ function animateWeather(weatherId) {
   else clear();
 }
 
-$(document).ready(getLocalWeather('http://ip-api.com/json'));
+getLocalWeather('http://ip-api.com/json');
 
 //console.log("temperature = ", temperature);
 
-$(".switch").on("click", units);
+unitsBtn.addEventListener('click', convert);
 
 
 /***/ })

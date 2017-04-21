@@ -7,6 +7,7 @@ import thunder from './weather/thunder';
 
 var temperature;
 var unitsBtn = document.querySelector('.switch');
+console.log(unitsBtn);
 var tempDisp = document.querySelector('.temp');
 
 export function randomInt(min, max) {
@@ -27,17 +28,17 @@ function convert(){
     C = Math.round((temperature - 32) * 5 / 9);
     //console.log(C);
     tempDisp.classList.remove('degF');
-    unitsBtn.innerHTML('F');
-    tempDisp.innerHTML(Math.round(C) + " C");
+    unitsBtn.innerHTML = 'F';
+    tempDisp.innerHTML = C + ' C';
     temperature = C;
   }
 
   else {
-    F = Math.round((temperature * 9 / 5) + 32);
+    F = Math.floor((temperature * 9 / 5) + 32);
     //console.log(F);
-    tempDisp.classList.remove("degF");
-    unitsBtn.classList.innerHTML("C");
-    tempDisp.innerHTML(Math.round(F) + "\xb0 F")
+    tempDisp.classList.add("degF");
+    unitsBtn.innerHTML = 'C';
+    tempDisp.innerHTML = F + "\xb0 F";
     temperature = F;
   }
   //console.log(temperature);
@@ -151,4 +152,4 @@ getLocalWeather('http://ip-api.com/json');
 
 //console.log("temperature = ", temperature);
 
-unitsBtn.on("click", convert);
+unitsBtn.addEventListener('click', convert);
