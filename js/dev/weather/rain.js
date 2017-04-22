@@ -1,7 +1,6 @@
 export default function rain(){
   var dropsCount = 200;
   var appendHere = document.querySelector('.sky');
-  console.log(appendHere);
   var appendMe = document.createElement('div');
   var layers = ['foreground', 'midground', 'background'];
 
@@ -10,7 +9,6 @@ export default function rain(){
   for(let i=0; i<layers.length; i++){
 
     appendHere = document.querySelector('.' + layers[i]);
-    console.log('appendHere: ', appendHere);
 
     for(let j=1; j<dropsCount; j++){
       var dropTop = randomInt(-120,99) + 'vh';
@@ -28,9 +26,9 @@ export default function rain(){
 }
 
 function randomInt(min, max) {
-  return Math.floor(Math.random * (max - min + 1) + min);
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 function randomFlt(min, max) {
-  return Math.random * (max - min + 1) + min;
+  return Math.random() * (max - min + 1) + min;
 }

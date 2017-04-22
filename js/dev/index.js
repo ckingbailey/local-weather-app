@@ -7,7 +7,6 @@ import thunder from './weather/thunder';
 
 var temperature;
 var unitsBtn = document.querySelector('.switch');
-console.log(unitsBtn);
 var tempDisp = document.querySelector('.temp');
 
 export function randomInt(min, max) {
@@ -80,6 +79,7 @@ function requestWeather(loc){
       //console.log("rounded 'temperature' = ", temperature);
       $(".temp").text(temperature + "\xb0 F").addClass("degF");
       $(".weather").text(api.weather[0].description);
+      console.log(api.weather);
       animateWeather(api.weather[0].id);
     },
     xhrField: {

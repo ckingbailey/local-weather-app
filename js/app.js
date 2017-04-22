@@ -78,13 +78,13 @@ function clouds(){
   var appendMe = document.createElement('div');
 
   appendHere.classList.add('clouds8xx');
-  
+
   for(let i=0; i<layers.length; i++){
     appendHere = document.querySelector('.' + layers[i]);
-    
-    appendMe.className.add('cloud' + i);
+
+    appendMe.classList.add('cloud' + i);
     appendHere.appendChild(appendMe);
-    
+
     appendMe = document.createElement('div');
   }
 
@@ -173,7 +173,6 @@ function fog() {
 function rain(){
   var dropsCount = 200;
   var appendHere = document.querySelector('.sky');
-  console.log(appendHere);
   var appendMe = document.createElement('div');
   var layers = ['foreground', 'midground', 'background'];
 
@@ -182,7 +181,6 @@ function rain(){
   for(let i=0; i<layers.length; i++){
 
     appendHere = document.querySelector('.' + layers[i]);
-    console.log('appendHere: ', appendHere);
 
     for(let j=1; j<dropsCount; j++){
       var dropTop = randomInt(-120,99) + 'vh';
@@ -200,11 +198,11 @@ function rain(){
 }
 
 function randomInt(min, max) {
-  return Math.floor(Math.random * (max - min + 1) + min);
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 function randomFlt(min, max) {
-  return Math.random * (max - min + 1) + min;
+  return Math.random() * (max - min + 1) + min;
 }
 
 
@@ -335,7 +333,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 var temperature;
 var unitsBtn = document.querySelector('.switch');
-console.log(unitsBtn);
 var tempDisp = document.querySelector('.temp');
 
 function randomInt(min, max) {
@@ -408,6 +405,7 @@ function requestWeather(loc){
       //console.log("rounded 'temperature' = ", temperature);
       $(".temp").text(temperature + "\xb0 F").addClass("degF");
       $(".weather").text(api.weather[0].description);
+      console.log(api.weather);
       animateWeather(api.weather[0].id);
     },
     xhrField: {
