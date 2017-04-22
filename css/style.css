@@ -26,7 +26,7 @@ $thunder-foreground-color: darken(desaturate($background-color,85%),45%);
   .sky.clouds8xx .cloud1, .sky.clouds8xx .cloud2, .sky.clouds8xx .cloud3 {
     opacity: .9;
     position: absolute;
-    border-radius: 1.5rem;
+    border-radius: 40%;
     background-color: white;
     box-shadow: 0 0 .5rem .25rem white;
     border: none; }
@@ -34,7 +34,7 @@ $thunder-foreground-color: darken(desaturate($background-color,85%),45%);
       content: '';
       position: absolute;
       opacity: inherit;
-      border-radius: 50%;
+      border-radius: 45%;
       background-color: inherit;
       box-shadow: inherit;
       border: inherit; }

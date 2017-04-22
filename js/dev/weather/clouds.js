@@ -8,12 +8,12 @@ export default function clouds(){
   for(let i=0; i<layers.length; i++){
     appendHere = document.querySelector('.' + layers[i]);
 
-    appendMe.classList.add('cloud' + i);
+    appendMe.classList.add('cloud' + (i + 1));
     appendHere.appendChild(appendMe);
 
     appendMe = document.createElement('div');
   }
 
   appendMe.classList.add('sun');
-  appendHere.appendChild(appendMe);
+  appendHere.insertAdjacentElement('afterbegin', appendMe);
 }
