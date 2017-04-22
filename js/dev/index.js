@@ -117,7 +117,7 @@ function getLocalWeather(locURL){
   });
 }
 
-function animateWeather(weatherId) {
+export default function animateWeather(weatherId) {
   if (weatherId >= 200 && weatherId < 300) {
     thunder();
   }

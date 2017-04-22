@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -315,16 +315,15 @@ function lightning(){
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__weather_clouds__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__weather_drizzle__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__weather_fog__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__weather_rain__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__weather_snow__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__weather_thunder__ = __webpack_require__(5);
-/* harmony export (immutable) */ __webpack_exports__["randomInt"] = randomInt;
-/* harmony export (immutable) */ __webpack_exports__["randomFlt"] = randomFlt;
-/* harmony export (immutable) */ __webpack_exports__["default"] = animateWeather;
+/* unused harmony export randomInt */
+/* unused harmony export randomFlt */
+/* harmony export (immutable) */ __webpack_exports__["a"] = animateWeather;
 
 
 
@@ -480,6 +479,43 @@ getLocalWeather('http://ip-api.com/json');
 //console.log("temperature = ", temperature);
 
 unitsBtn.addEventListener('click', convert);
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__js_dev_index__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__js_dev_weather_clouds__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__js_dev_weather_drizzle__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__js_dev_weather_fog__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__js_dev_weather_rain__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__js_dev_weather_snow__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__js_dev_weather_thunder__ = __webpack_require__(5);
+
+
+//import clear from '../js/dev/weather/clear';
+
+
+
+
+
+
+var weatherTypes = {
+  thunder: 200,
+  drizzle: 300,
+  rain: 500,
+  snow: 600,
+  fog: 700,
+  clear: 800,
+  clouds: 801,
+  extreme: 900,
+  other: 951
+}
+
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__js_dev_index__["a" /* default */])(weatherTypes.thunder);
 
 
 /***/ })

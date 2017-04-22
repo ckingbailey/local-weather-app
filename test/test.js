@@ -1,11 +1,11 @@
 import animateWeather from '../js/dev/index';
-import clouds from '../js/dev/weather';
-import clear from '../js/dev/weather';
-import drizzle from '../js/dev/weather';
-import fog from '../js/dev/weather';
-import rain from '../js/dev/weather';
-import snow from '../js/dev/weather';
-import thunder from '../js/dev/weather';
+import clouds from '../js/dev/weather/clouds';
+//import clear from '../js/dev/weather/clear';
+import drizzle from '../js/dev/weather/drizzle';
+import fog from '../js/dev/weather/fog';
+import rain from '../js/dev/weather/rain';
+import snow from '../js/dev/weather/snow';
+import thunder from '../js/dev/weather/thunder';
 
 var weatherTypes = {
   thunder: 200,

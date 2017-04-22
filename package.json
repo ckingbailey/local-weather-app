@@ -11,8 +11,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.config.js",
-    "sass": "node-sass scss/style.scss css/style.css"
+    "bundle": "webpack --config webpack.config.js",
+    "sass": "node-sass scss/style.scss css/style.css",
+    "build-test": "webpack --entry ./test/test.js --output-path ./test --output-filename test-app.js"
   },
   "repository": {
     "type": "git",
