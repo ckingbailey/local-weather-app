@@ -492,13 +492,16 @@ function animateWeather(weatherId) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ajax_fetchAPIs__ = __webpack_require__(7);
+/* unused harmony export unitsBtn */
 /* harmony export (immutable) */ __webpack_exports__["a"] = convert;
+
 
 
 /*-_-*-_-*-_-*-_-*-_-*-_-*-_-
 function used by units-switching button
 -_-*-_-*-_-*-_-*-_-*-_-*-_-*/
 var c, f;
+var unitsBtn = document.querySelector('.switch');
 
 function convert(){
   if($(".temp").hasClass("degF")){
@@ -550,6 +553,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+
+var unitsBtn = document.querySelector('.switch');
 
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__ajax_fetchAPIs__["a" /* getLocalWeather */])('http://ip-api.com/json');
 

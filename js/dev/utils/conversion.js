@@ -1,9 +1,11 @@
 import {temperature} from '../ajax/fetchAPIs';
 
+export {unitsBtn};
 /*-_-*-_-*-_-*-_-*-_-*-_-*-_-
 function used by units-switching button
 -_-*-_-*-_-*-_-*-_-*-_-*-_-*/
 var c, f;
+var unitsBtn = document.querySelector('.switch');
 
 export default function convert(){
   if($(".temp").hasClass("degF")){

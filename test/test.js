@@ -1,4 +1,4 @@
-import animateWeather from '../js/dev/index';
+import animateWeather from '../js/dev/weather/animateWeather';
 import clouds from '../js/dev/weather/clouds';
 //import clear from '../js/dev/weather/clear';
 import drizzle from '../js/dev/weather/drizzle';
@@ -17,6 +17,6 @@ var weatherTypes = {
   clouds: 801,
   extreme: 900,
   other: 951
-}
+};
 
-animateWeather(weatherTypes.thunder);
+animateWeather(weatherTypes.drizzle);
