@@ -26,7 +26,7 @@ export function requestWeather(loc){
 
   url += lat + "&" + lon + key;
 
-  console.log("url =", url);
+  //console.log("url =", url);
 
 /*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-
   AJAX weather request
