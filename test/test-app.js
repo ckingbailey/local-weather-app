@@ -147,7 +147,7 @@ function fog() {
       else {
       appendHere.appendChild(appendMe);
       }
-      
+
       appendHere = appendMe;
     }
 
@@ -169,7 +169,8 @@ function fog() {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = rain;
+/* harmony default export */ __webpack_exports__["a"] = (rain);
+
 function rain(){
   var dropsCount = 200;
   var appendHere = document.querySelector('.sky');

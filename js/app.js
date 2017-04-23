@@ -104,15 +104,15 @@ function drizzle(){
   var appendHere = document.querySelector('.sky');
   var appendMe = document.createElement('div');
 
-  function randomRoll(min, max) {
+  function randomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
-  appendHere.classList += 'drizzle3xx';
+  appendHere.classList.add('drizzle3xx');
 
-  for(i=1; i<dropsCount; i++){
-    var dropTop = randomRoll(-120,129) + 'vh';
-    var dropRight = randomRoll(0,100) + 'vw';
+  for(let i=1; i<dropsCount; i++){
+    var dropTop = randomInt(-120,129) + 'vh';
+    var dropRight = randomInt(0,100) + 'vw';
 
     appendMe = document.createElement('div');
     appendMe.setAttribute('class', 'rain-drop');
@@ -170,6 +170,7 @@ function fog() {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = rain;
+
 function rain(){
   var dropsCount = 200;
   var appendHere = document.querySelector('.sky');
