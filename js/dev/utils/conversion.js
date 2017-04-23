@@ -1,25 +1,28 @@
+import {temperature} from '../ajax/fetchAPIs';
+
 /*-_-*-_-*-_-*-_-*-_-*-_-*-_-
 function used by units-switching button
 -_-*-_-*-_-*-_-*-_-*-_-*-_-*/
+var c, f;
 
 export default function convert(){
-  var temperature, C, F;
   if($(".temp").hasClass("degF")){
-    C = Math.round((temperature - 32) * 5 / 9);
-    //console.log(C);
+    console.log('var temperature ==', temperature);
+    c = Math.round((temperature - 32) * 5 / 9);
+    console.log('c ==', c);
     $(".temp").removeClass("degF");
     $(".switch").text("F");
-    $(".temp").text(Math.round(C) + " C")
-    temperature = C;
+    $(".temp").text(Math.round(c) + " C")
   }
 
   else {
-    F = Math.round((temperature * 9 / 5) + 32);
-    //console.log(F);
+    console.log('var temperature ==', temperature);
+    f = temperature;
+//    f = Math.round((t * 9 / 5) + 32);
+    console.log(f);
     $(".temp").addClass("degF");
     $(".switch").text("C");
-    $(".temp").text(Math.round(F) + "\xb0 F")
-    temperature = F;
+    $(".temp").text(Math.round(f) + "\xb0 F")
   }
   //console.log(temperature);
 }

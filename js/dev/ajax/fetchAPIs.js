@@ -1,3 +1,15 @@
+import randomInt from '../utils/randomRolls';
+import randomFlt from '../utils/randomRolls';
+import clouds from '../weather/clouds';
+import drizzle from '../weather/drizzle';
+import fog from '../weather/fog';
+import rain from '../weather/rain';
+import snow from '../weather/snow';
+import thunder from '../weather/thunder';
+import animateWeather from '../weather/animateWeather';
+
+export var temperature;
+
 /*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-
   build query url and request AJAX
 -_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*/
@@ -31,9 +43,10 @@ export function requestWeather(loc){
       //console.log("weather object: ", api);
       //console.log("api.main.temp = ", api.main.temp);
       temperature = Math.round(api.main.temp);
-      //console.log("rounded 'temperature' = ", temperature);
+      console.log("rounded 'temperature' = ", temperature);
       $(".temp").text(temperature + "\xb0 F").addClass("degF");
       $(".weather").text(api.weather[0].description);
+      console.log(api);
       animateWeather(api.weather[0].id);
     },
     xhrField: {
@@ -52,7 +65,7 @@ export function requestWeather(loc){
  then fire location-dependent fcns
  such as get weather fcn
 _-*-_-*-_-*-_-*-_-*-_-*-_-*/
-export default function getLocalWeather(locURL){
+export function getLocalWeather(locURL){
   $.ajax({
     url: locURL,
     type: 'GET',

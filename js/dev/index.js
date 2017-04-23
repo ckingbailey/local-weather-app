@@ -7,12 +7,11 @@ import rain from './weather/rain';
 import snow from './weather/snow';
 import thunder from './weather/thunder';
 import animateWeather from './weather/animateWeather';
-import requestWeather from './fetchAPIs';
-import getLocalWeather from './fetchAPIs';
-import convert from './conversion';
+import {temperature, requestWeather, getLocalWeather} from './ajax/fetchAPIs';
+import convert from './utils/conversion';
 
 $(document).ready(getLocalWeather('http://ip-api.com/json'));
 
 //console.log("temperature = ", temperature);
 
-$(".switch").on("click", units);
+$(".switch").on("click", convert);

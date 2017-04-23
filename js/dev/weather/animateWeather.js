@@ -1,3 +1,12 @@
+import randomInt from '../utils/randomRolls';
+import randomFlt from '../utils/randomRolls';
+import clouds from './clouds';
+import drizzle from './drizzle';
+import fog from './fog';
+import rain from './rain';
+import snow from './snow';
+import thunder from './thunder';
+
 export default function animateWeather(weatherId) {
   if (weatherId >= 200 && weatherId < 300) {
     thunder();
