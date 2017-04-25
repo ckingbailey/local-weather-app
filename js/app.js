@@ -247,7 +247,7 @@ function snow(){
 
   for(var i=0; i<layers.length; i++){
 
-    appendHere = layers[i];
+    appendHere = document.querySelector('.' + layers[i]);
 
     for(let j=1; j<dropsCount; j++){
       var flakeTop = randomInt(-1,-8) + 'vh';

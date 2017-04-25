@@ -231,7 +231,7 @@ function snow(){
 
   for(var i=0; i<layers.length; i++){
 
-    appendHere = layers[i];
+    appendHere = document.querySelector('.' + layers[i]);
 
     for(let j=1; j<dropsCount; j++){
       var flakeTop = randomInt(-1,-8) + 'vh';
@@ -415,7 +415,7 @@ var weatherTypes = {
   other: 951
 };
 
-__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__js_dev_weather_animateWeather__["a" /* default */])(weatherTypes.drizzle);
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__js_dev_weather_animateWeather__["a" /* default */])(weatherTypes.thunder);
 
 
 /***/ })
