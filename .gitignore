@@ -1,5 +1,4 @@
 node_modules/
-.git/
 *.log
 .sass-cache
 .DS_store
