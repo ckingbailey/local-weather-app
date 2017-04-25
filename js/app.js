@@ -89,26 +89,23 @@ function randomFlt(min, max) {
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = clouds;
 function clouds(){
+  var layers = ['foreground', 'midground', 'background'];
   var appendHere = document.querySelector('.sky');
   var appendMe = document.createElement('div');
 
   appendHere.classList.add('clouds8xx');
 
+  for(let i=0; i<layers.length; i++){
+    appendHere = document.querySelector('.' + layers[i]);
+
+    appendMe.classList.add('cloud' + (i + 1));
+    appendHere.appendChild(appendMe);
+
+    appendMe = document.createElement('div');
+  }
+
   appendMe.classList.add('sun');
-  appendHere.appendChild(appendMe);
-
-  appendMe = document.createElement('div');
-  appendMe.classList.add('cloud1');
-  appendHere.appendChild(appendMe);
-
-  appendMe = document.createElement('div');
-  appendMe.classList.add('cloud2');
-  appendHere.appendChild(appendMe);
-
-  appendMe = document.createElement('div');
-  appendMe.classList.add('cloud3');
-  appendHere.appendChild(appendMe);
-
+  appendHere.insertAdjacentElement('afterbegin', appendMe);
 }
 
 
@@ -123,15 +120,15 @@ function drizzle(){
   var appendHere = document.querySelector('.sky');
   var appendMe = document.createElement('div');
 
-  function randomRoll(min, max) {
+  function randomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
-  appendHere.classList += 'drizzle3xx';
+  appendHere.classList.add('drizzle3xx');
 
-  for(i=1; i<dropsCount; i++){
-    var dropTop = randomRoll(-120,129) + 'vh';
-    var dropRight = randomRoll(0,100) + 'vw';
+  for(let i=1; i<dropsCount; i++){
+    var dropTop = randomInt(-120,129) + 'vh';
+    var dropRight = randomInt(0,100) + 'vw';
 
     appendMe = document.createElement('div');
     appendMe.setAttribute('class', 'rain-drop');
@@ -156,17 +153,25 @@ function fog() {
   appendHere.classList.add('fog7xx');
 
   for(let i=0; i<layers.length; i++){
-    if(!document.querySelector(layers[i])){
+    if(!document.querySelector('.' + layers[i])){
       appendMe.classList.add(layers[i]);
+
+      if(i == 0){
+        appendHere.insertAdjacentElement('afterbegin', appendMe);
+      }
+
+      else {
       appendHere.appendChild(appendMe);
+      }
+      
       appendHere = appendMe;
     }
 
-    else appendHere = document.querySelector(layers[i]);
+    else appendHere = document.querySelector('.' + layers[i]);
 
     for(let j=1; j<=3; j++){
       appendMe = document.createElement('div');
-      appendMe.classList += 'fog-' + j;
+      appendMe.classList.add('fog-' + j);
       appendHere.appendChild(appendMe);
     }
     appendMe = document.createElement('div');
@@ -181,10 +186,10 @@ function fog() {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = rain;
+
 function rain(){
   var dropsCount = 200;
   var appendHere = document.querySelector('.sky');
-  console.log(appendHere);
   var appendMe = document.createElement('div');
   var layers = ['foreground', 'midground', 'background'];
 
@@ -193,7 +198,6 @@ function rain(){
   for(let i=0; i<layers.length; i++){
 
     appendHere = document.querySelector('.' + layers[i]);
-    console.log('appendHere: ', appendHere);
 
     for(let j=1; j<dropsCount; j++){
       var dropTop = randomInt(-120,99) + 'vh';
@@ -211,11 +215,11 @@ function rain(){
 }
 
 function randomInt(min, max) {
-  return Math.floor(Math.random * (max - min + 1) + min);
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 function randomFlt(min, max) {
-  return Math.random * (max - min + 1) + min;
+  return Math.random() * (max - min + 1) + min;
 }
 
 
@@ -243,7 +247,7 @@ function snow(){
 
   for(var i=0; i<layers.length; i++){
 
-    appendHere = layers[i];
+    appendHere = document.querySelector('.' + layers[i]);
 
     for(let j=1; j<dropsCount; j++){
       var flakeTop = randomInt(-1,-8) + 'vh';
@@ -488,13 +492,16 @@ function animateWeather(weatherId) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ajax_fetchAPIs__ = __webpack_require__(7);
+/* unused harmony export unitsBtn */
 /* harmony export (immutable) */ __webpack_exports__["a"] = convert;
+
 
 
 /*-_-*-_-*-_-*-_-*-_-*-_-*-_-
 function used by units-switching button
 -_-*-_-*-_-*-_-*-_-*-_-*-_-*/
 var c, f;
+var unitsBtn = document.querySelector('.switch');
 
 function convert(){
   if($(".temp").hasClass("degF")){
@@ -547,11 +554,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-$(document).ready(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__ajax_fetchAPIs__["a" /* getLocalWeather */])('http://ip-api.com/json'));
+var unitsBtn = document.querySelector('.switch');
+
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__ajax_fetchAPIs__["a" /* getLocalWeather */])('http://ip-api.com/json');
 
 //console.log("temperature = ", temperature);
 
-$(".switch").on("click", __WEBPACK_IMPORTED_MODULE_9__utils_conversion__["a" /* default */]);
+unitsBtn.addEventListener('click', __WEBPACK_IMPORTED_MODULE_9__utils_conversion__["a" /* default */]);
 
 
 /***/ })

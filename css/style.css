@@ -4,6 +4,357 @@ $thunder-mid-color: darken(desaturate($background-color,82%),48%);
 $lightning-bg-grad: radial-gradient(lighten($thunder-mid-color,20%), rgba($thunder-mid-color,0) 45%);
 $thunder-foreground-color: darken(desaturate($background-color,85%),45%);
 */
+/*
+$thunder-bg-color: darken(desaturate($background-color,80%),50%);
+$thunder-mid-color: darken(desaturate($background-color,82%),48%);
+$lightning-bg-grad: radial-gradient(lighten($thunder-mid-color,20%), rgba($thunder-mid-color,0) 45%);
+$thunder-foreground-color: darken(desaturate($background-color,85%),45%);
+*/
+.sky.clouds8xx {
+  position: absolute;
+  background-color: #a0ccf9; }
+  .sky.clouds8xx .sun {
+    position: absolute;
+    top: 3rem;
+    right: 10%;
+    border-radius: 50%;
+    border: 0.25rem solid #a0ccf9;
+    height: 6rem;
+    width: 6rem;
+    background: #fffc60;
+    box-shadow: 0 0 1rem 0.35rem #fffc60; }
+  .sky.clouds8xx .cloud1, .sky.clouds8xx .cloud2, .sky.clouds8xx .cloud3 {
+    opacity: .9;
+    position: absolute;
+    border-radius: 40%;
+    background-color: white;
+    box-shadow: 0 0 .5rem .25rem white;
+    border: none; }
+    .sky.clouds8xx .cloud1:before, .sky.clouds8xx .cloud1:after, .sky.clouds8xx .cloud2:before, .sky.clouds8xx .cloud2:after, .sky.clouds8xx .cloud3:before, .sky.clouds8xx .cloud3:after {
+      content: '';
+      position: absolute;
+      opacity: inherit;
+      border-radius: 45%;
+      background-color: inherit;
+      box-shadow: inherit;
+      border: inherit; }
+  .sky.clouds8xx .cloud1 {
+    top: 6.75rem;
+    left: 15rem;
+    height: 2.75rem;
+    width: 7rem;
+    animation: cloud-walk 300s linear infinite; }
+    .sky.clouds8xx .cloud1:before {
+      top: -2rem;
+      left: .6rem;
+      height: 4.5rem;
+      width: 4.5rem; }
+    .sky.clouds8xx .cloud1:after {
+      top: -1rem;
+      right: .65rem;
+      height: 2rem;
+      width: 2rem; }
+  .sky.clouds8xx .cloud2 {
+    top: 8.5rem;
+    left: 7.5rem;
+    height: 2.35rem;
+    width: 11rem;
+    animation: cloud-walk 180s linear infinite; }
+    .sky.clouds8xx .cloud2:before {
+      top: -3.15rem;
+      left: 1.4rem;
+      height: 5.5rem;
+      width: 6rem; }
+    .sky.clouds8xx .cloud2:after {
+      top: -1.5rem;
+      right: 2rem;
+      height: 2.5rem;
+      width: 2.5rem; }
+  .sky.clouds8xx .cloud3 {
+    top: 2.75rem;
+    left: 4.25rem;
+    height: 3rem;
+    width: 5rem;
+    animation: cloud-walk 240s linear infinite; }
+    .sky.clouds8xx .cloud3:before {
+      top: -1rem;
+      left: .5rem;
+      height: 3rem;
+      width: 3rem; }
+    .sky.clouds8xx .cloud3:after {
+      top: -.75rem;
+      right: .65rem;
+      height: 1rem;
+      width: 1rem; }
+
+@keyframes cloud-walk {
+  to {
+    transform: translateX(100vw); } }
+
+.sky.drizzle3xx {
+  background-color: #568;
+  height: 100%; }
+  .sky.drizzle3xx .rain-drop {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(102, 102, 138, 0));
+    width: .1rem;
+    height: 2.7rem;
+    border-radius: .5rem;
+    position: absolute;
+    animation: drizzle-fall 3s linear infinite; }
+
+@keyframes drizzle-fall {
+  to {
+    transform: translateY(145vh); } }
+
+.sky.fog7xx {
+  height: 100%; }
+  .sky.fog7xx .background, .sky.fog7xx .midground, .sky.fog7xx .foreground, .sky.fog7xx .sub, .sky.fog7xx .sup {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    overflow: hidden; }
+  .sky.fog7xx .fog-1, .sky.fog7xx .fog-2, .sky.fog7xx .fog-3 {
+    min-width: 1200px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; }
+  .sky.fog7xx .fog-1 {
+    left: -1193px; }
+  .sky.fog7xx .fog-3 {
+    left: 1193px; }
+  .sky.fog7xx .sub {
+    left: 0;
+    bottom: -3.85rem;
+    opacity: .4;
+    animation-duration: 15s;
+    animation-name: fog-roll; }
+    .sky.fog7xx .sub .fog-1, .sky.fog7xx .sub .fog-2, .sky.fog7xx .sub .fog-3 {
+      background-image: url('data:image/svg+xml;utf8,<svg width="1200" height="300" xmlns="http://www.w3.org/2000/svg"><path filter="url(#fog-blur)" d="m0,0c49.66667,0 92.33333,44 142,44c50.33333,0 123.66667,-42 174,-42c50,0 81,33 131,33c50,0 107,-29 157,-29c50,0 91,37 141,37c50,0 123,-40 173,-40c50,0 75,35 125,35c50,0 107,-38 157,-38l0,300l-1200,0l0,-300z" fill="#b9c0f0"/><defs><filter height="200%" width="200%" y="-50%" x="-50%" id="fog-blur"><feGaussianBlur stdDeviation="6" in="SourceGraphic"/></filter></defs></svg>');
+      animation-duration: 60s;
+      animation-name: fog-walk; }
+  .sky.fog7xx .background {
+    bottom: -4rem;
+    opacity: .4;
+    animation-duration: 7s;
+    animation-name: fog-roll; }
+    .sky.fog7xx .background .fog-1, .sky.fog7xx .background .fog-2, .sky.fog7xx .background .fog-3 {
+      background-image: url('data:image/svg+xml;utf8,<svg width="1200" height="300" xmlns="http://www.w3.org/2000/svg"><path filter="url(#fog-blur)" d="m0,0c49.66667,0 92.33333,44 142,44c50.33333,0 123.66667,-42 174,-42c50,0 81,33 131,33c50,0 107,-29 157,-29c50,0 91,37 141,37c50,0 123,-40 173,-40c50,0 75,35 125,35c50,0 107,-38 157,-38l0,300l-1200,0l0,-300z" fill="#bbc9f0"/><defs><filter height="200%" width="200%" y="-50%" x="-50%" id="fog-blur"><feGaussianBlur stdDeviation="5" in="SourceGraphic"/></filter></defs></svg>');
+      animation-duration: 80s;
+      animation-name: fog-walk; }
+  .sky.fog7xx .midground {
+    left: 0;
+    bottom: -4rem;
+    opacity: .4;
+    animation-duration: 18s;
+    animation-delay: .5s;
+    animation-name: fog-roll; }
+    .sky.fog7xx .midground .fog-1, .sky.fog7xx .midground .fog-2, .sky.fog7xx .midground .fog-3 {
+      background-image: url('data:image/svg+xml;utf8,<svg width="1200" height="300" xmlns="http://www.w3.org/2000/svg"><path filter="url(#fog-blur)" d="m0,0c49.66667,0 92.33333,44 142,44c50.33333,0 123.66667,-42 174,-42c50,0 81,33 131,33c50,0 107,-29 157,-29c50,0 91,37 141,37c50,0 123,-40 173,-40c50,0 75,35 125,35c50,0 107,-38 157,-38l0,300l-1200,0l0,-300z" fill="#c0ccf0"/><defs><filter height="200%" width="200%" y="-50%" x="-50%" id="fog-blur"><feGaussianBlur stdDeviation="4" in="SourceGraphic"/></filter></defs></svg>'); }
+  .sky.fog7xx .foreground {
+    bottom: -4rem;
+    opacity: .4;
+    animation-duration: 21s;
+    animation-name: fog-roll;
+    animation-delay: .25s; }
+    .sky.fog7xx .foreground .fog-1, .sky.fog7xx .foreground .fog-2, .sky.fog7xx .foreground .fog-3 {
+      background-image: url('data:image/svg+xml;utf8,<svg width="1200" height="300" xmlns="http://www.w3.org/2000/svg"><path filter="url(#fog-blur)" d="m0,0c49.66667,0 92.33333,44 142,44c50.33333,0 123.66667,-42 174,-42c50,0 81,33 131,33c50,0 107,-29 157,-29c50,0 91,37 141,37c50,0 123,-40 173,-40c50,0 75,35 125,35c50,0 107,-38 157,-38l0,300l-1200,0l0,-300z" fill="#c9d0f0"/><defs><filter height="200%" width="200%" y="-50%" x="-50%" id="fog-blur"><feGaussianBlur stdDeviation="3" in="SourceGraphic"/></filter></defs></svg>');
+      animation-duration: 50s;
+      animation-name: fog-walk; }
+  .sky.fog7xx .sup {
+    bottom: -4.25rem;
+    opacity: .4;
+    animation-duration: 9s;
+    animation-name: fog-roll; }
+    .sky.fog7xx .sup .fog-1, .sky.fog7xx .sup .fog-2, .sky.fog7xx .sup .fog-3 {
+      background-image: url('data:image/svg+xml;utf8,<svg width="1200" height="300" xmlns="http://www.w3.org/2000/svg"><path filter="url(#fog-blur)" d="m0,0c49.66667,0 92.33333,44 142,44c50.33333,0 123.66667,-42 174,-42c50,0 81,33 131,33c50,0 107,-29 157,-29c50,0 91,37 141,37c50,0 123,-40 173,-40c50,0 75,35 125,35c50,0 107,-38 157,-38l0,300l-1200,0l0,-300z" fill="#cce0f0"/><defs><filter height="200%" width="200%" y="-50%" x="-50%" id="fog-blur"><feGaussianBlur stdDeviation="2" in="SourceGraphic"/></filter></defs></svg>');
+      animation-duration: 90s;
+      animation-name: fog-walk; }
+
+@keyframes fog-walk {
+  to {
+    transform: translatex(1200px); } }
+
+@keyframes fog-roll {
+  50% {
+    transform: translateY(0.5rem);
+    opacity: 0; }
+  100% {
+    transform: translateY(0);
+    opacity: .4; } }
+
+.sky.rain5xx {
+  background-color: #568;
+  height: 100%; }
+  .sky.rain5xx .foreground .rain-drop {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(102, 102, 138, 0));
+    width: .15rem;
+    height: 3rem;
+    border-radius: .75rem;
+    position: absolute;
+    animation-name: rain-fall-1;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; }
+  .sky.rain5xx .midground .rain-drop {
+    background: linear-gradient(0deg, rgba(220, 220, 230, 0.6), rgba(102, 102, 138, 0));
+    width: .12rem;
+    height: 2.7rem;
+    border-radius: .75rem;
+    position: absolute;
+    animation-name: rain-fall-1;
+    animation-duration: 1.2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; }
+  .sky.rain5xx .background .rain-drop {
+    background: linear-gradient(0deg, rgba(200, 200, 210, 0.6), rgba(102, 102, 138, 0));
+    width: .1rem;
+    height: 2.5rem;
+    border-radius: .75rem;
+    position: absolute;
+    animation-name: rain-fall-1;
+    animation-duration: 1.4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; }
+
+@keyframes rain-fall-1 {
+  to {
+    transform: translateY(135vh); } }
+
+@keyframes rain-fall-2 {
+  to {
+    transform: translateY(150vh); } }
+
+@keyframes rain-fall-3 {
+  to {
+    transform: translateY(120vh); } }
+
+.sky.snow6xx {
+  background-color: #679;
+  height: 100%; }
+  .sky.snow6xx .snow-flake {
+    position: absolute;
+    background: #fff;
+    animation-name: snow-fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; }
+  .sky.snow6xx .foreground .snow-flake {
+    height: .25rem;
+    width: .25rem;
+    box-shadow: 0 0 .25rem .1rem #fff; }
+  .sky.snow6xx .midground .snow-flake {
+    height: .2rem;
+    width: .2rem;
+    opacity: .6;
+    box-shadow: 0 0 .2rem .1rem #fff; }
+  .sky.snow6xx .background .snow-flake {
+    height: .15rem;
+    width: .15rem;
+    opacity: .45;
+    box-shadow: 0 0 .15rem .1rem #fff; }
+
+@keyframes snow-fall {
+  to {
+    margin-top: 110vh;
+    /*transform: translateX(-7vw);*/ } }
+
+@keyframes snow-drift-1 {
+  100% {
+    transform: translateX(3vw); } }
+
+.sky.thunder2xx {
+  background-color: #878;
+  height: 100%; }
+  .sky.thunder2xx .midground {
+    background-color: #989;
+    height: 7.5rem;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .sky.thunder2xx .foreground {
+    background-color: #a9a;
+    height: 5rem;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .sky.thunder2xx .lightning {
+    position: absolute;
+    top: 3rem;
+    left: 1rem;
+    height: 4.5rem;
+    width: 40vw;
+    border-radius: 50%;
+    background-image: radial-gradient(#ccccbb, rgba(153, 136, 153, 0) 35%);
+    /*transform: scaleY(0);*/
+    animation: lightning 3.8s infinite; }
+    .sky.thunder2xx .lightning:before {
+      content: '';
+      background-image: inherit;
+      position: absolute;
+      top: 0;
+      left: 2rem;
+      width: 17vw;
+      height: 4rem;
+      /*  animation: lightning 3.5s infinite;
+      animation-delay: .5s;*/ }
+    .sky.thunder2xx .lightning:after {
+      content: '';
+      background-image: inherit;
+      position: absolute;
+      top: 0;
+      left: 18rem;
+      width: 20vw;
+      height: 4rem;
+      /*  animation: lightning 3.5s infinite;
+      animation-delay: .75s;*/ }
+  .sky.thunder2xx .puff {
+    border-radius: 50%;
+    background-color: inherit;
+    position: absolute;
+    /*bottom: -1rem;*/
+    height: 2rem; }
+
+@keyframes lightning-test {
+  24% {
+    transform: translateY(0rem) scaleY(0); }
+  25% {
+    transform: translateY(1.5rem) scaleY(0.85); }
+  30% {
+    transform: translateY(0.2rem) scaleY(0.05); }
+  32% {
+    transform: translateY(1.7rem) scaleY(0.9); }
+  34% {
+    transform: translateY(0.1rem) scaleY(0.07); }
+  36% {
+    transform: translateY(2rem) scaleY(1); }
+  40% {
+    transform: translateY(1.25rem) scaleY(0.75); }
+  100% {
+    transform: translateY(0rem) scaleY(0); } }
+
+@keyframes lightning {
+  25% {
+    background-image: radial-gradient(rgba(204, 204, 187, 0), rgba(204, 204, 187, 0) 45%); }
+  30% {
+    background-image: radial-gradient(#ccccbb, rgba(204, 204, 187, 0) 45%); }
+  32% {
+    background-image: radial-gradient(rgba(204, 204, 187, 0), rgba(204, 204, 187, 0) 45%); }
+  34% {
+    background-image: radial-gradient(#ccccbb, rgba(204, 204, 187, 0) 45%); }
+  36% {
+    background-image: radial-gradient(rgba(204, 204, 187, 0), rgba(204, 204, 187, 0) 45%); }
+  40% {
+    background-image: radial-gradient(#ccccbb, rgba(204, 204, 187, 0) 45%); }
+  100% {
+    background-image: radial-gradient(rgba(204, 204, 187, 0), rgba(204, 204, 187, 0) 45%); } }
+
 html, body {
   height: 100%; }
 
@@ -11,7 +362,8 @@ body {
   font-family: sans-serif;
   color: #e0ecf9;
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  overflow: hidden; }
 
 h1, h2, h3, h4, h5 {
   margin: 0 0 1rem 0; }
@@ -59,13 +411,12 @@ h1, h2, h3, h4, h5 {
   position: absolute;
   top: 0;
   left: 0;
-  height: 120%;
+  height: 100%;
   width: 100%;
   overflow: hidden;
   z-index: -1; }
-  .sky .foreground {
-    width: 100%; }
-  .sky .midground {
-    width: 100%; }
-  .sky .background {
+  .sky .foreground, .sky .midground, .sky .background {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%; }

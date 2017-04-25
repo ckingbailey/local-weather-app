@@ -1,25 +1,25 @@
-@import _colors;
+@import '_colors';
 
-.sky.clouds {
-  position: relative;
-  background-color: $main-sky-color;
-}
-
-.sky.clouds .sun {
+.sky.clouds8xx {
   position: absolute;
-  top: 3rem;
-  right: 10%;
-  border-radius: 50%;
-  border: 0.25rem solid $main-sky-color;
-  height: 6rem;
-  width: 6rem;
-  background: $sun-yellow;
-  box-shadow: 0 0 1rem 0.35rem $sun-yellow;
+  background-color: $main-sky-color;
+
+  .sun {
+    position: absolute;
+    top: 3rem;
+    right: 10%;
+    border-radius: 50%;
+    border: 0.25rem solid $main-sky-color;
+    height: 6rem;
+    width: 6rem;
+    background: $sun-yellow;
+    box-shadow: 0 0 1rem 0.35rem $sun-yellow;
+  }
 
   .cloud1, .cloud2, .cloud3 {
     opacity: .9;
     position: absolute;
-    border-radius: 1.5rem;
+    border-radius: 40%;
     background-color: white;
     box-shadow: 0 0 .5rem .25rem white;
     border: none;
@@ -28,7 +28,7 @@
       content: '';
       position: absolute;
       opacity: inherit;
-      border-radius: 50%;
+      border-radius: 45%;
       background-color: inherit;
       box-shadow: inherit;
       border: inherit;

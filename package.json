@@ -6,11 +6,14 @@
   "dependencies": {},
   "devDependencies": {
     "gulp": "^3.9.1",
+    "node-sass": "^4.5.2",
     "webpack": "^2.4.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bundle": "webpack --config webpack.config.js"
+    "bundle": "webpack --config webpack.config.js",
+    "sass": "node-sass scss/style.scss css/style.css",
+    "build-test": "webpack --entry ./test/test.js --output-path ./test --output-filename test-app.js"
   },
   "repository": {
     "type": "git",
