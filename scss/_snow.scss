@@ -1,5 +1,7 @@
+@import '_colors';
+
 .sky.snow6xx{
-  background-color: #679;
+  background-color: $snow-sky-color;
   height: 100%;
 
   .snow-flake {

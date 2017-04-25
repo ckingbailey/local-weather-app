@@ -1,5 +1,7 @@
+@import '_colors';
+
 .sky.rain5xx{
-  background-color: #568;
+  background-color: $rain-sky-color;
   height: 100%;
 
   .foreground .rain-drop {

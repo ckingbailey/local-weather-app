@@ -1,26 +1,28 @@
+@import '_colors';
+
 .sky.thunder2xx {
-  background-color: #878;
+  background-color: $rain-sky-color;
   height: 100%;
 
 
   .midground {
-    background-color: #989;
+    background-color: lighten($rain-sky-color, 5%);
     height: 7.5rem;
     width: 100%;
     position: absolute;
     top: 0;
     left: 0;
   }
-  
+
   .foreground {
-    background-color: #a9a;
+    background-color: lighten($rain-sky-color, 10%);
     height: 5rem;
     width: 100%;
     position: absolute;
     top: 0;
     left: 0;
   }
-  
+
   .lightning {
     position: absolute;
     top: 3rem;
@@ -31,7 +33,7 @@
     background-image: radial-gradient(rgba(204, 204, 187, 1), rgba(153, 136, 153, 0) 35%);
     /*transform: scaleY(0);*/
     animation: lightning 3.8s infinite;
-  
+
     &:before {
       content: '';
       background-image: inherit;
@@ -43,7 +45,7 @@
     /*  animation: lightning 3.5s infinite;
       animation-delay: .5s;*/
     }
-    
+
     &:after {
       content: '';
       background-image: inherit;
@@ -56,7 +58,7 @@
       animation-delay: .75s;*/
     }
   }
-  
+
   .puff {
     border-radius: 50%;
     background-color: inherit;

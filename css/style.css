@@ -91,6 +91,12 @@ $thunder-foreground-color: darken(desaturate($background-color,85%),45%);
   to {
     transform: translateX(100vw); } }
 
+/*
+$thunder-bg-color: darken(desaturate($background-color,80%),50%);
+$thunder-mid-color: darken(desaturate($background-color,82%),48%);
+$lightning-bg-grad: radial-gradient(lighten($thunder-mid-color,20%), rgba($thunder-mid-color,0) 45%);
+$thunder-foreground-color: darken(desaturate($background-color,85%),45%);
+*/
 .sky.drizzle3xx {
   background-color: #568;
   height: 100%; }
@@ -188,6 +194,12 @@ $thunder-foreground-color: darken(desaturate($background-color,85%),45%);
     transform: translateY(0);
     opacity: .4; } }
 
+/*
+$thunder-bg-color: darken(desaturate($background-color,80%),50%);
+$thunder-mid-color: darken(desaturate($background-color,82%),48%);
+$lightning-bg-grad: radial-gradient(lighten($thunder-mid-color,20%), rgba($thunder-mid-color,0) 45%);
+$thunder-foreground-color: darken(desaturate($background-color,85%),45%);
+*/
 .sky.rain5xx {
   background-color: #568;
   height: 100%; }
@@ -234,8 +246,14 @@ $thunder-foreground-color: darken(desaturate($background-color,85%),45%);
   to {
     transform: translateY(120vh); } }
 
+/*
+$thunder-bg-color: darken(desaturate($background-color,80%),50%);
+$thunder-mid-color: darken(desaturate($background-color,82%),48%);
+$lightning-bg-grad: radial-gradient(lighten($thunder-mid-color,20%), rgba($thunder-mid-color,0) 45%);
+$thunder-foreground-color: darken(desaturate($background-color,85%),45%);
+*/
 .sky.snow6xx {
-  background-color: #679;
+  background-color: #89b;
   height: 100%; }
   .sky.snow6xx .snow-flake {
     position: absolute;
@@ -267,18 +285,24 @@ $thunder-foreground-color: darken(desaturate($background-color,85%),45%);
   100% {
     transform: translateX(3vw); } }
 
+/*
+$thunder-bg-color: darken(desaturate($background-color,80%),50%);
+$thunder-mid-color: darken(desaturate($background-color,82%),48%);
+$lightning-bg-grad: radial-gradient(lighten($thunder-mid-color,20%), rgba($thunder-mid-color,0) 45%);
+$thunder-foreground-color: darken(desaturate($background-color,85%),45%);
+*/
 .sky.thunder2xx {
-  background-color: #878;
+  background-color: #568;
   height: 100%; }
   .sky.thunder2xx .midground {
-    background-color: #989;
+    background-color: #5f7298;
     height: 7.5rem;
     width: 100%;
     position: absolute;
     top: 0;
     left: 0; }
   .sky.thunder2xx .foreground {
-    background-color: #a9a;
+    background-color: #6d7fa3;
     height: 5rem;
     width: 100%;
     position: absolute;

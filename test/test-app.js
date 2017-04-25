@@ -234,9 +234,9 @@ function snow(){
     appendHere = document.querySelector('.' + layers[i]);
 
     for(let j=1; j<dropsCount; j++){
-      var flakeTop = randomInt(-1,-8) + 'vh';
+      var flakeTop = randomInt(-1,-9) + 'vh';
       var flakeRight = randomFlt(0,100) + 'vw';
-      var animDelay = randomFlt(0,9) + i/4 + 's';
+      var animDelay = randomFlt(0 + i/4,10 + i) + 's';
       //var driftTime = randomFlt(3,6) + 's';
 
       appendMe = document.createElement('div');
@@ -415,7 +415,7 @@ var weatherTypes = {
   other: 951
 };
 
-__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__js_dev_weather_animateWeather__["a" /* default */])(weatherTypes.thunder);
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__js_dev_weather_animateWeather__["a" /* default */])(weatherTypes.snow);
 
 
 /***/ })
