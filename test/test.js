@@ -1,6 +1,6 @@
 import animateWeather from '../js/dev/weather/animateWeather';
 import clouds from '../js/dev/weather/clouds';
-//import clear from '../js/dev/weather/clear';
+import clear from '../js/dev/weather/clear';
 import drizzle from '../js/dev/weather/drizzle';
 import fog from '../js/dev/weather/fog';
 import rain from '../js/dev/weather/rain';
@@ -19,4 +19,4 @@ var weatherTypes = {
   other: 951
 };
 
-animateWeather(weatherTypes.snow);
+animateWeather(weatherTypes.clear);

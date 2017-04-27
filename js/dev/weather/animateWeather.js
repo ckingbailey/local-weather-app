@@ -1,5 +1,6 @@
 import randomInt from '../utils/randomRolls';
 import randomFlt from '../utils/randomRolls';
+import clear from './clear';
 import clouds from './clouds';
 import drizzle from './drizzle';
 import fog from './fog';

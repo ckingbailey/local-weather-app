@@ -1,24 +1,119 @@
-/*
-$thunder-bg-color: darken(desaturate($background-color,80%),50%);
-$thunder-mid-color: darken(desaturate($background-color,82%),48%);
-$lightning-bg-grad: radial-gradient(lighten($thunder-mid-color,20%), rgba($thunder-mid-color,0) 45%);
-$thunder-foreground-color: darken(desaturate($background-color,85%),45%);
-*/
-/*
-$thunder-bg-color: darken(desaturate($background-color,80%),50%);
-$thunder-mid-color: darken(desaturate($background-color,82%),48%);
-$lightning-bg-grad: radial-gradient(lighten($thunder-mid-color,20%), rgba($thunder-mid-color,0) 45%);
-$thunder-foreground-color: darken(desaturate($background-color,85%),45%);
-*/
+.sky.clear800 {
+  background-color: #88d3ff; }
+  .sky.clear800 .sun {
+    position: absolute;
+    top: 3rem;
+    right: 10%;
+    border-radius: 50%;
+    height: 6rem;
+    width: 6rem;
+    background: radial-gradient(white, #fffc60);
+    box-shadow: 0 0 1.5rem 0.5rem #fffc60; }
+    .sky.clear800 .sun .ray-box {
+      position: absolute;
+      margin: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 6rem; }
+      .sky.clear800 .sun .ray-box .ray {
+        background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
+        background-position: bottom center;
+        background-repeat: no-repeat;
+        border-radius: 0 0 80% 80%;
+        position: absolute;
+        transform-origin: bottom center;
+        opacity: 0.5;
+        animation: sun-twinkle 3s ease-in-out infinite; }
+      .sky.clear800 .sun .ray-box .ray1 {
+        height: 2rem;
+        width: 3rem;
+        transform: rotate(0deg);
+        top: -2rem;
+        left: 1.5rem;
+        animation-delay: 0s; }
+      .sky.clear800 .sun .ray-box .ray2 {
+        height: 2rem;
+        width: 3rem;
+        transform: rotate(36deg);
+        top: -1.427rem;
+        left: 3.263rem;
+        animation-delay: 1.5s; }
+      .sky.clear800 .sun .ray-box .ray3 {
+        height: 2.1rem;
+        width: 3rem;
+        transform: rotate(calc(2 * 36deg));
+        top: 0.073rem;
+        left: 4.353rem;
+        animation-delay: 2.25s; }
+      .sky.clear800 .sun .ray-box .ray4 {
+        height: 2rem;
+        width: 3rem;
+        transform: rotate(calc(3 * 36deg));
+        top: 2.146rem;
+        left: 4.353rem;
+        animation-delay: 1.5s; }
+      .sky.clear800 .sun .ray-box .ray5 {
+        height: 2rem;
+        width: 3rem;
+        transform: rotate(calc(4 * 36deg));
+        top: 3.427rem;
+        left: 3.263rem;
+        animation-delay: 0.75s; }
+      .sky.clear800 .sun .ray-box .ray6 {
+        height: 2rem;
+        width: 3rem;
+        transform: rotate(calc(5 * 36deg));
+        top: 4rem;
+        left: 1.5rem;
+        animation-delay: 0s; }
+      .sky.clear800 .sun .ray-box .ray7 {
+        height: 2rem;
+        width: 3rem;
+        transform: rotate(calc(6 * 36deg));
+        top: 3.427rem;
+        left: -0.263rem;
+        animation-delay: 2.25s; }
+      .sky.clear800 .sun .ray-box .ray8 {
+        height: 2rem;
+        width: 3rem;
+        transform: rotate(calc(7 * 36deg));
+        top: 2.146rem;
+        left: -1.353rem;
+        animation-delay: 3s; }
+      .sky.clear800 .sun .ray-box .ray9 {
+        height: 2rem;
+        width: 3rem;
+        transform: rotate(calc(8 * 36deg));
+        top: 0.073rem;
+        left: -1.353rem;
+        animation-delay: 1.5s; }
+      .sky.clear800 .sun .ray-box .ray10 {
+        height: 2rem;
+        width: 3rem;
+        transform: rotate(calc(9 * 36deg));
+        top: -1.427rem;
+        left: -0.263rem;
+        animation-delay: 3s; }
+
+@keyframes sun-twinkle {
+  0% {
+    background-position: bottom center; }
+  50% {
+    background-position: bottom -.25rem center; }
+  100% {
+    background-position: bottom center; } }
+
 .sky.clouds8xx {
   position: absolute;
-  background-color: #a0ccf9; }
+  background-color: #88d3ff; }
   .sky.clouds8xx .sun {
     position: absolute;
     top: 3rem;
     right: 10%;
     border-radius: 50%;
-    border: 0.25rem solid #a0ccf9;
+    border: 0.25rem solid #88d3ff;
     height: 6rem;
     width: 6rem;
     background: #fffc60;
@@ -91,12 +186,6 @@ $thunder-foreground-color: darken(desaturate($background-color,85%),45%);
   to {
     transform: translateX(100vw); } }
 
-/*
-$thunder-bg-color: darken(desaturate($background-color,80%),50%);
-$thunder-mid-color: darken(desaturate($background-color,82%),48%);
-$lightning-bg-grad: radial-gradient(lighten($thunder-mid-color,20%), rgba($thunder-mid-color,0) 45%);
-$thunder-foreground-color: darken(desaturate($background-color,85%),45%);
-*/
 .sky.drizzle3xx {
   background-color: #568;
   height: 100%; }
@@ -194,12 +283,6 @@ $thunder-foreground-color: darken(desaturate($background-color,85%),45%);
     transform: translateY(0);
     opacity: .4; } }
 
-/*
-$thunder-bg-color: darken(desaturate($background-color,80%),50%);
-$thunder-mid-color: darken(desaturate($background-color,82%),48%);
-$lightning-bg-grad: radial-gradient(lighten($thunder-mid-color,20%), rgba($thunder-mid-color,0) 45%);
-$thunder-foreground-color: darken(desaturate($background-color,85%),45%);
-*/
 .sky.rain5xx {
   background-color: #568;
   height: 100%; }
@@ -246,12 +329,6 @@ $thunder-foreground-color: darken(desaturate($background-color,85%),45%);
   to {
     transform: translateY(120vh); } }
 
-/*
-$thunder-bg-color: darken(desaturate($background-color,80%),50%);
-$thunder-mid-color: darken(desaturate($background-color,82%),48%);
-$lightning-bg-grad: radial-gradient(lighten($thunder-mid-color,20%), rgba($thunder-mid-color,0) 45%);
-$thunder-foreground-color: darken(desaturate($background-color,85%),45%);
-*/
 .sky.snow6xx {
   background-color: #89b;
   height: 100%; }
@@ -285,12 +362,6 @@ $thunder-foreground-color: darken(desaturate($background-color,85%),45%);
   100% {
     transform: translateX(3vw); } }
 
-/*
-$thunder-bg-color: darken(desaturate($background-color,80%),50%);
-$thunder-mid-color: darken(desaturate($background-color,82%),48%);
-$lightning-bg-grad: radial-gradient(lighten($thunder-mid-color,20%), rgba($thunder-mid-color,0) 45%);
-$thunder-foreground-color: darken(desaturate($background-color,85%),45%);
-*/
 .sky.thunder2xx {
   background-color: #568;
   height: 100%; }
@@ -431,7 +502,7 @@ h1, h2, h3, h4, h5 {
   weather-specific styles
 -_-*-_-*-_-*-_-*-_-*-_-*-_-*/
 .sky {
-  background: #a0ccf9;
+  background: #88d3ff;
   position: absolute;
   top: 0;
   left: 0;

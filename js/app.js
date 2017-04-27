@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 10);
+/******/ 	return __webpack_require__(__webpack_require__.s = 11);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -250,9 +250,9 @@ function snow(){
     appendHere = document.querySelector('.' + layers[i]);
 
     for(let j=1; j<dropsCount; j++){
-      var flakeTop = randomInt(-1,-8) + 'vh';
+      var flakeTop = randomInt(-1,-9) + 'vh';
       var flakeRight = randomFlt(0,100) + 'vw';
-      var animDelay = randomFlt(0,9) + i/4 + 's';
+      var animDelay = randomFlt(0 + i/4,10 + i) + 's';
       //var driftTime = randomFlt(3,6) + 's';
 
       appendMe = document.createElement('div');
@@ -438,13 +438,15 @@ function getLocalWeather(locURL){
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__clouds__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__drizzle__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__fog__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__rain__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__snow__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__thunder__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__clear__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__clouds__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__drizzle__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fog__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__rain__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__snow__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__thunder__ = __webpack_require__(6);
 /* harmony export (immutable) */ __webpack_exports__["a"] = animateWeather;
+
 
 
 
@@ -456,25 +458,25 @@ function getLocalWeather(locURL){
 
 function animateWeather(weatherId) {
   if (weatherId >= 200 && weatherId < 300) {
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__thunder__["a" /* default */])();
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__thunder__["a" /* default */])();
   }
   else if (weatherId >= 300 && weatherId < 400) {
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__drizzle__["a" /* default */])();
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__drizzle__["a" /* default */])();
   }
   else if (weatherId >= 500 && weatherId < 600) {
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__rain__["a" /* default */])();
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__rain__["a" /* default */])();
   }
   else if (weatherId >= 600 && weatherId < 700) {
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__snow__["a" /* default */])();
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__snow__["a" /* default */])();
   }
   else if (weatherId >= 700 && weatherId < 800) {
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__fog__["a" /* default */])();
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__fog__["a" /* default */])();
   }
   else if (weatherId === 800) {
-    clear();
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__clear__["a" /* default */])();
   }
   else if (weatherId > 800 && weatherId < 900) {
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__clouds__["a" /* default */])();
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__clouds__["a" /* default */])();
   }
   else if (weatherId >= 900 && weatherId <= 950) {
     extreme();
@@ -482,12 +484,31 @@ function animateWeather(weatherId) {
   else if (weatherId > 950 && weatherId < 1000) {
     other();
   }
-  else clear();
+  else __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__clear__["a" /* default */])();
 }
 
 
 /***/ }),
 /* 9 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = clear;
+function clear(){
+  var layers = ['foreground', 'midground', 'background'];
+  var appendHere = document.querySelector('.sky');
+  var appendMe = document.createElement('div');
+
+  appendHere.classList.add('clear800');
+  appendHere = document.querySelector('.' + layers[2]);
+
+  appendMe.classList.add('sun');
+  appendHere.appendChild(appendMe);
+}
+
+
+/***/ }),
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -527,21 +548,23 @@ function convert(){
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__weather_clouds__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__weather_drizzle__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__weather_fog__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__weather_rain__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__weather_snow__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__weather_thunder__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__weather_animateWeather__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ajax_fetchAPIs__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__utils_conversion__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__weather_clear__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__weather_clouds__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__weather_drizzle__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__weather_fog__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__weather_rain__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__weather_snow__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__weather_thunder__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__weather_animateWeather__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ajax_fetchAPIs__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__utils_conversion__ = __webpack_require__(10);
+
 
 
 
@@ -556,11 +579,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 var unitsBtn = document.querySelector('.switch');
 
-__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__ajax_fetchAPIs__["a" /* getLocalWeather */])('http://ip-api.com/json');
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9__ajax_fetchAPIs__["a" /* getLocalWeather */])('http://ip-api.com/json');
 
 //console.log("temperature = ", temperature);
 
-unitsBtn.addEventListener('click', __WEBPACK_IMPORTED_MODULE_9__utils_conversion__["a" /* default */]);
+unitsBtn.addEventListener('click', __WEBPACK_IMPORTED_MODULE_10__utils_conversion__["a" /* default */]);
 
 
 /***/ })
