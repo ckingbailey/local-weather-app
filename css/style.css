@@ -25,7 +25,7 @@
         position: absolute;
         transform-origin: bottom center;
         opacity: 0.5;
-        animation: sun-twinkle 3s ease-in-out infinite; }
+        animation: sun-twinkle 5s ease-in-out infinite; }
       .sky.clear800 .sun .ray-box .ray1 {
         height: 2rem;
         width: 3rem;
@@ -39,71 +39,71 @@
         transform: rotate(36deg);
         top: -1.427rem;
         left: 3.263rem;
-        animation-delay: 1.5s; }
+        animation-delay: 2.5s; }
       .sky.clear800 .sun .ray-box .ray3 {
         height: 2.1rem;
         width: 3rem;
         transform: rotate(calc(2 * 36deg));
         top: 0.073rem;
         left: 4.353rem;
-        animation-delay: 2.25s; }
+        animation-delay: 2s; }
       .sky.clear800 .sun .ray-box .ray4 {
         height: 2rem;
         width: 3rem;
         transform: rotate(calc(3 * 36deg));
         top: 2.146rem;
         left: 4.353rem;
-        animation-delay: 1.5s; }
+        animation-delay: 0s; }
       .sky.clear800 .sun .ray-box .ray5 {
         height: 2rem;
         width: 3rem;
         transform: rotate(calc(4 * 36deg));
         top: 3.427rem;
         left: 3.263rem;
-        animation-delay: 0.75s; }
+        animation-delay: 0.5s; }
       .sky.clear800 .sun .ray-box .ray6 {
         height: 2rem;
         width: 3rem;
         transform: rotate(calc(5 * 36deg));
         top: 4rem;
         left: 1.5rem;
-        animation-delay: 0s; }
+        animation-delay: 1.5s; }
       .sky.clear800 .sun .ray-box .ray7 {
         height: 2rem;
         width: 3rem;
         transform: rotate(calc(6 * 36deg));
         top: 3.427rem;
         left: -0.263rem;
-        animation-delay: 2.25s; }
+        animation-delay: 2s; }
       .sky.clear800 .sun .ray-box .ray8 {
         height: 2rem;
         width: 3rem;
         transform: rotate(calc(7 * 36deg));
         top: 2.146rem;
         left: -1.353rem;
-        animation-delay: 3s; }
+        animation-delay: 1s; }
       .sky.clear800 .sun .ray-box .ray9 {
         height: 2rem;
         width: 3rem;
         transform: rotate(calc(8 * 36deg));
         top: 0.073rem;
         left: -1.353rem;
-        animation-delay: 1.5s; }
+        animation-delay: 0.5s; }
       .sky.clear800 .sun .ray-box .ray10 {
         height: 2rem;
         width: 3rem;
         transform: rotate(calc(9 * 36deg));
         top: -1.427rem;
         left: -0.263rem;
-        animation-delay: 3s; }
+        animation-delay: 1.5s; }
 
 @keyframes sun-twinkle {
   0% {
-    background-position: bottom center; }
+    opacity: .5; }
   50% {
-    background-position: bottom -.25rem center; }
+    opacity: .25; }
   100% {
-    background-position: bottom center; } }
+    opacity: .5; } }
 
 .sky.clouds8xx {
   position: absolute;

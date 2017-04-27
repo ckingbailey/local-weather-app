@@ -504,6 +504,22 @@ function clear(){
 
   appendMe.classList.add('sun');
   appendHere.appendChild(appendMe);
+
+  appendHere = appendMe;
+  appendMe = document.createElement('div');
+  appendMe.classList.add('ray-box');
+  appendHere.appendChild(appendMe);
+
+  appendHere = appendMe;
+
+  for(let i = 0; i < 10; i++) {
+    appendMe = document.createElement('div');
+    appendMe.classList.add('ray');
+    appendMe.classList.add('ray' + (i + 1));
+    appendHere.appendChild(appendMe);
+  }
+
+
 }
 
 

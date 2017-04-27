@@ -6,7 +6,7 @@ $ray-wd: 3rem;
 $bump-top: -2rem;
 $bump-left: ( $sun-ht - $ray-wd ) / 2;
 $rad: 3rem;
-$anim-dur: 3s;
+$anim-dur: 5s;
 
 .sky.clear800 {
   background-color: $main-sky-color;
@@ -60,7 +60,7 @@ $anim-dur: 3s;
         transform: rotate(36deg);
         top: $rad - 2.427rem - $ray-ht;
         left: $bump-left + 1.763rem;
-        animation-delay: $anim-dur * 1/2;
+        animation-delay: $anim-dur * .5;
       }
 
       .ray3 {
@@ -69,7 +69,7 @@ $anim-dur: 3s;
         transform: rotate(calc(2 * 36deg));
         top: $bump-top + ($rad - .927rem);
         left: $bump-left + 2.853rem;
-        animation-delay: $anim-dur * 3/4;
+        animation-delay: $anim-dur * .4;
       }
 
       .ray4 {
@@ -78,7 +78,7 @@ $anim-dur: 3s;
         transform: rotate(calc(3 * 36deg));
         top: 2 * ($rad - .927rem) - $ray-ht;
         left: $bump-left + 2.853rem;
-        animation-delay: $anim-dur * 1/2;
+        animation-delay: $anim-dur * 0;
       }
 
       .ray5 {
@@ -87,7 +87,7 @@ $anim-dur: 3s;
         transform: rotate(calc(4 * 36deg));
         top: $rad + 2.427rem - $ray-ht;
         left: $bump-left + 1.763rem;
-        animation-delay: $anim-dur * 1/4;
+        animation-delay: $anim-dur * .1;
       }
 
       .ray6 {
@@ -96,7 +96,7 @@ $anim-dur: 3s;
         transform: rotate(calc(5 * 36deg));
         top: $bump-top + 2 * $rad;
         left: $bump-left;
-        animation-delay: $anim-dur * 0;
+        animation-delay: $anim-dur * .3;
       }
 
       .ray7 {
@@ -105,7 +105,7 @@ $anim-dur: 3s;
         transform: rotate(calc(6 * 36deg));
         top: $rad + 2.427rem - $ray-ht;
         left: $bump-left - 1.763rem;
-        animation-delay: $anim-dur * 3/4;
+        animation-delay: $anim-dur * .4;
       }
 
       .ray8 {
@@ -114,7 +114,7 @@ $anim-dur: 3s;
         transform: rotate(calc(7 * 36deg));
         top: 2 * ($rad - .927rem) - $ray-ht;
         left: $bump-left - 2.853rem;
-        animation-delay: $anim-dur;
+        animation-delay: $anim-dur * .2;
       }
 
       .ray9 {
@@ -123,7 +123,7 @@ $anim-dur: 3s;
         transform: rotate(calc(8 * 36deg));
         top: $bump-top + ($rad - .927rem);
         left: $bump-left - 2.853rem;
-        animation-delay: $anim-dur * 1/2;
+        animation-delay: $anim-dur * .1;
       }
 
       .ray10 {
@@ -132,14 +132,14 @@ $anim-dur: 3s;
         transform: rotate(calc(9 * 36deg));
         top: $rad - 2.427rem - $ray-ht;
         left: $bump-left - 1.763rem;
-        animation-delay: $anim-dur;
+        animation-delay: $anim-dur * .3;
       }
     }
   }
 }
 
 @keyframes sun-twinkle {
-  0% {background-position: bottom center;}
-  50% {background-position: bottom -.25rem center;}
-  100% {background-position: bottom center;}
+  0% {opacity: .5;}
+  50% {opacity: .25;}
+  100% {opacity: .5;}
 }
