@@ -1,3 +1,4 @@
+import randomInt, {randomFlt} from '../utils/randomRolls';
 
 export default function rain(){
   var dropsCount = 200;
@@ -24,12 +25,4 @@ export default function rain(){
       appendHere.appendChild(appendMe);
     }
   }
-}
-
-function randomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-function randomFlt(min, max) {
-  return Math.random() * (max - min + 1) + min;
 }

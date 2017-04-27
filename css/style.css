@@ -189,17 +189,45 @@
 .sky.drizzle3xx {
   background-color: #568;
   height: 100%; }
-  .sky.drizzle3xx .rain-drop {
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(102, 102, 138, 0));
-    width: .1rem;
+  .sky.drizzle3xx .foreground .rain-drop {
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.3) 10%, rgba(33, 40, 53, 0));
+    width: .15rem;
     height: 2.7rem;
-    border-radius: .5rem;
+    border-radius: 0 0 50% 50%;
     position: absolute;
-    animation: drizzle-fall 3s linear infinite; }
+    animation-duration: 1.25s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; }
+  .sky.drizzle3xx .midground .rain-drop {
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.6), rgba(33, 40, 53, 0));
+    width: .12rem;
+    height: 2.5rem;
+    border-radius: 0 0 50% 50%;
+    position: absolute;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; }
+  .sky.drizzle3xx .background .rain-drop {
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.6), rgba(33, 40, 53, 0));
+    width: .1rem;
+    height: 2.3rem;
+    border-radius: 0 0 50% 50%;
+    position: absolute;
+    animation-duration: 1.75s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; }
 
-@keyframes drizzle-fall {
+@keyframes drizzle-fall-1 {
   to {
     transform: translateY(145vh); } }
+
+@keyframes drizzle-fall-2 {
+  to {
+    transform: translateY(135vh); } }
+
+@keyframes drizzle-fall-3 {
+  to {
+    transform: translateY(120vh); } }
 
 .sky.fog7xx {
   height: 100%; }
@@ -486,9 +514,17 @@ h1, h2, h3, h4, h5 {
   position: relative; }
 
 .switch {
+  height: 1.75rem;
+  width: 1.75rem;
+  border-radius: .5rem;
+  border: 0.25rem solid #88d3ff;
+  background-color: #55c0ff;
+  text-align: center;
   position: absolute;
   top: 0;
   right: 0; }
+  .switch:active, .switch:focus {
+    outline: none; }
 
 @media screen and (max-width: 480px) {
   .flex-container {

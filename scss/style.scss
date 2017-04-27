@@ -51,9 +51,19 @@ h1,h2,h3,h4,h5 {
 }
 
 .switch {
+  height: 1.75rem;
+  width: 1.75rem;
+  border-radius: .5rem;
+  border: .25rem solid $main-sky-color;
+  background-color: darken($main-sky-color, 10%);
+  text-align: center;
   position: absolute;
   top: 0;
   right: 0;
+
+  &:active, &:focus {
+    outline: none;
+  }
 }
 
 @media screen and (max-width:480px) {
