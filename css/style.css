@@ -393,8 +393,15 @@
 .sky.thunder2xx {
   background-color: #568;
   height: 100%; }
-  .sky.thunder2xx .midground {
+  .sky.thunder2xx .background {
     background-color: #5f7298;
+    height: 7.5rem;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .sky.thunder2xx .midground {
+    background-color: transparent;
     height: 7.5rem;
     width: 100%;
     position: absolute;
@@ -414,7 +421,7 @@
     height: 4.5rem;
     width: 40vw;
     border-radius: 50%;
-    background-image: radial-gradient(#ccccbb, rgba(153, 136, 153, 0) 35%);
+    background-image: radial-gradient(rgba(204, 204, 187, 0), rgba(153, 136, 153, 0) 35%);
     /*transform: scaleY(0);*/
     animation: lightning 3.8s infinite; }
     .sky.thunder2xx .lightning:before {
@@ -463,6 +470,8 @@
     transform: translateY(0rem) scaleY(0); } }
 
 @keyframes lightning {
+  0% {
+    background-image: radial-gradient(rgba(204, 204, 187, 0), rgba(204, 204, 187, 0) 45%); }
   25% {
     background-image: radial-gradient(rgba(204, 204, 187, 0), rgba(204, 204, 187, 0) 45%); }
   30% {

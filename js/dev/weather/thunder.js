@@ -1,3 +1,5 @@
+import randomInt, {randomFlt} from '../utils/randomRolls';
+
 export default function thunder() {
 
 var appendHere = document.querySelector('.sky');
@@ -5,18 +7,19 @@ var appendMe = document.createElement('div');
 var b, w, l, viewW;
 var styles;
 
-appendHere.classList += ' thunder2xx';
+appendHere.classList.add('thunder2xx');
 
 appendMe = document.createElement('div');
 
 //make cloud puffs
 cloudPuffs('.foreground');
 
-cloudPuffs('.midground');
+cloudPuffs('.background');
 
 //make lightning (static for the mo')
 appendMe = document.createElement('div');
 appendMe.classList.add('lightning');
+appendHere = document.querySelector('.midground');
 
 appendHere.appendChild(appendMe);
 
@@ -30,8 +33,10 @@ function cloudPuffs(selector) {
 
     appendMe.classList += 'puff';
 
-    w = (Math.floor(Math.random() * (36 - 12) + 12))/4;
-    b = -1 - (Math.floor(Math.random() * 2))/8;
+//what ranges am I trying to acheive here?
+//find a way to use randomInt() instead
+    w = randomInt(3,9);
+    b = -(randomFlt(1,1.125));
 
     styles = 'width: ' + w + 'vw; left: ' + l + 'vw; bottom: ' + b + 'rem';
     appendMe.setAttribute('style', styles);
@@ -42,11 +47,12 @@ function cloudPuffs(selector) {
   }
 }
 
-function lightning(){
+function moveLightning(){
 
-//appendHere = .midground
-
-
+  appendMe.style.left = randomFlt(-20, 80) + 'vw';
 
 };
+
+appendMe.addEventListener('animationiteration', moveLightning);
+
 }

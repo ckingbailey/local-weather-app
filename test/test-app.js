@@ -72,13 +72,13 @@
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = randomInt;
-/* unused harmony export randomFlt */
+/* harmony export (immutable) */ __webpack_exports__["b"] = randomFlt;
 function randomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 function randomFlt(min, max) {
-  return Math.random() * (max - min + 1) + min;
+  return Math.random() * (max - min) + min;
 }
 
 
@@ -308,7 +308,10 @@ function snow(){
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__ = __webpack_require__(0);
 /* harmony export (immutable) */ __webpack_exports__["a"] = thunder;
+
+
 function thunder() {
 
 var appendHere = document.querySelector('.sky');
@@ -316,18 +319,19 @@ var appendMe = document.createElement('div');
 var b, w, l, viewW;
 var styles;
 
-appendHere.classList += ' thunder2xx';
+appendHere.classList.add('thunder2xx');
 
 appendMe = document.createElement('div');
 
 //make cloud puffs
 cloudPuffs('.foreground');
 
-cloudPuffs('.midground');
+cloudPuffs('.background');
 
 //make lightning (static for the mo')
 appendMe = document.createElement('div');
 appendMe.classList.add('lightning');
+appendHere = document.querySelector('.midground');
 
 appendHere.appendChild(appendMe);
 
@@ -341,8 +345,10 @@ function cloudPuffs(selector) {
 
     appendMe.classList += 'puff';
 
-    w = (Math.floor(Math.random() * (36 - 12) + 12))/4;
-    b = -1 - (Math.floor(Math.random() * 2))/8;
+//what ranges am I trying to acheive here?
+//find a way to use randomInt() instead
+    w = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["a" /* default */])(3,9);
+    b = -(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["b" /* randomFlt */])(1,1.125));
 
     styles = 'width: ' + w + 'vw; left: ' + l + 'vw; bottom: ' + b + 'rem';
     appendMe.setAttribute('style', styles);
@@ -353,13 +359,14 @@ function cloudPuffs(selector) {
   }
 }
 
-function lightning(){
+function moveLightning(){
 
-//appendHere = .midground
-
-
+  appendMe.style.left = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["b" /* randomFlt */])(-20, 80) + 'vw';
 
 };
+
+appendMe.addEventListener('animationiteration', moveLightning);
+
 }
 
 
