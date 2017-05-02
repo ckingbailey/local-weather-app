@@ -16,4 +16,18 @@ export default function clouds(){
 
   appendMe.classList.add('sun');
   appendHere.insertAdjacentElement('afterbegin', appendMe);
+
+  appendHere = appendMe;
+  appendMe = document.createElement('div');
+  appendMe.classList.add('ray-box');
+  appendHere.appendChild(appendMe);
+
+  appendHere = appendMe;
+
+  for(let i = 1; i <= 10; i++) {
+    appendMe = document.createElement('div');
+    appendMe.classList.add('ray');
+    appendMe.classList.add('ray' + i);
+    appendHere.appendChild(appendMe);
+  }
 }

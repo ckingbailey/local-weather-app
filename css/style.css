@@ -1,4 +1,5 @@
 .sky.clear800 {
+  position: relative;
   background-color: #88d3ff; }
   .sky.clear800 .sun {
     position: absolute;
@@ -41,7 +42,7 @@
         left: 3.263rem;
         animation-delay: 2.5s; }
       .sky.clear800 .sun .ray-box .ray3 {
-        height: 2.1rem;
+        height: 2rem;
         width: 3rem;
         transform: rotate(calc(2 * 36deg));
         top: 0.073rem;
@@ -113,11 +114,97 @@
     top: 3rem;
     right: 10%;
     border-radius: 50%;
-    border: 0.25rem solid #88d3ff;
     height: 6rem;
     width: 6rem;
-    background: #fffc60;
-    box-shadow: 0 0 1rem 0.35rem #fffc60; }
+    background: radial-gradient(#fffee0, #fffc60);
+    box-shadow: 0 0 0.5rem 0.125rem #fffc60; }
+    .sky.clouds8xx .sun .ray-box {
+      position: absolute;
+      margin: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 6rem; }
+      .sky.clouds8xx .sun .ray-box .ray {
+        background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
+        background-position: bottom center;
+        background-repeat: no-repeat;
+        border-radius: 0 0 80% 80%;
+        position: absolute;
+        transform-origin: bottom center;
+        opacity: 0.5;
+        animation: sun-twinkle 5s ease-in-out infinite; }
+      .sky.clouds8xx .sun .ray-box .ray1 {
+        height: 1rem;
+        width: 2.5rem;
+        transform: rotate(0deg);
+        top: -1rem;
+        left: 1.75rem;
+        animation-delay: 0s; }
+      .sky.clouds8xx .sun .ray-box .ray2 {
+        height: 1rem;
+        width: 2.5rem;
+        transform: rotate(36deg);
+        top: -0.427rem;
+        left: 3.513rem;
+        animation-delay: 2.5s; }
+      .sky.clouds8xx .sun .ray-box .ray3 {
+        height: 1rem;
+        width: 2.5rem;
+        transform: rotate(calc(2 * 36deg));
+        top: 1.073rem;
+        left: 4.603rem;
+        animation-delay: 2s; }
+      .sky.clouds8xx .sun .ray-box .ray4 {
+        height: 1rem;
+        width: 2.5rem;
+        transform: rotate(calc(3 * 36deg));
+        top: 3.146rem;
+        left: 4.603rem;
+        animation-delay: 0s; }
+      .sky.clouds8xx .sun .ray-box .ray5 {
+        height: 1rem;
+        width: 2.5rem;
+        transform: rotate(calc(4 * 36deg));
+        top: 4.427rem;
+        left: 3.513rem;
+        animation-delay: 0.5s; }
+      .sky.clouds8xx .sun .ray-box .ray6 {
+        height: 1rem;
+        width: 2.5rem;
+        transform: rotate(calc(5 * 36deg));
+        top: 5rem;
+        left: 1.75rem;
+        animation-delay: 1.5s; }
+      .sky.clouds8xx .sun .ray-box .ray7 {
+        height: 1rem;
+        width: 2.5rem;
+        transform: rotate(calc(6 * 36deg));
+        top: 4.427rem;
+        left: -0.013rem;
+        animation-delay: 2s; }
+      .sky.clouds8xx .sun .ray-box .ray8 {
+        height: 1rem;
+        width: 2.5rem;
+        transform: rotate(calc(7 * 36deg));
+        top: 3.146rem;
+        left: -1.103rem;
+        animation-delay: 1s; }
+      .sky.clouds8xx .sun .ray-box .ray9 {
+        height: 1rem;
+        width: 2.5rem;
+        transform: rotate(calc(8 * 36deg));
+        top: 1.073rem;
+        left: -1.103rem;
+        animation-delay: 0.5s; }
+      .sky.clouds8xx .sun .ray-box .ray10 {
+        height: 1rem;
+        width: 2.5rem;
+        transform: rotate(calc(9 * 36deg));
+        top: -0.427rem;
+        left: -0.013rem;
+        animation-delay: 1.5s; }
   .sky.clouds8xx .cloud1, .sky.clouds8xx .cloud2, .sky.clouds8xx .cloud3 {
     opacity: .9;
     position: absolute;
@@ -185,6 +272,14 @@
 @keyframes cloud-walk {
   to {
     transform: translateX(100vw); } }
+
+@keyframes sun-twinkle {
+  0% {
+    opacity: .5; }
+  50% {
+    opacity: .25; }
+  100% {
+    opacity: .5; } }
 
 .sky.drizzle3xx {
   background-color: #568;

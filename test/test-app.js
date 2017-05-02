@@ -106,10 +106,10 @@ function clear(){
 
   appendHere = appendMe;
 
-  for(let i = 0; i < 10; i++) {
+  for(let i = 1; i <= 10; i++) {
     appendMe = document.createElement('div');
     appendMe.classList.add('ray');
-    appendMe.classList.add('ray' + (i + 1));
+    appendMe.classList.add('ray' + i);
     appendHere.appendChild(appendMe);
   }
 
@@ -141,6 +141,20 @@ function clouds(){
 
   appendMe.classList.add('sun');
   appendHere.insertAdjacentElement('afterbegin', appendMe);
+
+  appendHere = appendMe;
+  appendMe = document.createElement('div');
+  appendMe.classList.add('ray-box');
+  appendHere.appendChild(appendMe);
+
+  appendHere = appendMe;
+
+  for(let i = 1; i <= 10; i++) {
+    appendMe = document.createElement('div');
+    appendMe.classList.add('ray');
+    appendMe.classList.add('ray' + i);
+    appendHere.appendChild(appendMe);
+  }
 }
 
 
@@ -461,7 +475,7 @@ var weatherTypes = {
   other: 951
 };
 
-__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__js_dev_weather_animateWeather__["a" /* default */])(weatherTypes.thunder);
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__js_dev_weather_animateWeather__["a" /* default */])(weatherTypes.clear);
 
 
 /***/ })

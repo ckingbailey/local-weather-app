@@ -5,10 +5,11 @@ $ray-ht: 2rem;
 $ray-wd: 3rem;
 $bump-top: -2rem;
 $bump-left: ( $sun-ht - $ray-wd ) / 2;
-$rad: 3rem;
+$rad: $sun-ht / 2;
 $anim-dur: 5s;
 
 .sky.clear800 {
+  position: relative;
   background-color: $main-sky-color;
 
   .sun {
@@ -64,8 +65,8 @@ $anim-dur: 5s;
       }
 
       .ray3 {
-        height: 2.1rem;
-        width: 3rem;
+        height: $ray-ht;
+        width: $ray-wd;
         transform: rotate(calc(2 * 36deg));
         top: $bump-top + ($rad - .927rem);
         left: $bump-left + 2.853rem;
@@ -82,8 +83,8 @@ $anim-dur: 5s;
       }
 
       .ray5 {
-        height: 2rem;
-        width: 3rem;
+        height: $ray-ht;
+        width: $ray-wd;
         transform: rotate(calc(4 * 36deg));
         top: $rad + 2.427rem - $ray-ht;
         left: $bump-left + 1.763rem;
@@ -100,8 +101,8 @@ $anim-dur: 5s;
       }
 
       .ray7 {
-        height: 2rem;
-        width: 3rem;
+        height: $ray-ht;
+        width: $ray-wd;
         transform: rotate(calc(6 * 36deg));
         top: $rad + 2.427rem - $ray-ht;
         left: $bump-left - 1.763rem;
@@ -109,8 +110,8 @@ $anim-dur: 5s;
       }
 
       .ray8 {
-        height: 2rem;
-        width: 3rem;
+        height: $ray-ht;
+        width: $ray-wd;
         transform: rotate(calc(7 * 36deg));
         top: 2 * ($rad - .927rem) - $ray-ht;
         left: $bump-left - 2.853rem;
@@ -118,8 +119,8 @@ $anim-dur: 5s;
       }
 
       .ray9 {
-        height: 2rem;
-        width: 3rem;
+        height: $ray-ht;
+        width: $ray-wd;
         transform: rotate(calc(8 * 36deg));
         top: $bump-top + ($rad - .927rem);
         left: $bump-left - 2.853rem;
@@ -127,8 +128,8 @@ $anim-dur: 5s;
       }
 
       .ray10 {
-        height: 2rem;
-        width: 3rem;
+        height: $ray-ht;
+        width: $ray-wd;
         transform: rotate(calc(9 * 36deg));
         top: $rad - 2.427rem - $ray-ht;
         left: $bump-left - 1.763rem;
