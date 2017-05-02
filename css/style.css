@@ -518,7 +518,7 @@
     border-radius: 50%;
     background-image: radial-gradient(rgba(204, 204, 187, 0), rgba(153, 136, 153, 0) 35%);
     /*transform: scaleY(0);*/
-    animation: lightning 3.8s infinite; }
+    animation: lightning 3.8s ease-in-out infinite; }
     .sky.thunder2xx .lightning:before {
       content: '';
       background-image: inherit;
@@ -527,8 +527,8 @@
       left: 2rem;
       width: 17vw;
       height: 4rem;
-      /*  animation: lightning 3.5s infinite;
-      animation-delay: .5s;*/ }
+      animation: lightning 3.8s ease-in-out infinite;
+      animation-delay: .5s; }
     .sky.thunder2xx .lightning:after {
       content: '';
       background-image: inherit;
@@ -537,8 +537,8 @@
       left: 18rem;
       width: 20vw;
       height: 4rem;
-      /*  animation: lightning 3.5s infinite;
-      animation-delay: .75s;*/ }
+      animation: lightning 3.8s ease-in-out infinite;
+      animation-delay: .75s; }
   .sky.thunder2xx .puff {
     border-radius: 50%;
     background-color: inherit;
@@ -546,41 +546,34 @@
     /*bottom: -1rem;*/
     height: 2rem; }
 
-@keyframes lightning-test {
-  24% {
-    transform: translateY(0rem) scaleY(0); }
-  25% {
-    transform: translateY(1.5rem) scaleY(0.85); }
-  30% {
-    transform: translateY(0.2rem) scaleY(0.05); }
-  32% {
-    transform: translateY(1.7rem) scaleY(0.9); }
-  34% {
-    transform: translateY(0.1rem) scaleY(0.07); }
-  36% {
-    transform: translateY(2rem) scaleY(1); }
-  40% {
-    transform: translateY(1.25rem) scaleY(0.75); }
-  100% {
-    transform: translateY(0rem) scaleY(0); } }
-
 @keyframes lightning {
   0% {
-    background-image: radial-gradient(rgba(204, 204, 187, 0), rgba(204, 204, 187, 0) 45%); }
+    background-image: radial-gradient(rgba(204, 204, 187, 0), rgba(204, 204, 187, 0) 45%);
+    opacity: 0; }
   25% {
-    background-image: radial-gradient(rgba(204, 204, 187, 0), rgba(204, 204, 187, 0) 45%); }
+    background-image: radial-gradient(rgba(204, 204, 187, 0), rgba(204, 204, 187, 0) 45%);
+    opacity: 0; }
   30% {
-    background-image: radial-gradient(#ccccbb, rgba(204, 204, 187, 0) 45%); }
+    background-image: radial-gradient(#ccccbb, rgba(204, 204, 187, 0) 45%);
+    opacity: 1; }
   32% {
-    background-image: radial-gradient(rgba(204, 204, 187, 0), rgba(204, 204, 187, 0) 45%); }
+    background-image: radial-gradient(rgba(204, 204, 187, 0), rgba(204, 204, 187, 0) 45%);
+    opacity: 0; }
   34% {
-    background-image: radial-gradient(#ccccbb, rgba(204, 204, 187, 0) 45%); }
+    background-image: radial-gradient(#ccccbb, rgba(204, 204, 187, 0) 45%);
+    opacity: 1; }
   36% {
-    background-image: radial-gradient(rgba(204, 204, 187, 0), rgba(204, 204, 187, 0) 45%); }
+    background-image: radial-gradient(rgba(204, 204, 187, 0), rgba(204, 204, 187, 0) 45%);
+    opacity: 0; }
   40% {
-    background-image: radial-gradient(#ccccbb, rgba(204, 204, 187, 0) 45%); }
+    background-image: radial-gradient(#ccccbb, rgba(204, 204, 187, 0) 45%);
+    opacity: 1; }
+  75% {
+    background-image: radial-gradient(#ccccbb, rgba(204, 204, 187, 0) 45%);
+    opacity: 0; }
   100% {
-    background-image: radial-gradient(rgba(204, 204, 187, 0), rgba(204, 204, 187, 0) 45%); } }
+    background-image: radial-gradient(rgba(204, 204, 187, 0), rgba(204, 204, 187, 0) 45%);
+    opacity: 0; } }
 
 html, body {
   height: 100%; }
