@@ -211,7 +211,10 @@
     border-radius: 40%;
     background-color: white;
     box-shadow: 0 0 .5rem .25rem white;
-    border: none; }
+    border: none;
+    animation-name: cloud-walk, fade-in;
+    animation-timing-function: linear, linear;
+    animation-iteration-count: infinite, 1; }
     .sky.clouds8xx .cloud1:before, .sky.clouds8xx .cloud1:after, .sky.clouds8xx .cloud2:before, .sky.clouds8xx .cloud2:after, .sky.clouds8xx .cloud3:before, .sky.clouds8xx .cloud3:after {
       content: '';
       position: absolute;
@@ -225,7 +228,7 @@
     left: 15rem;
     height: 2.75rem;
     width: 7rem;
-    animation: cloud-walk 300s linear infinite; }
+    animation-duration: 300s, 10s; }
     .sky.clouds8xx .cloud1:before {
       top: -2rem;
       left: .6rem;
@@ -241,7 +244,7 @@
     left: 7.5rem;
     height: 2.35rem;
     width: 11rem;
-    animation: cloud-walk 180s linear infinite; }
+    animation-duration: 180s, 10s; }
     .sky.clouds8xx .cloud2:before {
       top: -3.15rem;
       left: 1.4rem;
@@ -257,7 +260,7 @@
     left: 4.25rem;
     height: 3rem;
     width: 5rem;
-    animation: cloud-walk 240s linear infinite; }
+    animation-duration: 240s, 10s; }
     .sky.clouds8xx .cloud3:before {
       top: -1rem;
       left: .5rem;
@@ -272,6 +275,12 @@
 @keyframes cloud-walk {
   to {
     transform: translateX(100vw); } }
+
+@keyframes fade-in {
+  from {
+    opacity: 0; }
+  to {
+    opacity: .9; } }
 
 @keyframes sun-twinkle {
   0% {

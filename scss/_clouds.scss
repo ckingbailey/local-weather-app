@@ -145,6 +145,9 @@ $anim-dur: 5s;
     background-color: white;
     box-shadow: 0 0 .5rem .25rem white;
     border: none;
+    animation-name: cloud-walk, fade-in;
+    animation-timing-function: linear, linear;
+    animation-iteration-count: infinite, 1;
 
     &:before, &:after {
       content: '';
@@ -162,7 +165,7 @@ $anim-dur: 5s;
     left: 15rem;
     height: 2.75rem;
     width: 7rem;
-    animation: cloud-walk 300s linear infinite;
+    animation-duration: 300s, 10s;
 
     &:before {
       top: -2rem;
@@ -184,7 +187,7 @@ $anim-dur: 5s;
     left: 7.5rem;
     height: 2.35rem;
     width: 11rem;
-    animation: cloud-walk 180s linear infinite;
+    animation-duration: 180s, 10s;
 
     &:before {
       top: -3.15rem;
@@ -206,7 +209,7 @@ $anim-dur: 5s;
     left: 4.25rem;
     height: 3rem;
     width: 5rem;
-    animation: cloud-walk 240s linear infinite;
+    animation-duration: 240s, 10s;
 
     &:before {
       top: -1rem;
@@ -228,6 +231,11 @@ $anim-dur: 5s;
   to {
     transform: translateX(100vw);
   }
+}
+
+@keyframes fade-in {
+  from {opacity: 0}
+  to {opacity: .9}
 }
 
 @keyframes sun-twinkle {

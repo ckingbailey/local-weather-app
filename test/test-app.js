@@ -155,6 +155,16 @@ function clouds(){
     appendMe.classList.add('ray' + i);
     appendHere.appendChild(appendMe);
   }
+
+  function cloudLoop(element){
+    var w = window.getComputedStyle(element).width.match(/^(\d+)(\D+)/);
+    element.style.left = (-w[1] + 2) + w[2];
+  }
+
+  for(let i = 0; i<layers.length; i++){
+    appendMe = document.querySelector('.cloud' + (i +1));
+    appendMe.addEventListener('animationiteration', cloudLoop(appendMe));
+  }
 }
 
 
