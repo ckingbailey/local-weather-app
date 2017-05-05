@@ -19,4 +19,4 @@ var weatherTypes = {
   other: 951
 };
 
-animateWeather(weatherTypes.thunder);
+animateWeather(weatherTypes.clouds);

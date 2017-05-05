@@ -5,15 +5,23 @@ export default function clouds(){
 
   appendHere.classList.add('clouds8xx');
 
+//make clouds in css
   for(let i=0; i<layers.length; i++){
     appendHere = document.querySelector('.' + layers[i]);
 
     appendMe.classList.add('cloud' + (i + 1));
     appendHere.appendChild(appendMe);
 
+    appendMe.addEventListener('animationiteration', function() {
+      var w = window.getComputedStyle(this).width.match(/(\d+)(\D+)/);
+      console.log(w);
+      this.style.left = -(w[1] + 1) + w[2];
+    }, 'once');
+
     appendMe = document.createElement('div');
   }
 
+//create the sun in css
   appendMe.classList.add('sun');
   appendHere.insertAdjacentElement('afterbegin', appendMe);
 
@@ -24,6 +32,7 @@ export default function clouds(){
 
   appendHere = appendMe;
 
+//make rays of sun in css
   for(let i = 1; i <= 10; i++) {
     appendMe = document.createElement('div');
     appendMe.classList.add('ray');
@@ -31,13 +40,14 @@ export default function clouds(){
     appendHere.appendChild(appendMe);
   }
 
-  function cloudLoop(element){
-    var w = window.getComputedStyle(element).width.match(/^(\d+)(\D+)/);
-    element.style.left = (-w[1] + 2) + w[2];
-  }
-
-  for(let i = 0; i<layers.length; i++){
-    appendMe = document.querySelector('.cloud' + (i +1));
-    appendMe.addEventListener('animationiteration', cloudLoop(appendMe));
-  }
+//make clouds start over from left side of screen on animationiteration
+/*  for(let i = 0; i<layers.length; i++){
+    appendMe = document.querySelector('.cloud' + (i + 1));
+    console.log(appendMe);
+    appendMe.addEventListener('animationiteration', function cloudLoop(){
+      var w = window.getComputedStyle(appendMe).width.match(/^(\d+)(\D+)/);
+      console.log(w);
+      appendMe.style.left = '-10px';
+    });
+  }*/
 }
