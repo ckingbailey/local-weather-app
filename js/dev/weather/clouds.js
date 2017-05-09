@@ -15,8 +15,8 @@ export default function clouds(){
     appendMe.addEventListener('animationiteration', function() {
       var w = window.getComputedStyle(this).width.match(/(\d+)(\D+)/);
       console.log(w);
-      this.style.left = -(parseInt(w[1], 10) + 1) + w[2];
-    }, 'once');
+      this.style.left = -(parseInt(w[1], 10) + (parseInt(w[1], 10) * 0.05)) + w[2];
+    }, {once: true});
 
     appendMe = document.createElement('div');
   }
