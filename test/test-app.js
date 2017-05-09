@@ -140,8 +140,8 @@ function clouds(){
     appendMe.addEventListener('animationiteration', function() {
       var w = window.getComputedStyle(this).width.match(/(\d+)(\D+)/);
       console.log(w);
-      this.style.left = -(w[1] + 1) + w[2];
-    }, 'once');
+      this.style.left = -(parseInt(w[1], 10) + (parseInt(w[1], 10) * 0.05)) + w[2];
+    }, {once: true});
 
     appendMe = document.createElement('div');
   }
@@ -183,8 +183,8 @@ function clouds(){
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__ = __webpack_require__(0);
 /* harmony export (immutable) */ __webpack_exports__["a"] = drizzle;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__ = __webpack_require__(0);
 
 
 function drizzle(){
@@ -261,8 +261,8 @@ function fog() {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__ = __webpack_require__(0);
 /* harmony export (immutable) */ __webpack_exports__["a"] = rain;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__ = __webpack_require__(0);
 
 
 function rain(){
@@ -342,8 +342,8 @@ function snow(){
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__ = __webpack_require__(0);
 /* harmony export (immutable) */ __webpack_exports__["a"] = thunder;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__ = __webpack_require__(0);
 
 
 function thunder() {
@@ -409,6 +409,7 @@ appendMe.addEventListener('animationiteration', moveLightning);
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = animateWeather;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__clear__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__clouds__ = __webpack_require__(2);
@@ -417,7 +418,6 @@ appendMe.addEventListener('animationiteration', moveLightning);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__rain__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__snow__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__thunder__ = __webpack_require__(7);
-/* harmony export (immutable) */ __webpack_exports__["a"] = animateWeather;
 
 
 
