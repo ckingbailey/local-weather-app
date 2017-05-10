@@ -222,7 +222,8 @@
       border-radius: 45%;
       background-color: inherit;
       box-shadow: inherit;
-      border: inherit; }
+      border: inherit;
+      animation: fade-in 10s linear 1; }
   .sky.clouds8xx .cloud1 {
     top: 6.75rem;
     left: 15rem;
@@ -244,7 +245,7 @@
     left: 7.5rem;
     height: 2.35rem;
     width: 11rem;
-    animation-duration: 10s, 10s; }
+    animation-duration: 270s, 10s; }
     .sky.clouds8xx .cloud2:before {
       top: -3.15rem;
       left: 1.4rem;
@@ -274,7 +275,7 @@
 
 @keyframes cloud-walk {
   to {
-    transform: translateX(100vw); } }
+    transform: translateX(120vw); } }
 
 @keyframes fade-in {
   from {
