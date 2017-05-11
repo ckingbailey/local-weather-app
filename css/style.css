@@ -1,5 +1,4 @@
 .sky.clear800 {
-  position: relative;
   background-color: #88d3ff; }
   .sky.clear800 .sun {
     position: absolute;
@@ -107,7 +106,6 @@
     opacity: .5; } }
 
 .sky.clouds8xx {
-  position: absolute;
   background-color: #88d3ff; }
   .sky.clouds8xx .sun {
     position: absolute;
@@ -245,7 +243,7 @@
     left: 7.5rem;
     height: 2.35rem;
     width: 11rem;
-    animation-duration: 270s, 10s; }
+    animation-duration: 180s, 10s; }
     .sky.clouds8xx .cloud2:before {
       top: -3.15rem;
       left: 1.4rem;
