@@ -3,6 +3,7 @@ import randomFlt from './utils/randomRolls';
 import clear from './weather/clear';
 import clouds from './weather/clouds';
 import drizzle from './weather/drizzle';
+import extreme from './weather/extreme';
 import fog from './weather/fog';
 import rain from './weather/rain';
 import snow from './weather/snow';
