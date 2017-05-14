@@ -292,10 +292,9 @@
   100% {
     opacity: .5; } }
 
-.sky.drizzle3xx {
-  background-color: #568;
-  height: 100%; }
-  .sky.drizzle3xx .foreground .rain-drop {
+.drizzle {
+  background-color: #568; }
+  .drizzle .foreground .rain-drop {
     background: linear-gradient(to top, rgba(255, 255, 255, 0.3) 10%, rgba(33, 40, 53, 0));
     width: .15rem;
     height: 2.7rem;
@@ -304,7 +303,7 @@
     animation-duration: 1.25s;
     animation-timing-function: linear;
     animation-iteration-count: infinite; }
-  .sky.drizzle3xx .midground .rain-drop {
+  .drizzle .midground .rain-drop {
     background: linear-gradient(to top, rgba(255, 255, 255, 0.6), rgba(33, 40, 53, 0));
     width: .12rem;
     height: 2.5rem;
@@ -313,7 +312,7 @@
     animation-duration: 1.5s;
     animation-timing-function: linear;
     animation-iteration-count: infinite; }
-  .sky.drizzle3xx .background .rain-drop {
+  .drizzle .background .rain-drop {
     background: linear-gradient(to top, rgba(255, 255, 255, 0.6), rgba(33, 40, 53, 0));
     width: .1rem;
     height: 2.3rem;
@@ -336,7 +335,7 @@
     transform: translateY(120vh); } }
 
 .sky.fog7xx {
-  height: 100%; }
+  background-color: #89b; }
   .sky.fog7xx .background, .sky.fog7xx .midground, .sky.fog7xx .foreground, .sky.fog7xx .sub, .sky.fog7xx .sup {
     position: absolute;
     height: 100%;
@@ -420,49 +419,108 @@
 .sky.hot904 {
   background-image: linear-gradient(to top, orangeRed, yellow); }
 
-.sky.hurricane902 .rain-drop {
-  animation-name: wind;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear; }
+.wet, .rain, .hurricane {
+  background-color: #568; }
+  .wet .rain-drop, .rain .rain-drop, .hurricane .rain-drop {
+    border-radius: .75rem;
+    position: absolute; }
+  .wet .foreground .rain-drop, .rain .foreground .rain-drop, .hurricane .foreground .rain-drop {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(102, 102, 138, 0));
+    width: .15rem;
+    height: 3rem; }
+  .wet .midground .rain-drop, .rain .midground .rain-drop, .hurricane .midground .rain-drop {
+    background: linear-gradient(0deg, rgba(220, 220, 230, 0.6), rgba(102, 102, 138, 0));
+    width: .12rem;
+    height: 2.7rem; }
+  .wet .background .rain-drop, .rain .background .rain-drop, .hurricane .background .rain-drop {
+    background: linear-gradient(0deg, rgba(200, 200, 210, 0.6), rgba(102, 102, 138, 0));
+    width: .1rem;
+    height: 2.5rem; }
 
-@keyframes wind {
+.rain .rain-drop {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite; }
+
+.rain .foreground .rain-drop {
+  animation-duration: 1s; }
+
+.rain .midground .rain-drop {
+  animation-duration: 1.2s; }
+
+.rain .background .rain-drop {
+  animation-duration: 1.4s; }
+
+@keyframes rain-fall-1 {
+  to {
+    transform: translateY(135vh); } }
+
+@keyframes rain-fall-2 {
+  to {
+    transform: translateY(150vh); } }
+
+@keyframes rain-fall-3 {
+  to {
+    transform: translateY(120vh); } }
+
+.hurricane .rain-drop {
+  animation-iteration-count: infinite, infinite;
+  animation-timing-function: linear, linear; }
+
+.hurricane .foreground {
+  transform: rotate(-35deg);
+  top: -15vh; }
+  .hurricane .foreground .rain-drop {
+    animation-duration: 1s, 4s; }
+
+.hurricane .midground {
+  transform: rotate(-27deg);
+  top: -5vh; }
+  .hurricane .midground .rain-drop {
+    animation-duration: 1.2s, 4s; }
+
+.hurricane .background {
+  transform: rotate(12deg); }
+  .hurricane .background .rain-drop {
+    animation-duration: 1.4s, 4s; }
+
+@keyframes wind-1 {
   to {
     margin-left: 30vw; } }
 
-.sky.rain5xx {
-  background-color: #568;
-  height: 100%; }
-  .sky.rain5xx .foreground .rain-drop {
+@keyframes wind-2 {
+  to {
+    margin-left: -20vw; } }
+
+.wet, .rain, .hurricane {
+  background-color: #568; }
+  .wet .rain-drop, .rain .rain-drop, .hurricane .rain-drop {
+    border-radius: .75rem;
+    position: absolute; }
+  .wet .foreground .rain-drop, .rain .foreground .rain-drop, .hurricane .foreground .rain-drop {
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(102, 102, 138, 0));
     width: .15rem;
-    height: 3rem;
-    border-radius: .75rem;
-    position: absolute;
-    animation-name: rain-fall-1;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite; }
-  .sky.rain5xx .midground .rain-drop {
+    height: 3rem; }
+  .wet .midground .rain-drop, .rain .midground .rain-drop, .hurricane .midground .rain-drop {
     background: linear-gradient(0deg, rgba(220, 220, 230, 0.6), rgba(102, 102, 138, 0));
     width: .12rem;
-    height: 2.7rem;
-    border-radius: .75rem;
-    position: absolute;
-    animation-name: rain-fall-1;
-    animation-duration: 1.2s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite; }
-  .sky.rain5xx .background .rain-drop {
+    height: 2.7rem; }
+  .wet .background .rain-drop, .rain .background .rain-drop, .hurricane .background .rain-drop {
     background: linear-gradient(0deg, rgba(200, 200, 210, 0.6), rgba(102, 102, 138, 0));
     width: .1rem;
-    height: 2.5rem;
-    border-radius: .75rem;
-    position: absolute;
-    animation-name: rain-fall-1;
-    animation-duration: 1.4s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite; }
+    height: 2.5rem; }
+
+.rain .rain-drop {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite; }
+
+.rain .foreground .rain-drop {
+  animation-duration: 1s; }
+
+.rain .midground .rain-drop {
+  animation-duration: 1.2s; }
+
+.rain .background .rain-drop {
+  animation-duration: 1.4s; }
 
 @keyframes rain-fall-1 {
   to {
@@ -659,7 +717,6 @@ h1, h2, h3, h4, h5 {
   weather-specific styles
 -_-*-_-*-_-*-_-*-_-*-_-*-_-*/
 .sky {
-  background: #88d3ff;
   position: absolute;
   top: 0;
   left: 0;
@@ -669,6 +726,4 @@ h1, h2, h3, h4, h5 {
   z-index: -1; }
   .sky .foreground, .sky .midground, .sky .background {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%; }

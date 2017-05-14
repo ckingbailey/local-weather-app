@@ -86,7 +86,6 @@ h1,h2,h3,h4,h5 {
 -_-*-_-*-_-*-_-*-_-*-_-*-_-*/
 
 .sky{
-  background: $main-sky-color;
   position: absolute;
   top: 0; left: 0;
   height: 100%; //previously I had this as 120%. interesting. sthing to try.
@@ -96,7 +95,6 @@ h1,h2,h3,h4,h5 {
 
       .foreground, .midground, .background {
         position: absolute;
-        top: 0; left: 0;
         width: 100%;
       }
 }

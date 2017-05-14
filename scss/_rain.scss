@@ -1,43 +1,50 @@
 @import '_colors';
 
-.sky.rain5xx{
+.wet {
   background-color: $rain-sky-color;
-  height: 100%;
+
+  .rain-drop {
+    border-radius: .75rem;
+    position: absolute;
+  }
 
   .foreground .rain-drop {
     background: linear-gradient(0deg, rgba(255,255,255,.6), rgba(102,102,138,0));
     width: .15rem;
     height: 3rem;
-    border-radius: .75rem;
-    position: absolute;
-    animation-name: rain-fall-1;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
   }
 
   .midground .rain-drop {
     background: linear-gradient(0deg, rgba(220,220,230,.6), rgba(102,102,138,0));
     width: .12rem;
     height: 2.7rem;
-    border-radius: .75rem;
-    position: absolute;
-    animation-name: rain-fall-1;
-    animation-duration: 1.2s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
   }
 
   .background .rain-drop {
     background: linear-gradient(0deg, rgba(200,200,210,.6), rgba(102,102,138,0));
     width: .1rem;
     height: 2.5rem;
-    border-radius: .75rem;
-    position: absolute;
-    animation-name: rain-fall-1;
-    animation-duration: 1.4s;
+  }
+}
+
+.rain {
+  @extend .wet;
+
+  .rain-drop {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+  }
+
+  .foreground .rain-drop {
+    animation-duration: 1s;
+  }
+
+  .midground .rain-drop {
+    animation-duration: 1.2s;
+  }
+
+  .background .rain-drop {
+    animation-duration: 1.4s;
   }
 }
 

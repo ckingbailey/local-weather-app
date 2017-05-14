@@ -8,12 +8,24 @@ export default function extreme(id){
     case 900:
       appendHere.classList.add('tornado900');
       break;
-    case 901:
-      appendHere.classList.add('tropical-storm901');
+    case 901: { //'tropical-storm'
+      rain('hurricane', 250, -40, 125);
+      var drops = document.querySelectorAll('.rain-drop');
+      console.log(drops);
+      drops.forEach(function(el) {
+        el.style.animationName += ', wind-1';
+      });
       break;
-    case 902:
-      hurricane();
+    }
+    case 902: {
+      rain('hurricane', 250, -40, 125);
+      var drops = document.querySelectorAll('.rain-drop');
+      console.log(drops);
+      drops.forEach(function(el) {
+        el.style.animationName += ', wind-1';
+      });
       break;
+    }
     case 903:
       appendHere.classList.add('cold903');
       break;
@@ -28,10 +40,5 @@ export default function extreme(id){
       break;
     default:
       break;
-  }
-
-  function hurricane() {
-    rain();
-    appendHere.classList.add('hurricane902', 'rain5xx');
   }
 }

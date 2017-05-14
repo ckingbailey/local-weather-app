@@ -1,6 +1,7 @@
+@import '_colors';
+
 .sky.fog7xx {
-  height: 100%;
-//  background-color: inherit;
+  background-color: $snow-sky-color;
 
   .background, .midground, .foreground, .sub, .sup {
     position: absolute;
