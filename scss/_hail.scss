@@ -1,0 +1,40 @@
+@import '_colors';
+@import '_rain';
+
+$anim-dur: 1.5s;
+$hail-size: .5rem;
+
+.hail {
+  background-color: $snow-sky-color;
+
+  .rain-drop {
+    position: absolute;
+    border-radius: 50%;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  .foreground {
+    .rain-drop {
+      background-color: rgba(255,255,255,1);
+      height: $hail-size; width: $hail-size;
+      animation-duration: $anim-dur;
+    }
+  }
+
+  .midground {
+    .rain-drop {
+      background-color: rgba(255,255,255,.8);
+      height: $hail-size + .05rem; width: $hail-size + .05rem;
+      animation-duration: $anim-dur + .2s;
+    }
+  }
+
+  .background {
+    .rain-drop {
+      background-color: rgba(255,255,255,.65);
+      height: $hail-size + .1rem; width: $hail-size + .1rem;
+      animation-duration: $anim-dur + .4s;
+    }
+  }
+}

@@ -19,8 +19,8 @@ export default function extreme(id){
     }
     case 902: {
       rain('hurricane', 250, -40, 125);
+      //add wind
       var drops = document.querySelectorAll('.rain-drop');
-      console.log(drops);
       drops.forEach(function(el) {
         el.style.animationName += ', wind-1';
       });
@@ -35,9 +35,10 @@ export default function extreme(id){
     case 905:
       appendHere.classList.add('windy905');
       break;
-    case 906:
-      appendHere.classList.add('hail906');
+    case 906: {
+      rain('hail', 180, 0, 100);
       break;
+    }
     default:
       break;
   }

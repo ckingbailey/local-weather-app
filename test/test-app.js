@@ -113,6 +113,7 @@ function rain(weatherType, number, left, right){
       appendMe.style.left = dropRight;
       appendMe.style.top = dropTop;
       appendMe.style.animationName += anim;
+      appendMe.style.animationDelay = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["b" /* randomFlt */])(0,.33) + 's';
       appendHere.appendChild(appendMe);
     }
   }
@@ -269,13 +270,19 @@ function extreme(id){
     case 900:
       appendHere.classList.add('tornado900');
       break;
-    case 901:
-      appendHere.classList.add('tropical-storm901');
-      break;
-    case 902: {
+    case 901: { //'tropical-storm'
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__rain__["a" /* default */])('hurricane', 250, -40, 125);
       var drops = document.querySelectorAll('.rain-drop');
       console.log(drops);
+      drops.forEach(function(el) {
+        el.style.animationName += ', wind-1';
+      });
+      break;
+    }
+    case 902: {
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__rain__["a" /* default */])('hurricane', 250, -40, 125);
+      //add wind
+      var drops = document.querySelectorAll('.rain-drop');
       drops.forEach(function(el) {
         el.style.animationName += ', wind-1';
       });
@@ -290,9 +297,10 @@ function extreme(id){
     case 905:
       appendHere.classList.add('windy905');
       break;
-    case 906:
-      appendHere.classList.add('hail906');
+    case 906: {
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__rain__["a" /* default */])('hail', 180, 0, 100);
       break;
+    }
     default:
       break;
   }
@@ -377,7 +385,6 @@ function snow(){
       appendMe.style.left = flakeRight;
       appendMe.style.top = flakeTop;
       appendMe.style.animationDelay = animDelay;
-      appendMe.style.animationDuration = 12 + i/2 + 's';
       appendHere.appendChild(appendMe);
     }
   }
@@ -554,7 +561,7 @@ var weatherTypes = {
   other: 951
 };
 
-__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__js_dev_weather_animateWeather__["a" /* default */])(weatherTypes.extreme.hurricane);
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__js_dev_weather_animateWeather__["a" /* default */])(weatherTypes.extreme.hail);
 
 
 /***/ })

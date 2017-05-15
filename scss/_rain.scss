@@ -49,13 +49,64 @@
 }
 
 @keyframes rain-fall-1 {
-  to {transform: translateY(135vh)}
+  100% {
+    transform: translateY(135vh);
+  }
 }
 
 @keyframes rain-fall-2 {
-  to {transform: translateY(150vh)}
+  100% {
+    transform: translateY(150vh);
+  }
 }
 
 @keyframes rain-fall-3 {
-  to {transform: translateY(120vh)}
+  100% {
+    transform: translateY(120vh);
+  }
+}
+
+@keyframes rain-fade-1 {
+  0% {
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes rain-fade-2 {
+  0% {
+    opacity: 0;
+  }
+  9% {
+    opacity: 1;
+  }
+  96% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes rain-fade-3 {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  97% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }

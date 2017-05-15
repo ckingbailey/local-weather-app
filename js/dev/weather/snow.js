@@ -29,7 +29,6 @@ export default function snow(){
       appendMe.style.left = flakeRight;
       appendMe.style.top = flakeTop;
       appendMe.style.animationDelay = animDelay;
-      appendMe.style.animationDuration = 12 + i/2 + 's';
       appendHere.appendChild(appendMe);
     }
   }

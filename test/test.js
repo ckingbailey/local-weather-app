@@ -28,4 +28,4 @@ var weatherTypes = {
   other: 951
 };
 
-animateWeather(weatherTypes.extreme.hurricane);
+animateWeather(weatherTypes.extreme.hail);

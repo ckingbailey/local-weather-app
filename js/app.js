@@ -91,8 +91,8 @@ function randomFlt(min, max) {
 /* harmony export (immutable) */ __webpack_exports__["a"] = rain;
 
 
-function rain(weatherType){
-  var dropsCount = 200;
+function rain(weatherType, number, left, right){
+  var dropsCount = number;
   var appendHere = document.querySelector('.sky');
   var appendMe = document.createElement('div');
   var layers = ['foreground', 'midground', 'background'];
@@ -105,7 +105,7 @@ function rain(weatherType){
 
     for(let j=1; j<dropsCount; j++){
       var dropTop = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["a" /* default */])(-120,99) + 'vh';
-      var dropRight = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["a" /* default */])(0,100) + 'vw';
+      var dropRight = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["a" /* default */])(left,right) + 'vw';
       var anim = 'rain-fall-' + __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["a" /* default */])(1,3);
 
       appendMe = document.createElement('div');
@@ -505,10 +505,10 @@ function animateWeather(weatherId) {
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__thunder__["a" /* default */])();
   }
   else if (weatherId >= 300 && weatherId < 400) {
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__rain__["a" /* default */])('drizzle');
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__rain__["a" /* default */])('drizzle', 50, 0, 100);
   }
   else if (weatherId >= 500 && weatherId < 600) {
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__rain__["a" /* default */])('rain');
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__rain__["a" /* default */])('rain', 200, 0, 100);
   }
   else if (weatherId >= 600 && weatherId < 700) {
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__snow__["a" /* default */])();
@@ -584,15 +584,21 @@ function extreme(id){
     case 900:
       appendHere.classList.add('tornado900');
       break;
-    case 901:
-      appendHere.classList.add('tropical-storm901');
-      break;
-    case 902: {
-      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__rain__["a" /* default */])('hurricane');
+    case 901: { //'tropical-storm'
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__rain__["a" /* default */])('hurricane', 250, -40, 125);
       var drops = document.querySelectorAll('.rain-drop');
       console.log(drops);
       drops.forEach(function(el) {
-        el.style.animationName += ', wind';
+        el.style.animationName += ', wind-1';
+      });
+      break;
+    }
+    case 902: {
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__rain__["a" /* default */])('hurricane', 250, -40, 125);
+      var drops = document.querySelectorAll('.rain-drop');
+      console.log(drops);
+      drops.forEach(function(el) {
+        el.style.animationName += ', wind-1';
       });
       break;
     }
