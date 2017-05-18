@@ -22,7 +22,7 @@ export default function extreme(id){
       //add wind
       var drops = document.querySelectorAll('.rain-drop');
       drops.forEach(function(el) {
-        el.style.animationName += ', wind-1';
+        el.style.animationName += ', wind';
       });
       break;
     }

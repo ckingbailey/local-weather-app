@@ -22,7 +22,6 @@ export default function rain(weatherType, number, left, right){
       appendMe.style.left = dropRight;
       appendMe.style.top = dropTop;
       appendMe.style.animationName += anim;
-      appendMe.style.animationDelay = randomFlt(0,.33) + 's';
       appendHere.appendChild(appendMe);
     }
   }

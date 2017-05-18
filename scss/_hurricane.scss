@@ -5,8 +5,8 @@
   @extend .wet;
 
   .rain-drop {
-    animation-iteration-count: infinite, infinite;
-    animation-timing-function: linear, linear;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
   }
 
   .foreground {
@@ -16,7 +16,7 @@
     top: -15vh;
 
     .rain-drop {
-      animation-duration: 1s, 4s;
+      animation-duration: 1s, .34s, 4s;
     }
   }
 
@@ -41,10 +41,6 @@
   }
 }
 
-@keyframes wind-1 {
+@keyframes wind {
   to {margin-left: 30vw;}
-}
-
-@keyframes wind-2 {
-  to {margin-left: -20vw;}
 }
