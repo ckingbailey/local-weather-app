@@ -7,6 +7,7 @@ import fog from '../js/dev/weather/fog';
 import rain from '../js/dev/weather/rain';
 import snow from '../js/dev/weather/snow';
 import thunder from '../js/dev/weather/thunder';
+import tornado from '../js/dev/weather/tornado';
 
 var weatherTypes = {
   thunder: 200,
@@ -28,4 +29,4 @@ var weatherTypes = {
   other: 951
 };
 
-animateWeather(weatherTypes.extreme.hail);
+animateWeather(weatherTypes.tornado);

@@ -106,14 +106,13 @@ function rain(weatherType, number, left, right){
     for(let j=1; j<dropsCount; j++){
       var dropTop = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["a" /* default */])(-120,99) + 'vh';
       var dropRight = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["a" /* default */])(left,right) + 'vw';
-      var anim = 'rain-fall-' + __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["a" /* default */])(1,3);
 
       appendMe = document.createElement('div');
       appendMe.classList.add('rain-drop');
       appendMe.style.left = dropRight;
       appendMe.style.top = dropTop;
-      appendMe.style.animationName += anim;
-      appendMe.style.animationDelay = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["b" /* randomFlt */])(0,.33) + 's';
+      appendMe.style.animationName += 'rain-fall-' + __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["a" /* default */])(1,3) + ', rain-fade';
+      appendMe.style.animationDelay = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["b" /* randomFlt */])(0,.33) + 's, 0';
       appendHere.appendChild(appendMe);
     }
   }
@@ -284,7 +283,7 @@ function extreme(id){
       //add wind
       var drops = document.querySelectorAll('.rain-drop');
       drops.forEach(function(el) {
-        el.style.animationName += ', wind-1';
+        el.style.animationName += ', wind';
       });
       break;
     }
@@ -561,7 +560,7 @@ var weatherTypes = {
   other: 951
 };
 
-__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__js_dev_weather_animateWeather__["a" /* default */])(weatherTypes.extreme.hail);
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__js_dev_weather_animateWeather__["a" /* default */])(weatherTypes.rain);
 
 
 /***/ })

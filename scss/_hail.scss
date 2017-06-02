@@ -1,7 +1,8 @@
 @import '_colors';
 @import '_rain';
 
-$anim-dur: 1.5s;
+$fall-dur: 1.5s;
+$fade-dur: .33s;
 $hail-size: .5rem;
 
 .hail {
@@ -11,14 +12,14 @@ $hail-size: .5rem;
     position: absolute;
     border-radius: 50%;
     animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    animation-iteration-count: infinite, 1;
   }
 
   .foreground {
     .rain-drop {
       background-color: rgba(255,255,255,1);
       height: $hail-size; width: $hail-size;
-      animation-duration: $anim-dur;
+      animation-duration: $fall-dur, $fade-dur;
     }
   }
 
@@ -26,7 +27,7 @@ $hail-size: .5rem;
     .rain-drop {
       background-color: rgba(255,255,255,.8);
       height: $hail-size + .05rem; width: $hail-size + .05rem;
-      animation-duration: $anim-dur + .2s;
+      animation-duration: $fall-dur + .2s, $fade-dur;
     }
   }
 
@@ -34,7 +35,7 @@ $hail-size: .5rem;
     .rain-drop {
       background-color: rgba(255,255,255,.65);
       height: $hail-size + .1rem; width: $hail-size + .1rem;
-      animation-duration: $anim-dur + .4s;
+      animation-duration: $fall-dur + .4s, $fade-dur;
     }
   }
 }

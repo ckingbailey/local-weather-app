@@ -1,5 +1,8 @@
 @import '_colors';
 
+$fall-dur: 1s;
+$fade-dur: .33s;
+
 .wet {
   background-color: $rain-sky-color;
 
@@ -32,19 +35,19 @@
 
   .rain-drop {
     animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    animation-iteration-count: infinite, 1;
   }
 
   .foreground .rain-drop {
-    animation-duration: 1s;
+    animation-duration: $fall-dur, $fade-dur;
   }
 
   .midground .rain-drop {
-    animation-duration: 1.2s;
+    animation-duration: $fall-dur + .2s, $fade-dur;
   }
 
   .background .rain-drop {
-    animation-duration: 1.4s;
+    animation-duration: $fall-dur + .4s, $fade-dur;
   }
 }
 
@@ -66,47 +69,11 @@
   }
 }
 
-@keyframes rain-fade-1 {
+@keyframes rain-fade {
   0% {
     opacity: 0;
   }
-  8% {
-    opacity: 1;
-  }
-  95% {
-    opacity: 1;
-  }
   100% {
-    opacity: 0;
-  }
-}
-
-@keyframes rain-fade-2 {
-  0% {
-    opacity: 0;
-  }
-  9% {
     opacity: 1;
-  }
-  96% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes rain-fade-3 {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  97% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
   }
 }

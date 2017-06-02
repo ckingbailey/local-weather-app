@@ -1,12 +1,16 @@
 @import '_colors';
 @import '_rain';
 
+$fall-dur: 1s;
+$fade-dur: .33s;
+$wind-dur: 4s;
+
 .hurricane {
   @extend .wet;
 
   .rain-drop {
-    animation-iteration-count: infinite, infinite;
-    animation-timing-function: linear, linear;
+    animation-iteration-count: infinite, 1, infinite;
+    animation-timing-function: linear;
   }
 
   .foreground {
@@ -16,7 +20,7 @@
     top: -15vh;
 
     .rain-drop {
-      animation-duration: 1s, 4s;
+      animation-duration: $fall-dur, $fade-dur, $wind-dur;
     }
   }
 
@@ -26,7 +30,7 @@
     top: -5vh;
 
     .rain-drop {
-      animation-duration: 1.2s, 4s;
+      animation-duration: $fall-dur + .2s, $fade-dur, $wind-dur;
     }
   }
 
@@ -36,15 +40,11 @@
     transform: rotate(12deg);
 
     .rain-drop {
-      animation-duration: 1.4s, 4s;
+      animation-duration: $fall-dur + .4s, $fade-dur, $wind-dur;
     }
   }
 }
 
-@keyframes wind-1 {
+@keyframes wind {
   to {margin-left: 30vw;}
-}
-
-@keyframes wind-2 {
-  to {margin-left: -20vw;}
 }
