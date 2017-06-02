@@ -9,7 +9,7 @@ $wind-dur: 4s;
   @extend .wet;
 
   .rain-drop {
-    animation-iteration-count: infinite, 1, infinite;
+    animation-iteration-count: infinite;
     animation-timing-function: linear;
   }
 

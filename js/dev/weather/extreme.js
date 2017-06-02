@@ -57,34 +57,34 @@ function other(id) {
     case 952: {
       appendHere.classList.add('light-breeze');
     }
-    case 953 {
+    case 953: {
       appendHere.classList.add('gentle-breeze');
     }
-    case 954 {
+    case 954: {
       appendHere.classList.add('moderate-breeze');
     }
-    case 955 {
+    case 955: {
       appendHere.classList.add('fresh-breeze');
     }
-    case 956 {
+    case 956: {
       appendHere.classList.add('strong-breeze');
     }
-    case 957 {
+    case 957: {
       appendHere.classList.add('high-wind');
     }
-    case 958 {
+    case 958: {
       appendHere.classList.add('gale');
     }
-    case 959 {
+    case 959: {
       appendHere.classList.add('severe-gale');
     }
-    case 960 {
+    case 960: {
       appendHere.classList.add('storm');
     }
-    case 961 {
+    case 961: {
       appendHere.classList.add('violent-storm');
     }
-    case 962 {
+    case 962: {
       rain('hurricane', 250, -40, 125);
       //add wind
       var drops = document.querySelectorAll('.rain-drop');

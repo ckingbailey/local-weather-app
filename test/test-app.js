@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 10);
+/******/ 	return __webpack_require__(__webpack_require__.s = 11);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -106,13 +106,13 @@ function rain(weatherType, number, left, right){
     for(let j=1; j<dropsCount; j++){
       var dropTop = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["a" /* default */])(-120,99) + 'vh';
       var dropRight = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["a" /* default */])(left,right) + 'vw';
+      var anim = 'rain-fall-' + __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["a" /* default */])(1,3);
 
       appendMe = document.createElement('div');
       appendMe.classList.add('rain-drop');
       appendMe.style.left = dropRight;
       appendMe.style.top = dropTop;
-      appendMe.style.animationName += 'rain-fall-' + __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["a" /* default */])(1,3) + ', rain-fade';
-      appendMe.style.animationDelay = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["b" /* randomFlt */])(0,.33) + 's, 0';
+      appendMe.style.animationName += anim;
       appendHere.appendChild(appendMe);
     }
   }
@@ -258,7 +258,9 @@ function drizzle(){
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rain__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tornado__ = __webpack_require__(9);
 /* harmony export (immutable) */ __webpack_exports__["a"] = extreme;
+
 
 
 function extreme(id){
@@ -266,9 +268,10 @@ function extreme(id){
   var appendMe;
 
   switch (id) {
-    case 900:
-      appendHere.classList.add('tornado900');
+    case 900: {
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__tornado__["a" /* default */])();
       break;
+    }
     case 901: { //'tropical-storm'
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__rain__["a" /* default */])('hurricane', 250, -40, 125);
       var drops = document.querySelectorAll('.rain-drop');
@@ -302,6 +305,56 @@ function extreme(id){
     }
     default:
       break;
+  }
+}
+
+function other(id) {
+  var appendHere = document.querySelector('.sky');
+  var appendMe;
+
+  switch (id) {
+    case 951: {
+      appendHere.classList.add('calm');
+    }
+    case 952: {
+      appendHere.classList.add('light-breeze');
+    }
+    case 953: {
+      appendHere.classList.add('gentle-breeze');
+    }
+    case 954: {
+      appendHere.classList.add('moderate-breeze');
+    }
+    case 955: {
+      appendHere.classList.add('fresh-breeze');
+    }
+    case 956: {
+      appendHere.classList.add('strong-breeze');
+    }
+    case 957: {
+      appendHere.classList.add('high-wind');
+    }
+    case 958: {
+      appendHere.classList.add('gale');
+    }
+    case 959: {
+      appendHere.classList.add('severe-gale');
+    }
+    case 960: {
+      appendHere.classList.add('storm');
+    }
+    case 961: {
+      appendHere.classList.add('violent-storm');
+    }
+    case 962: {
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__rain__["a" /* default */])('hurricane', 250, -40, 125);
+      //add wind
+      var drops = document.querySelectorAll('.rain-drop');
+      drops.forEach(function(el) {
+        el.style.animationName += ', wind';
+      });
+      break;
+    }
   }
 }
 
@@ -462,6 +515,90 @@ appendMe.addEventListener('animationiteration', moveLightning);
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = tornado;
+function tornado() {
+
+  var appendHere = document.querySelector('.sky');
+  var partCt = +(window.getComputedStyle(document.querySelector('.tornado')).height.match(/\d+/))/10;
+  var layerCt = 5;
+  var b, c, l, appendMe, comSty, offset, rate, run;
+
+  appendHere.classList.add('tornado');
+
+  for(let i = 0; i < layerCt; i++) {
+    appendMe = document.createElement('div');
+    appendMe.classList.add('layer', 'layer-' + (i+1));
+    appendHere.appendChild(appendMe);
+  }
+
+  appendMe = document.querySelector('.layer-1');
+
+  //length of run of slope = the difference between the width of layers 1 & 2
+  run = window.getComputedStyle(document.querySelector('.layer-2')).width.match(/\d+\.*\d*/)[0] - window.getComputedStyle(appendMe).width.match(/\d+\.*\d*/)[0];
+
+  offset = window.getComputedStyle(appendMe).width.match(/\d+\.*\d*/)[0] - run;
+
+  //rise/run = height of layer element / length of run of slope
+  rate = window.getComputedStyle(appendMe).height.match(/\d+\.*\d*/)[0] / run;
+
+  function randomFlt(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  //grab layers and layer styles to contain particles
+  for(let i = 0; i < layers.length; i++) {
+    appendHere = document.querySelector('.layer-' + (i+1));
+    comSty = window.getComputedStyle(appendHere);
+
+    comSty = {
+      wd: comSty.width.match(/(\d+\.*\d*)(\D+)/),
+      ht: comSty.height.match(/(\d+\.*\d*)(\D+)/)
+    };
+
+    comSty.wd[1] = +(comSty.wd[1]);
+    comSty.ht[1] = +(comSty.ht[1]);
+
+  //create particles within current layer
+    for(let j = 0; j < partCt * comSty.wd[1] / comSty.ht[1]; j++) {
+      b = randomFlt(-1,20);
+      c = (comSty.wd[1] - ((comSty.wd[1] - l) * 2))/2;
+
+      appendMe.classList.add('particle');
+      appendMe.style.bottom = b + 'vh';
+      //console.log('bottom,', window.getComputedStyle(appendMe));
+      //b = window.getComputedStyle(appendMe).bottom.match(/\d+\.*\d*/)[0];
+      l = randomFlt(b/rate + (comSty.wd[1] - run), b/rate + comSty.wd[1]);
+      appendMe.style.left = l + comSty.wd[2];
+      appendMe.style.height = randomFlt(.1,.25) + 'rem';
+      appendMe.style.width = randomFlt(.15,.35) + 'rem';
+      appendMe.style.transformOrigin = -l + 'px';
+
+      appendMe.setAttribute('c', c);
+
+      if(c <= 0) {
+        appendMe.style.animationDuration = randomFlt((c * -1) ** .02, (c* -1) ** .1) + 's';
+      }
+      else appendMe.style.animationDuration = randomFlt(c ** .01, c ** .08) + 's';
+
+      //appendMe.style.backgroundColor = '#664';
+      //appendMe.style.transform = 'rotateY(' + randomFlt(0,360) + 'deg)';
+      appendHere.appendChild(appendMe);
+      appendMe = document.createElement('div');
+    }
+
+  }
+
+  document.querySelectorAll('.particle').forEach(function(el) {
+    el.style.opacity = 1;
+  });
+}
+
+
+/***/ }),
+/* 10 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__clear__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__clouds__ = __webpack_require__(3);
@@ -516,12 +653,12 @@ function animateWeather(weatherId) {
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__js_dev_weather_animateWeather__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__js_dev_weather_animateWeather__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__js_dev_weather_clouds__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__js_dev_weather_clear__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__js_dev_weather_drizzle__ = __webpack_require__(4);
@@ -530,6 +667,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__js_dev_weather_rain__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__js_dev_weather_snow__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__js_dev_weather_thunder__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__js_dev_weather_tornado__ = __webpack_require__(9);
+
 
 
 

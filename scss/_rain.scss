@@ -68,12 +68,3 @@ $fade-dur: .33s;
     transform: translateY(120vh);
   }
 }
-
-@keyframes rain-fade {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
