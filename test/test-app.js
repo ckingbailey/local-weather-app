@@ -87,8 +87,8 @@ function randomFlt(min, max) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__ = __webpack_require__(0);
 /* harmony export (immutable) */ __webpack_exports__["a"] = rain;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__ = __webpack_require__(0);
 
 
 function rain(weatherType, number, left, right){
@@ -220,8 +220,8 @@ function clouds(){
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__ = __webpack_require__(0);
 /* unused harmony export default */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__ = __webpack_require__(0);
 
 
 function drizzle(){
@@ -257,9 +257,9 @@ function drizzle(){
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = extreme;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rain__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tornado__ = __webpack_require__(9);
-/* harmony export (immutable) */ __webpack_exports__["a"] = extreme;
 
 
 
@@ -448,8 +448,8 @@ function snow(){
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__ = __webpack_require__(0);
 /* harmony export (immutable) */ __webpack_exports__["a"] = thunder;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__ = __webpack_require__(0);
 
 
 function thunder() {
@@ -599,6 +599,7 @@ function tornado() {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = animateWeather;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__clear__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__clouds__ = __webpack_require__(3);
@@ -608,7 +609,6 @@ function tornado() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__rain__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__snow__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__thunder__ = __webpack_require__(8);
-/* harmony export (immutable) */ __webpack_exports__["a"] = animateWeather;
 
 
 
@@ -699,7 +699,7 @@ var weatherTypes = {
   other: 951
 };
 
-__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__js_dev_weather_animateWeather__["a" /* default */])(weatherTypes.rain);
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__js_dev_weather_animateWeather__["a" /* default */])(weatherTypes.extreme.tornado);
 
 
 /***/ })
