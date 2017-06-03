@@ -1,7 +1,7 @@
 export default function tornado() {
 
   var appendHere = document.querySelector('.sky');
-  var partCt = +(window.getComputedStyle(document.querySelector('.tornado')).height.match(/\d+/))/10;
+  var partCt = +(window.getComputedStyle(appendHere).height.match(/\d+/))/10;
   var layerCt = 5;
   var b, c, l, appendMe, comSty, offset, rate, run;
 
@@ -28,7 +28,7 @@ export default function tornado() {
   }
 
   //grab layers and layer styles to contain particles
-  for(let i = 0; i < layers.length; i++) {
+  for(let i = 0; i < layerCt; i++) {
     appendHere = document.querySelector('.layer-' + (i+1));
     comSty = window.getComputedStyle(appendHere);
 
@@ -45,6 +45,7 @@ export default function tornado() {
       b = randomFlt(-1,20);
       c = (comSty.wd[1] - ((comSty.wd[1] - l) * 2))/2;
 
+      appendMe = document.createElement('div');
       appendMe.classList.add('particle');
       appendMe.style.bottom = b + 'vh';
       //console.log('bottom,', window.getComputedStyle(appendMe));
@@ -65,7 +66,6 @@ export default function tornado() {
       //appendMe.style.backgroundColor = '#664';
       //appendMe.style.transform = 'rotateY(' + randomFlt(0,360) + 'deg)';
       appendHere.appendChild(appendMe);
-      appendMe = document.createElement('div');
     }
 
   }

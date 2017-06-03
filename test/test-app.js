@@ -87,8 +87,8 @@ function randomFlt(min, max) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = rain;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__ = __webpack_require__(0);
+/* harmony export (immutable) */ __webpack_exports__["a"] = rain;
 
 
 function rain(weatherType, number, left, right){
@@ -220,8 +220,8 @@ function clouds(){
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export default */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__ = __webpack_require__(0);
+/* unused harmony export default */
 
 
 function drizzle(){
@@ -257,9 +257,9 @@ function drizzle(){
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = extreme;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rain__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tornado__ = __webpack_require__(9);
+/* harmony export (immutable) */ __webpack_exports__["a"] = extreme;
 
 
 
@@ -448,8 +448,8 @@ function snow(){
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = thunder;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__ = __webpack_require__(0);
+/* harmony export (immutable) */ __webpack_exports__["a"] = thunder;
 
 
 function thunder() {
@@ -519,7 +519,7 @@ appendMe.addEventListener('animationiteration', moveLightning);
 function tornado() {
 
   var appendHere = document.querySelector('.sky');
-  var partCt = +(window.getComputedStyle(document.querySelector('.tornado')).height.match(/\d+/))/10;
+  var partCt = +(window.getComputedStyle(appendHere).height.match(/\d+/))/10;
   var layerCt = 5;
   var b, c, l, appendMe, comSty, offset, rate, run;
 
@@ -546,7 +546,7 @@ function tornado() {
   }
 
   //grab layers and layer styles to contain particles
-  for(let i = 0; i < layers.length; i++) {
+  for(let i = 0; i < layerCt; i++) {
     appendHere = document.querySelector('.layer-' + (i+1));
     comSty = window.getComputedStyle(appendHere);
 
@@ -563,6 +563,7 @@ function tornado() {
       b = randomFlt(-1,20);
       c = (comSty.wd[1] - ((comSty.wd[1] - l) * 2))/2;
 
+      appendMe = document.createElement('div');
       appendMe.classList.add('particle');
       appendMe.style.bottom = b + 'vh';
       //console.log('bottom,', window.getComputedStyle(appendMe));
@@ -583,7 +584,6 @@ function tornado() {
       //appendMe.style.backgroundColor = '#664';
       //appendMe.style.transform = 'rotateY(' + randomFlt(0,360) + 'deg)';
       appendHere.appendChild(appendMe);
-      appendMe = document.createElement('div');
     }
 
   }
@@ -599,7 +599,6 @@ function tornado() {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = animateWeather;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__clear__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__clouds__ = __webpack_require__(3);
@@ -609,6 +608,7 @@ function tornado() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__rain__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__snow__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__thunder__ = __webpack_require__(8);
+/* harmony export (immutable) */ __webpack_exports__["a"] = animateWeather;
 
 
 
