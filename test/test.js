@@ -29,4 +29,4 @@ var weatherTypes = {
   other: 951
 };
 
-animateWeather(weatherTypes.extreme.tornado);
+animateWeather(weatherTypes.extreme.windy);

@@ -2,6 +2,7 @@
 
 .sky.fog7xx {
   background-color: $snow-sky-color;
+  transition: background-color .5s linear;
 
   .background, .midground, .foreground, .sub, .sup {
     position: absolute;

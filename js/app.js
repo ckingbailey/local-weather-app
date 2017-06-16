@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 12);
+/******/ 	return __webpack_require__(__webpack_require__.s = 13);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -84,43 +84,6 @@ function randomFlt(min, max) {
 
 /***/ }),
 /* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = rain;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__ = __webpack_require__(0);
-
-
-function rain(weatherType, number, left, right){
-  var dropsCount = number;
-  var appendHere = document.querySelector('.sky');
-  var appendMe = document.createElement('div');
-  var layers = ['foreground', 'midground', 'background'];
-
-  appendHere.classList.add(weatherType);
-
-  for(let i=0; i<layers.length; i++){
-
-    appendHere = document.querySelector('.' + layers[i]);
-
-    for(let j=1; j<dropsCount; j++){
-      var dropTop = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["a" /* default */])(-120,99) + 'vh';
-      var dropRight = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["a" /* default */])(left,right) + 'vw';
-      var anim = 'rain-fall-' + __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["a" /* default */])(1,3);
-
-      appendMe = document.createElement('div');
-      appendMe.classList.add('rain-drop');
-      appendMe.style.left = dropRight;
-      appendMe.style.top = dropTop;
-      appendMe.style.animationName += anim;
-      appendHere.appendChild(appendMe);
-    }
-  }
-}
-
-
-/***/ }),
-/* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -181,36 +144,36 @@ function clouds(){
 
 
 /***/ }),
-/* 3 */
+/* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export default */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__ = __webpack_require__(0);
+/* harmony export (immutable) */ __webpack_exports__["a"] = rain;
 
 
-function drizzle(){
-  var dropsCount = 50;
+function rain(weatherType, number, left, right){
+  var dropsCount = number;
   var appendHere = document.querySelector('.sky');
   var appendMe = document.createElement('div');
-  var layers = ['foreground', 'background', 'midground'];
+  var layers = ['foreground', 'midground', 'background'];
 
-  appendHere.classList.add('drizzle3xx');
+  appendHere.classList.add(weatherType);
 
   for(let i=0; i<layers.length; i++){
 
     appendHere = document.querySelector('.' + layers[i]);
 
-    for(let j=0; j<dropsCount; j++){
-      var dropTop = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["a" /* default */])(-120,129) + 'vh';
-      var dropRight = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["a" /* default */])(0,100) + 'vw';
-      var anim = 'drizzle-fall-' + __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["a" /* default */])(1,3);
+    for(let j=1; j<dropsCount; j++){
+      var dropTop = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["a" /* default */])(-120,99) + 'vh';
+      var dropRight = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["a" /* default */])(left,right) + 'vw';
+      var anim = 'rain-fall-' + __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["a" /* default */])(1,3);
 
       appendMe = document.createElement('div');
       appendMe.classList.add('rain-drop');
       appendMe.style.left = dropRight;
       appendMe.style.top = dropTop;
-      appendMe.style.animationName = anim;
+      appendMe.style.animationName += anim;
       appendHere.appendChild(appendMe);
     }
   }
@@ -218,96 +181,12 @@ function drizzle(){
 
 
 /***/ }),
-/* 4 */
+/* 3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = fog;
-function fog() {
-  var appendMe = document.createElement('div');
-  var appendHere = document.querySelector('.sky');
-  var layers = ['sub', 'background','midground','foreground','sup'];
-
-  appendHere.classList.add('fog7xx');
-
-  for(let i=0; i<layers.length; i++){
-    if(!document.querySelector('.' + layers[i])){
-      appendMe.classList.add(layers[i]);
-
-      if(i == 0){
-        appendHere.insertAdjacentElement('afterbegin', appendMe);
-      }
-
-      else {
-      appendHere.appendChild(appendMe);
-      }
-      
-      appendHere = appendMe;
-    }
-
-    else appendHere = document.querySelector('.' + layers[i]);
-
-    for(let j=1; j<=3; j++){
-      appendMe = document.createElement('div');
-      appendMe.classList.add('fog-' + j);
-      appendHere.appendChild(appendMe);
-    }
-    appendMe = document.createElement('div');
-    appendHere = document.querySelector('.sky');
-  }
-}
-
-
-/***/ }),
-/* 5 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = snow;
-function snow(){
-  var dropsCount = 70;
-  var appendHere = document.querySelector('.sky');
-  var appendMe = document.createElement('div');
-  var layers = ['foreground', 'midground', 'background'];
-
-  function randomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  }
-
-  function randomFlt(min, max) {
-    return Math.random() * (max - min + 1) + min;
-  }
-
-  appendHere.classList.add('snow6xx');
-
-  for(var i=0; i<layers.length; i++){
-
-    appendHere = document.querySelector('.' + layers[i]);
-
-    for(let j=1; j<dropsCount; j++){
-      var flakeTop = randomInt(-1,-9) + 'vh';
-      var flakeRight = randomFlt(0,100) + 'vw';
-      var animDelay = randomFlt(0 + i/4,10 + i) + 's';
-      //var driftTime = randomFlt(3,6) + 's';
-
-      appendMe = document.createElement('div');
-      appendMe.className = 'snow-flake';
-      appendMe.style.left = flakeRight;
-      appendMe.style.top = flakeTop;
-      appendMe.style.animationDelay = animDelay;
-      appendHere.appendChild(appendMe);
-    }
-  }
-}
-
-
-/***/ }),
-/* 6 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = thunder;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__ = __webpack_require__(0);
+/* harmony export (immutable) */ __webpack_exports__["a"] = thunder;
 
 
 function thunder() {
@@ -369,21 +248,142 @@ appendMe.addEventListener('animationiteration', moveLightning);
 
 
 /***/ }),
+/* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__ = __webpack_require__(0);
+/* unused harmony export default */
+
+
+function drizzle(){
+  var dropsCount = 50;
+  var appendHere = document.querySelector('.sky');
+  var appendMe = document.createElement('div');
+  var layers = ['foreground', 'background', 'midground'];
+
+  appendHere.classList.add('drizzle3xx');
+
+  for(let i=0; i<layers.length; i++){
+
+    appendHere = document.querySelector('.' + layers[i]);
+
+    for(let j=0; j<dropsCount; j++){
+      var dropTop = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["a" /* default */])(-120,129) + 'vh';
+      var dropRight = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["a" /* default */])(0,100) + 'vw';
+      var anim = 'drizzle-fall-' + __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["a" /* default */])(1,3);
+
+      appendMe = document.createElement('div');
+      appendMe.classList.add('rain-drop');
+      appendMe.style.left = dropRight;
+      appendMe.style.top = dropTop;
+      appendMe.style.animationName = anim;
+      appendHere.appendChild(appendMe);
+    }
+  }
+}
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = fog;
+function fog() {
+  var appendMe = document.createElement('div');
+  var appendHere = document.querySelector('.sky');
+  var layers = ['sub', 'background','midground','foreground','sup'];
+
+  appendHere.classList.add('fog7xx');
+
+  for(let i=0; i<layers.length; i++){
+    if(!document.querySelector('.' + layers[i])){
+      appendMe.classList.add(layers[i]);
+
+      if(i == 0){
+        appendHere.insertAdjacentElement('afterbegin', appendMe);
+      }
+
+      else {
+      appendHere.appendChild(appendMe);
+      }
+      
+      appendHere = appendMe;
+    }
+
+    else appendHere = document.querySelector('.' + layers[i]);
+
+    for(let j=1; j<=3; j++){
+      appendMe = document.createElement('div');
+      appendMe.classList.add('fog-' + j);
+      appendHere.appendChild(appendMe);
+    }
+    appendMe = document.createElement('div');
+    appendHere = document.querySelector('.sky');
+  }
+}
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = snow;
+function snow(){
+  var dropsCount = 70;
+  var appendHere = document.querySelector('.sky');
+  var appendMe = document.createElement('div');
+  var layers = ['foreground', 'midground', 'background'];
+
+  function randomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+
+  function randomFlt(min, max) {
+    return Math.random() * (max - min + 1) + min;
+  }
+
+  appendHere.classList.add('snow6xx');
+
+  for(var i=0; i<layers.length; i++){
+
+    appendHere = document.querySelector('.' + layers[i]);
+
+    for(let j=1; j<dropsCount; j++){
+      var flakeTop = randomInt(-1,-9) + 'vh';
+      var flakeRight = randomFlt(0,100) + 'vw';
+      var animDelay = randomFlt(0 + i/4,10 + i) + 's';
+      //var driftTime = randomFlt(3,6) + 's';
+
+      appendMe = document.createElement('div');
+      appendMe.className = 'snow-flake';
+      appendMe.style.left = flakeRight;
+      appendMe.style.top = flakeTop;
+      appendMe.style.animationDelay = animDelay;
+      appendHere.appendChild(appendMe);
+    }
+  }
+}
+
+
+/***/ }),
 /* 7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__weather_clouds__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__weather_drizzle__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__weather_fog__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__weather_rain__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__weather_snow__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__weather_thunder__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__weather_animateWeather__ = __webpack_require__(8);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return temperature; });
 /* unused harmony export requestWeather */
 /* harmony export (immutable) */ __webpack_exports__["a"] = getLocalWeather;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__weather_clouds__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__weather_drizzle__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__weather_fog__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__weather_rain__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__weather_snow__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__weather_thunder__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__weather_animateWeather__ = __webpack_require__(8);
 
 
 
@@ -478,16 +478,16 @@ function getLocalWeather(locURL){
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = animateWeather;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__clear__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__clouds__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__drizzle__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__clouds__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__drizzle__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__extreme__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__fog__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__rain__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__snow__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__thunder__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__fog__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__rain__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__snow__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__thunder__ = __webpack_require__(3);
+/* harmony export (immutable) */ __webpack_exports__["a"] = animateWeather;
 
 
 
@@ -571,8 +571,16 @@ function clear(){
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__clouds__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__rain__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__thunder__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tornado__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__windy__ = __webpack_require__(14);
 /* harmony export (immutable) */ __webpack_exports__["a"] = extreme;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rain__ = __webpack_require__(1);
+
+
+
+
 
 
 function extreme(id){
@@ -580,20 +588,93 @@ function extreme(id){
   var appendMe;
 
   switch (id) {
-    case 900:
-      appendHere.classList.add('tornado900');
+    case 900: {
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__tornado__["a" /* default */])();
       break;
+    } //done
     case 901: { //'tropical-storm'
-      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__rain__["a" /* default */])('hurricane', 250, -40, 125);
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__rain__["a" /* default */])('hurricane', 250, -40, 125);
       var drops = document.querySelectorAll('.rain-drop');
       console.log(drops);
       drops.forEach(function(el) {
         el.style.animationName += ', wind-1';
       });
       break;
-    }
+    } //done
     case 902: {
-      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__rain__["a" /* default */])('hurricane', 250, -40, 125);
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__rain__["a" /* default */])('hurricane', 250, -40, 125);
+      //add wind
+      var drops = document.querySelectorAll('.rain-drop');
+      drops.forEach(function(el) {
+        el.style.animationName += ', wind';
+      });
+      break;
+    } //done
+    case 903: {
+      appendHere.classList.add('cold903');
+      break;
+    }//done
+    case 904: {
+      appendHere.classList.add('hot904');
+      break;
+    }//done
+    case 905: { //'windy'
+      //clouds();
+      //document.querySelectorAll('[class^=cloud]').forEach(function(cloud){
+        //cloud.style.animationDuration = +(window.getComputedStyle(cloud).animationDuration.match(/\d+\.*\d*/)) / 12 + 's';
+      //});
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__windy__["a" /* default */])(10);
+      break;
+    }
+    case 906: {
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__rain__["a" /* default */])('hail', 180, 0, 100);
+      break;
+    }
+    default:
+      break;
+  }
+}
+
+function other(id) {
+  var appendHere = document.querySelector('.sky');
+  var appendMe;
+
+  switch (id) {
+    case 951: {
+      appendHere.classList.add('calm');
+    }
+    case 952: {  //'light-breeze'
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__windy__["a" /* default */])(3);
+    }
+    case 953: { // 'gentle-breeze'
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__windy__["a" /* default */])(3);
+    }
+    case 954: { // 'moderate-breeze'
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__windy__["a" /* default */])(5);
+    }
+    case 955: { // 'fresh-breeze'
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__windy__["a" /* default */])(5);
+    }
+    case 956: { // 'strong-breeze'
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__windy__["a" /* default */])(7);
+    }
+    case 957: { // 'high-wind'
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__windy__["a" /* default */])(15);
+    }
+    case 958: { // 'gale'
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__windy__["a" /* default */])(15);
+    }
+    case 959: { // 'sever-gale'
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__windy__["a" /* default */])(20);
+    }
+    case 960: {
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__thunder__["a" /* default */])();
+    }
+    case 961: {
+      appendHere.classList.add('violent-storm');
+    }
+    case 962: {
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__rain__["a" /* default */])('hurricane', 250, -40, 125);
       //add wind
       var drops = document.querySelectorAll('.rain-drop');
       drops.forEach(function(el) {
@@ -601,21 +682,6 @@ function extreme(id){
       });
       break;
     }
-    case 903:
-      appendHere.classList.add('cold903');
-      break;
-    case 904:
-      appendHere.classList.add('hot904');
-      break;
-    case 905:
-      appendHere.classList.add('windy905');
-      break;
-    case 906: {
-      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__rain__["a" /* default */])('hail', 180, 0, 100);
-      break;
-    }
-    default:
-      break;
   }
 }
 
@@ -625,9 +691,100 @@ function extreme(id){
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = tornado;
+/* unused harmony export colorParticles */
+function tornado() {
+
+  var appendHere = document.querySelector('.sky');
+  var partCt = +(window.getComputedStyle(appendHere).height.match(/\d+/))/10;
+  var layerCt = 6;
+  var b, c, l, appendMe, comSty, offset, rate, run;
+
+  appendHere.classList.add('tornado');
+
+  for(let i = 0; i < layerCt; i++) {
+    appendMe = document.createElement('div');
+    appendMe.classList.add('layer', 'layer-' + (i+1));
+    appendHere.appendChild(appendMe);
+  }
+
+  appendMe = document.querySelector('.layer-1');
+
+  //length of run of slope = the difference between the width of layers 1 & 2
+  run = window.getComputedStyle(document.querySelector('.layer-2')).width.match(/\d+\.*\d*/)[0] - window.getComputedStyle(appendMe).width.match(/\d+\.*\d*/)[0];
+
+  offset = window.getComputedStyle(appendMe).width.match(/\d+\.*\d*/)[0] - run;
+
+  //rise/run = height of layer element / length of run of slope
+  rate = window.getComputedStyle(appendMe).height.match(/\d+\.*\d*/)[0] / run;
+
+  function randomFlt(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  //grab layers and layer styles to contain particles
+  for(let i = 0; i < layerCt; i++) {
+    appendHere = document.querySelector('.layer-' + (i+1));
+    comSty = window.getComputedStyle(appendHere);
+
+    comSty = {
+      wd: comSty.width.match(/(\d+\.*\d*)(\D+)/),
+      ht: comSty.height.match(/(\d+\.*\d*)(\D+)/)
+    };
+
+    comSty.wd[1] = +(comSty.wd[1]);
+    comSty.ht[1] = +(comSty.ht[1]);
+
+  //create particles within current layer
+    for(let j = 0; j < partCt * comSty.wd[1] / comSty.ht[1]; j++) {
+      b = randomFlt(-1,20);
+      c = (comSty.wd[1] - ((comSty.wd[1] - l) * 2))/2;
+
+      appendMe = document.createElement('div');
+      appendMe.classList.add('particle');
+      appendMe.style.bottom = b + 'vh';
+      //console.log('bottom,', window.getComputedStyle(appendMe));
+      //b = window.getComputedStyle(appendMe).bottom.match(/\d+\.*\d*/)[0];
+      l = randomFlt(b/rate + (comSty.wd[1] - run), b/rate + comSty.wd[1]);
+      appendMe.style.left = l + comSty.wd[2];
+      appendMe.style.height = randomFlt(.1,.25) + 'rem';
+      appendMe.style.width = randomFlt(.15,.35) + 'rem';
+      appendMe.style.transformOrigin = -l + 'px';
+
+      appendMe.setAttribute('c', c);
+
+      if(c <= 0) {
+        appendMe.style.animationDuration = randomFlt((c * -1) ** .02, (c* -1) ** .1) + 's';
+      }
+      else appendMe.style.animationDuration = randomFlt(c ** .01, c ** .08) + 's';
+
+      //appendMe.style.backgroundColor = '#664';
+      //appendMe.style.transform = 'rotateY(' + randomFlt(0,360) + 'deg)';
+      appendHere.appendChild(appendMe);
+    }
+
+  }
+
+  document.querySelectorAll('.particle').forEach(function(el) {
+    el.style.opacity = 1;
+  });
+}
+
+function colorParticles() {
+  document.querySelectorAll('.particle').forEach(function(el) {
+      el.style.opacity = 1;
+  });
+}
+
+
+/***/ }),
+/* 12 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ajax_fetchAPIs__ = __webpack_require__(7);
 /* unused harmony export unitsBtn */
 /* harmony export (immutable) */ __webpack_exports__["a"] = convert;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ajax_fetchAPIs__ = __webpack_require__(7);
 
 
 
@@ -661,23 +818,25 @@ function convert(){
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__weather_clear__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__weather_clouds__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__weather_drizzle__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__weather_clouds__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__weather_drizzle__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__weather_extreme__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__weather_fog__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__weather_rain__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__weather_snow__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__weather_thunder__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__weather_animateWeather__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ajax_fetchAPIs__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__utils_conversion__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__weather_fog__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__weather_rain__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__weather_snow__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__weather_thunder__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__weather_tornado__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__weather_animateWeather__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ajax_fetchAPIs__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__utils_conversion__ = __webpack_require__(12);
+
 
 
 
@@ -694,11 +853,36 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 var unitsBtn = document.querySelector('.switch');
 
-__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10__ajax_fetchAPIs__["a" /* getLocalWeather */])('http://ip-api.com/json');
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_11__ajax_fetchAPIs__["a" /* getLocalWeather */])('http://ip-api.com/json');
 
 //console.log("temperature = ", temperature);
 
-unitsBtn.addEventListener('click', __WEBPACK_IMPORTED_MODULE_11__utils_conversion__["a" /* default */]);
+unitsBtn.addEventListener('click', __WEBPACK_IMPORTED_MODULE_12__utils_conversion__["a" /* default */]);
+
+
+/***/ }),
+/* 14 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = windy;
+function windy(leafCt) {
+  var appendHere, appendMe;
+
+  for(let i = 0; i < leafCt; i++){
+    appendHere = document.createElement('div');
+    appendHere.classList.add('leaf');
+
+    ['leaf-top', 'leaf-bottom', 'leaf-stem'].forEach(function(leaf){
+      appendMe = document.createElement('div');
+      appendMe.classList.add(leaf);
+      appendHere.appendChild(appendMe);
+    });
+    appendMe = appendHere;
+    appendHere = document.querySelector('.sky').classList.add('windy');
+    appendHere.appendChild(appendMe);
+  }
+}
 
 
 /***/ })

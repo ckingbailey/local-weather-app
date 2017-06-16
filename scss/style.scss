@@ -11,6 +11,7 @@
 @import '_snow';
 @import '_thunder';
 @import '_tornado';
+@import '_windy';
 
 html, body {
   height: 100%;
@@ -21,6 +22,7 @@ body {
   color: $text-color;
   padding: 0; margin: 0;
   overflow: hidden;
+  background-color: $main-sky-color;
 }
 
 h1,h2,h3,h4,h5 {

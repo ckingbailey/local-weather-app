@@ -2,7 +2,7 @@ export default function tornado() {
 
   var appendHere = document.querySelector('.sky');
   var partCt = +(window.getComputedStyle(appendHere).height.match(/\d+/))/10;
-  var layerCt = 5;
+  var layerCt = 6;
   var b, c, l, appendMe, comSty, offset, rate, run;
 
   appendHere.classList.add('tornado');
@@ -72,5 +72,11 @@ export default function tornado() {
 
   document.querySelectorAll('.particle').forEach(function(el) {
     el.style.opacity = 1;
+  });
+}
+
+export function colorParticles() {
+  document.querySelectorAll('.particle').forEach(function(el) {
+      el.style.opacity = 1;
   });
 }

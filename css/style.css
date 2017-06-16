@@ -335,7 +335,8 @@
     transform: translateY(120vh); } }
 
 .sky.fog7xx {
-  background-color: #89b; }
+  background-color: #89b;
+  transition: background-color .5s linear; }
   .sky.fog7xx .background, .sky.fog7xx .midground, .sky.fog7xx .foreground, .sky.fog7xx .sub, .sky.fog7xx .sup {
     position: absolute;
     height: 100%;
@@ -842,7 +843,7 @@ body, html, .tornado {
   left: 20rem;
   animation-delay: .25s; }
 
-.layer-x {
+.layer-6 {
   visibility: hidden;
   height: 0;
   bottom: 100vh; }
@@ -908,6 +909,198 @@ body, html, .tornado {
   50% {transform: translateX(2.45rem)}
 }*/
 html, body {
+  padding: 0;
+  margin: 0; }
+
+html, body, .sky {
+  height: 100%;
+  overflow: hidden; }
+
+.sky.windy {
+  background-color: #88d3ff; }
+
+/*
+Depending on leaf, rotation, certain minimums:
+min position top = -38px
+*/
+.leaf {
+  position: absolute;
+  top: 0px;
+  left: -5vw;
+  transform: rotateX(50deg) rotateY(20deg) rotateZ(40deg);
+  animation: 3s ease-in-out 0.15s infinite leaf-fall-1; }
+
+.leaf-top {
+  position: relative;
+  bottom: 1px;
+  width: 45px;
+  height: 14px;
+  background-color: green;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 75%;
+  border-bottom-right-radius: 20%;
+  transform: skew(-35deg); }
+
+.leaf-bottom {
+  position: relative;
+  top: 1px;
+  width: 45px;
+  height: 15px;
+  background-color: green;
+  border-bottom-left-radius: 85%;
+  border-bottom-right-radius: 70%;
+  border-top-right-radius: 20%;
+  transform: skew(35deg); }
+
+.leaf-stem {
+  position: relative;
+  left: 38px;
+  top: -19px;
+  width: 12px;
+  height: 2px;
+  border-bottom: 2px solid green;
+  border-right: 3px solid green;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  transform: rotate(-12deg); }
+
+.leaf:nth-of-type(2n) {
+  animation-name: leaf-fall-2; }
+
+.leaf:nth-of-type(3n) {
+  animation-name: leaf-fall-3; }
+
+.leaf:nth-of-type(5n+2) {
+  animation-name: leaf-fall-1; }
+
+.leaf:nth-of-type(3n+1) {
+  animation-duration: 2.65s; }
+
+.leaf:nth-of-type(4n+2) {
+  animation-duration: 4.75s; }
+
+.leaf:nth-of-type(4n) {
+  animation-delay: 1.15s; }
+
+.leaf:nth-of-type(5n) {
+  animation-delay: -0.75s; }
+
+.leaf:nth-of-type(5n+1) {
+  animation-delay: 2.05s; }
+
+.leaf:nth-of-type(5n+3) {
+  animation-delay: 2.6s; }
+
+.leaf:nth-of-type(7n) {
+  animation-delay: 0.4s; }
+
+.leaf:nth-of-type(3n+1) {
+  left: -18vw; }
+
+.leaf:nth-of-type(2n+1) {
+  top: 67px;
+  left: -20vw; }
+
+.leaf:nth-of-type(4n) {
+  top: -10px; }
+
+.leaf:nth-of-type(4n+3) {
+  top: 5px; }
+
+.leaf:nth-of-type(5n+2) {
+  left: -17vw; }
+
+.leaf:nth-of-type(5n+3) {
+  top: -5px; }
+
+.leaf:nth-of-type(3n+1) .leaf-top {
+  height: 9px;
+  width: 38.25px;
+  bottom: 0; }
+
+.leaf:nth-of-type(3n+1) .leaf-bottom {
+  height: 9px;
+  width: 38.25px; }
+
+.leaf:nth-of-type(3n+1) .leaf-stem {
+  left: 31.25px;
+  top: -13px;
+  width: 10.2px;
+  height: 1.2px; }
+
+.leaf:nth-of-type(4n+2) .leaf-top {
+  height: 11.75px;
+  width: 26px;
+  bottom: 0; }
+
+.leaf:nth-of-type(4n+2) .leaf-bottom {
+  height: 12.75px;
+  width: 27px; }
+
+.leaf:nth-of-type(4n+2) .leaf-stem {
+  left: 21px;
+  top: -15.75px;
+  width: 7.2px;
+  height: 1.2px; }
+
+.leaf:nth-of-type(3n+2) * {
+  background-color: darkGreen;
+  border-color: darkGreen; }
+
+.leaf:nth-of-type(4n+1) * {
+  background-color: darkOliveGreen;
+  border-color: darkOliveGreen; }
+
+.leaf:nth-of-type(6n-3) * {
+  background-color: seaGreen;
+  border-color: seaGreen; }
+
+@keyframes leaf-fall-1 {
+  0% {
+    margin-top: 0;
+    margin-left: 0;
+    opacity: 1; }
+  50% {
+    margin-top: 60vh;
+    transform: rotateX(70deg) rotateY(-10deg) rotateZ(15deg);
+    opacity: .8; }
+  100% {
+    margin-top: 80vh;
+    margin-left: 85vw;
+    transform: rotateX(25deg) rotateY(66deg) rotateZ(35deg);
+    opacity: 0; } }
+
+@keyframes leaf-fall-2 {
+  0% {
+    margin-top: -1vh;
+    margin-left: 0;
+    opacity: 1; }
+  50% {
+    margin-top: 55vh;
+    transform: rotateX(85deg) rotateY(-10deg) rotateZ(15deg);
+    opacity: .8; }
+  100% {
+    margin-top: 88vh;
+    margin-left: 76vw;
+    transform: rotateX(25deg) rotateY(26deg) rotateZ(35deg);
+    opacity: 0; } }
+
+@keyframes leaf-fall-3 {
+  0% {
+    margin-top: 0;
+    margin-left: -2vw;
+    opacity: 1; }
+  50% {
+    margin-top: 20vh;
+    transform: rotateX(110deg) rotateY(-10deg) rotateZ(-5deg);
+    opacity: .8; }
+  100% {
+    margin-top: 70vh;
+    margin-left: 112vw;
+    transform: rotateX(35deg) rotateY(25deg) rotateZ(15deg);
+    opacity: 0; } }
+
+html, body {
   height: 100%; }
 
 body {
@@ -915,7 +1108,8 @@ body {
   color: #e0ecf9;
   padding: 0;
   margin: 0;
-  overflow: hidden; }
+  overflow: hidden;
+  background-color: #88d3ff; }
 
 h1, h2, h3, h4, h5 {
   margin: 0 0 1rem 0; }
