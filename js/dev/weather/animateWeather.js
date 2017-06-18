@@ -3,7 +3,7 @@ import randomFlt from '../utils/randomRolls';
 import clear from './clear';
 import clouds from './clouds';
 import drizzle from './drizzle';
-import extreme from './extreme';
+import extreme, {other} from './extreme';
 import fog from './fog';
 import rain from './rain';
 import snow from './snow';
@@ -35,7 +35,7 @@ export default function animateWeather(weatherId) {
     extreme(weatherId);
   }
   else if (weatherId > 950 && weatherId < 1000) {
-    other();
+    other(weatherId);
   }
   else clear();
 }

@@ -122,7 +122,6 @@ min position top = -38px
 .leaf:nth-of-type(7n){
   animation-delay: $dur - 2.6s;
 }
-//timing-fcn
 
 //position
 .leaf:nth-of-type(3n+1){
@@ -187,8 +186,6 @@ min position top = -38px
   }
 }
 
-//rotate
-
 //color
 .leaf:nth-of-type(3n+2) * {
   background-color: darkGreen;
@@ -205,6 +202,30 @@ min position top = -38px
   border-color: seaGreen;
 }
 
+//variance for wind types
+.leaf.lo{
+  animation-duration: $dur + 1;
+}
+
+.leaf.lo:nth-of-type(3n+1){
+  animation-duration: $dur + .65s;
+}
+
+.leaf.lo:nth-of-type(4n+2){
+  animation-duration: $dur + 2.75s;
+}
+
+.leaf.hi{
+  animation-duration: $dur - 1;
+}
+
+.leaf.hi:nth-of-type(3n+1){
+  animation-duration: $dur - 1.35s;
+}
+
+.leaf.hi:nth-of-type(4n+2){
+  animation-duration: $dur + .75s;
+}
 @keyframes leaf-fall-1 {
   0% {
     margin-top: 0;

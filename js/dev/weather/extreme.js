@@ -12,7 +12,7 @@ export default function extreme(id){
     case 900: {
       tornado();
       break;
-    } //done
+    } //complete
     case 901: { //'tropical-storm'
       rain('hurricane', 250, -40, 125);
       var drops = document.querySelectorAll('.rain-drop');
@@ -21,7 +21,7 @@ export default function extreme(id){
         el.style.animationName += ', wind-1';
       });
       break;
-    } //done
+    } //complete
     case 902: {
       rain('hurricane', 250, -40, 125);
       //add wind
@@ -30,11 +30,11 @@ export default function extreme(id){
         el.style.animationName += ', wind';
       });
       break;
-    } //done
+    } //complete
     case 903: {
       appendHere.classList.add('cold903');
       break;
-    }//done
+    }//complete
     case 904: {
       appendHere.classList.add('hot904');
       break;
@@ -56,43 +56,78 @@ export default function extreme(id){
   }
 }
 
-function other(id) {
-  var appendHere = document.querySelector('.sky');
-  var appendMe;
+export function other(id) {
+  //var appendHere = document.querySelector('.sky');
+  //var appendMe;
 
   switch (id) {
     case 951: {
       appendHere.classList.add('calm');
+      break;
     }
     case 952: {  //'light-breeze'
       windy(3);
+      document.querySelectorAll('.leaf').forEach(function(leaf){
+        leaf.classList.add('lo');
+      });
+      break;
     }
     case 953: { // 'gentle-breeze'
       windy(3);
+      document.querySelectorAll('.leaf').forEach(function(leaf){
+        leaf.classList.add('lo');
+      });
+      break;
     }
     case 954: { // 'moderate-breeze'
       windy(5);
+      document.querySelectorAll('.leaf').forEach(function(leaf){
+        leaf.classList.add('lo');
+      });
+      break;
     }
     case 955: { // 'fresh-breeze'
       windy(5);
+      document.querySelectorAll('.leaf').forEach(function(leaf){
+        leaf.classList.add('lo');
+      });
+      break;
     }
     case 956: { // 'strong-breeze'
       windy(7);
+      document.querySelectorAll('.leaf').forEach(function(leaf){
+        leaf.classList.add('lo');
+      });
+      break;
     }
     case 957: { // 'high-wind'
       windy(15);
+      document.querySelectorAll('.leaf').forEach(function(leaf){
+        leaf.classList.add('hi');
+      });
+      break;
     }
     case 958: { // 'gale'
       windy(15);
+      document.querySelectorAll('.leaf').forEach(function(leaf){
+        leaf.classList.add('hi');
+      });
+      break;
     }
-    case 959: { // 'sever-gale'
+    case 959: { // 'severe-gale'
       windy(20);
+      document.querySelectorAll('.leaf').forEach(function(leaf){
+        leaf.classList.add('hi');
+      });
+      break;
     }
     case 960: {
       thunder();
+      break;
     }
-    case 961: {
-      appendHere.classList.add('violent-storm');
+    case 961: { // 'violent-storm'
+      extreme(902);
+      break;
     }
     case 962: {
       rain('hurricane', 250, -40, 125);

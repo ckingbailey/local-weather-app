@@ -330,6 +330,7 @@ function drizzle(){
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tornado__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__windy__ = __webpack_require__(11);
 /* harmony export (immutable) */ __webpack_exports__["a"] = extreme;
+/* harmony export (immutable) */ __webpack_exports__["b"] = other;
 
 
 
@@ -344,7 +345,7 @@ function extreme(id){
     case 900: {
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__tornado__["a" /* default */])();
       break;
-    } //done
+    } //complete
     case 901: { //'tropical-storm'
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__rain__["a" /* default */])('hurricane', 250, -40, 125);
       var drops = document.querySelectorAll('.rain-drop');
@@ -353,7 +354,7 @@ function extreme(id){
         el.style.animationName += ', wind-1';
       });
       break;
-    } //done
+    } //complete
     case 902: {
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__rain__["a" /* default */])('hurricane', 250, -40, 125);
       //add wind
@@ -362,11 +363,11 @@ function extreme(id){
         el.style.animationName += ', wind';
       });
       break;
-    } //done
+    } //complete
     case 903: {
       appendHere.classList.add('cold903');
       break;
-    }//done
+    }//complete
     case 904: {
       appendHere.classList.add('hot904');
       break;
@@ -389,42 +390,77 @@ function extreme(id){
 }
 
 function other(id) {
-  var appendHere = document.querySelector('.sky');
-  var appendMe;
+  //var appendHere = document.querySelector('.sky');
+  //var appendMe;
 
   switch (id) {
     case 951: {
       appendHere.classList.add('calm');
+      break;
     }
     case 952: {  //'light-breeze'
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__windy__["a" /* default */])(3);
+      document.querySelectorAll('.leaf').forEach(function(leaf){
+        leaf.classList.add('lo');
+      });
+      break;
     }
     case 953: { // 'gentle-breeze'
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__windy__["a" /* default */])(3);
+      document.querySelectorAll('.leaf').forEach(function(leaf){
+        leaf.classList.add('lo');
+      });
+      break;
     }
     case 954: { // 'moderate-breeze'
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__windy__["a" /* default */])(5);
+      document.querySelectorAll('.leaf').forEach(function(leaf){
+        leaf.classList.add('lo');
+      });
+      break;
     }
     case 955: { // 'fresh-breeze'
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__windy__["a" /* default */])(5);
+      document.querySelectorAll('.leaf').forEach(function(leaf){
+        leaf.classList.add('lo');
+      });
+      break;
     }
     case 956: { // 'strong-breeze'
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__windy__["a" /* default */])(7);
+      document.querySelectorAll('.leaf').forEach(function(leaf){
+        leaf.classList.add('lo');
+      });
+      break;
     }
     case 957: { // 'high-wind'
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__windy__["a" /* default */])(15);
+      document.querySelectorAll('.leaf').forEach(function(leaf){
+        leaf.classList.add('hi');
+      });
+      break;
     }
     case 958: { // 'gale'
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__windy__["a" /* default */])(15);
+      document.querySelectorAll('.leaf').forEach(function(leaf){
+        leaf.classList.add('hi');
+      });
+      break;
     }
-    case 959: { // 'sever-gale'
+    case 959: { // 'severe-gale'
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__windy__["a" /* default */])(20);
+      document.querySelectorAll('.leaf').forEach(function(leaf){
+        leaf.classList.add('hi');
+      });
+      break;
     }
     case 960: {
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__thunder__["a" /* default */])();
+      break;
     }
-    case 961: {
-      appendHere.classList.add('violent-storm');
+    case 961: { // 'violent-storm'
+      extreme(902);
+      break;
     }
     case 962: {
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__rain__["a" /* default */])('hurricane', 250, -40, 125);
@@ -666,7 +702,7 @@ function animateWeather(weatherId) {
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__extreme__["a" /* default */])(weatherId);
   }
   else if (weatherId > 950 && weatherId < 1000) {
-    other();
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__extreme__["b" /* other */])(weatherId);
   }
   else __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__clear__["a" /* default */])();
 }
@@ -743,10 +779,23 @@ var weatherTypes = {
     windy: 905,
     hail: 906
   },
-  other: 951
+  other: {
+    calm: 951,
+    lightBreeze: 952,
+    gentleBreeze: 953,
+    moderateBreeze: 954,
+    freshBreeze: 955,
+    strongBreeze: 956,
+    highWind: 957,
+    gale: 958,
+    severeGale: 959,
+    thunder: 960,
+    violentStorm: 961,
+    hurricane: 962
+  }
 };
 
-__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__js_dev_weather_animateWeather__["a" /* default */])(weatherTypes.extreme.windy);
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__js_dev_weather_animateWeather__["a" /* default */])(weatherTypes.other.severeGale);
 
 
 /***/ })

@@ -26,7 +26,20 @@ var weatherTypes = {
     windy: 905,
     hail: 906
   },
-  other: 951
+  other: {
+    calm: 951,
+    lightBreeze: 952,
+    gentleBreeze: 953,
+    moderateBreeze: 954,
+    freshBreeze: 955,
+    strongBreeze: 956,
+    highWind: 957,
+    gale: 958,
+    severeGale: 959,
+    thunder: 960,
+    violentStorm: 961,
+    hurricane: 962
+  }
 };
 
-animateWeather(weatherTypes.extreme.windy);
+animateWeather(weatherTypes.other.severeGale);
