@@ -467,35 +467,33 @@
     border-radius: 50%;
     animation-timing-function: linear;
     animation-iteration-count: infinite; }
-  .hail .foreground {
-    /*.rain-drop:nth-of-type(2n) {
-      animation-duration: $anim-dur + .03;
-    }
-    .rain-drop:nth-of-type(3n+1) {
-      animation-duration: $anim-dur - .03;
-    }*/ }
-    .hail .foreground .rain-drop {
-      background-color: white;
-      height: 0.5rem;
-      width: 0.5rem;
-      animation-duration: 1.5s; }
-  .hail .midground {
-    /*.rain-drop:nth-of-type(2n) {
-      animation-duration: $anim-dur + .03;
-    }
-    .rain-drop:nth-of-type(3n+1) {
-      animation-duration: $anim-dur - .03;
-    }*/ }
-    .hail .midground .rain-drop {
-      background-color: rgba(255, 255, 255, 0.8);
-      height: 0.55rem;
-      width: 0.55rem;
-      animation-duration: 1.5s; }
+  .hail .foreground .rain-drop {
+    background-color: white;
+    height: 0.5rem;
+    width: 0.5rem;
+    animation-duration: 1.5s; }
+  .hail .foreground .rain-drop:nth-of-type(2n) {
+    animation-duration: 1.525s; }
+  .hail .foreground .rain-drop:nth-of-type(3n+1) {
+    animation-duration: 1.55s; }
+  .hail .midground .rain-drop {
+    background-color: rgba(255, 255, 255, 0.8);
+    height: 0.55rem;
+    width: 0.55rem;
+    animation-duration: 1.6s; }
+  .hail .midground .rain-drop:nth-of-type(2n) {
+    animation-duration: 1.65s; }
+  .hail .midground .rain-drop:nth-of-type(3n+1) {
+    animation-duration: 1.7s; }
   .hail .background .rain-drop {
     background-color: rgba(255, 255, 255, 0.65);
     height: 0.6rem;
     width: 0.6rem;
-    animation-duration: 1.5s; }
+    animation-duration: 1.7s; }
+  .hail .background .rain-drop:nth-of-type(2n) {
+    animation-duration: 1.8s; }
+  .hail .background .rain-drop:nth-of-type(3n+1) {
+    animation-duration: 1.9s; }
 
 .sky.hot904 {
   background-image: linear-gradient(to top, #ff6a13, #ffa130 20%, #fffdad); }
