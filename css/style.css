@@ -1,5 +1,5 @@
 .sky.cold903 {
-  background-image: linear-gradient(to top, blue, white); }
+  background-image: linear-gradient(to top, #5f6bcf, #89b 30%, white); }
 
 .sky.clear800 {
   background-color: #88d3ff; }
@@ -466,91 +466,46 @@
     position: absolute;
     border-radius: 50%;
     animation-timing-function: linear;
-    animation-iteration-count: infinite, 1; }
-  .hail .foreground .rain-drop {
-    background-color: white;
-    height: 0.5rem;
-    width: 0.5rem;
-    animation-duration: 1.5s, 0.33s; }
-  .hail .midground .rain-drop {
-    background-color: rgba(255, 255, 255, 0.8);
-    height: 0.55rem;
-    width: 0.55rem;
-    animation-duration: 1.7s, 0.33s; }
-  .hail .background .rain-drop {
-    background-color: rgba(255, 255, 255, 0.65);
-    height: 0.6rem;
-    width: 0.6rem;
-    animation-duration: 1.9s, 0.33s; }
-
-.wet, .rain, .hurricane {
-  background-color: #568; }
-  .wet .rain-drop, .rain .rain-drop, .hurricane .rain-drop {
-    border-radius: .75rem;
-    position: absolute; }
-  .wet .foreground .rain-drop, .rain .foreground .rain-drop, .hurricane .foreground .rain-drop {
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(102, 102, 138, 0));
-    width: .15rem;
-    height: 3rem; }
-  .wet .midground .rain-drop, .rain .midground .rain-drop, .hurricane .midground .rain-drop {
-    background: linear-gradient(0deg, rgba(220, 220, 230, 0.6), rgba(102, 102, 138, 0));
-    width: .12rem;
-    height: 2.7rem; }
-  .wet .background .rain-drop, .rain .background .rain-drop, .hurricane .background .rain-drop {
-    background: linear-gradient(0deg, rgba(200, 200, 210, 0.6), rgba(102, 102, 138, 0));
-    width: .1rem;
-    height: 2.5rem; }
-
-.rain .rain-drop {
-  animation-timing-function: linear;
-  animation-iteration-count: infinite, 1; }
-
-.rain .foreground .rain-drop {
-  animation-duration: 1s, 0.33s; }
-
-.rain .midground .rain-drop {
-  animation-duration: 1.2s, 0.33s; }
-
-.rain .background .rain-drop {
-  animation-duration: 1.4s, 0.33s; }
-
-@keyframes rain-fall-1 {
-  100% {
-    transform: translateY(135vh); } }
-
-@keyframes rain-fall-2 {
-  100% {
-    transform: translateY(150vh); } }
-
-@keyframes rain-fall-3 {
-  100% {
-    transform: translateY(120vh); } }
-
-.hail {
-  background-color: #89b; }
-  .hail .rain-drop {
-    position: absolute;
-    border-radius: 50%;
-    animation-timing-function: linear;
     animation-iteration-count: infinite; }
-  .hail .foreground .rain-drop {
-    background-color: white;
-    height: 0.5rem;
-    width: 0.5rem;
-    animation-duration: 1.5s; }
-  .hail .midground .rain-drop {
-    background-color: rgba(255, 255, 255, 0.8);
-    height: 0.55rem;
-    width: 0.55rem;
-    animation-duration: 1.7s; }
-  .hail .background .rain-drop {
-    background-color: rgba(255, 255, 255, 0.65);
-    height: 0.6rem;
-    width: 0.6rem;
-    animation-duration: 1.9s; }
+  .hail .foreground {
+    /*.rain-drop:nth-of-type(2n) {
+      animation-duration: $anim-dur + .03;
+    }
+    .rain-drop:nth-of-type(3n+1) {
+      animation-duration: $anim-dur - .03;
+    }*/ }
+    .hail .foreground .rain-drop {
+      background-color: white;
+      height: 0.5rem;
+      width: 0.5rem;
+      animation-duration: 1.53s; }
+  .hail .midground {
+    /*.rain-drop:nth-of-type(2n) {
+      animation-duration: $anim-dur + .03;
+    }
+    .rain-drop:nth-of-type(3n+1) {
+      animation-duration: $anim-dur - .03;
+    }*/ }
+    .hail .midground .rain-drop {
+      background-color: rgba(255, 255, 255, 0.8);
+      height: 0.55rem;
+      width: 0.55rem;
+      animation-duration: 1.53s; }
+  .hail .background {
+    /*.rain-drop:nth-of-type(2n) {
+      animation-duration: $anim-dur + .03;
+    }
+    .rain-drop:nth-of-type(3n+1) {
+      animation-duration: $anim-dur - .03;
+    }*/ }
+    .hail .background .rain-drop {
+      background-color: rgba(255, 255, 255, 0.65);
+      height: 0.6rem;
+      width: 0.6rem;
+      animation-duration: 1.53s; }
 
 .sky.hot904 {
-  background-image: linear-gradient(to top, orangeRed, yellow); }
+  background-image: linear-gradient(to top, #ff6a13, #ffa130 20%, #fffdad); }
 
 .wet, .rain, .hurricane {
   background-color: #568; }
@@ -851,7 +806,6 @@ body, html, .tornado {
 .particle {
   background-color: #66625f;
   position: absolute;
-  border-radius: 50%;
   opacity: 0;
   transition: opacity 8.5s ease-in;
   animation-name: tornado-whirl;
@@ -1107,7 +1061,7 @@ min position top = -38px
   0% {
     margin-top: 0;
     margin-left: -2vw;
-    opacity: 1; }
+    opacity: 0; }
   50% {
     margin-top: 20vh;
     transform: rotateX(110deg) rotateY(-10deg) rotateZ(-5deg);

@@ -1,3 +1,4 @@
+import clear from './clear';
 import clouds from './clouds';
 import rain from './rain';
 import thunder from './thunder';
@@ -14,12 +15,7 @@ export default function extreme(id){
       break;
     } //complete
     case 901: { //'tropical-storm'
-      rain('hurricane', 250, -40, 125);
-      var drops = document.querySelectorAll('.rain-drop');
-      console.log(drops);
-      drops.forEach(function(el) {
-        el.style.animationName += ', wind-1';
-      });
+      extreme(902);
       break;
     } //complete
     case 902: {
@@ -27,7 +23,7 @@ export default function extreme(id){
       //add wind
       var drops = document.querySelectorAll('.rain-drop');
       drops.forEach(function(el) {
-        el.style.animationName += ', wind';
+        el.style.animationName += ', wind-1';
       });
       break;
     } //complete
@@ -48,7 +44,7 @@ export default function extreme(id){
       break;
     }
     case 906: {
-      rain('hail', 180, 0, 100);
+      rain('hail', 100, 0, 100);
       break;
     }
     default:
@@ -62,7 +58,7 @@ export function other(id) {
 
   switch (id) {
     case 951: {
-      appendHere.classList.add('calm');
+      clear();
       break;
     }
     case 952: {  //'light-breeze'
@@ -130,12 +126,7 @@ export function other(id) {
       break;
     }
     case 962: {
-      rain('hurricane', 250, -40, 125);
-      //add wind
-      var drops = document.querySelectorAll('.rain-drop');
-      drops.forEach(function(el) {
-        el.style.animationName += ', wind';
-      });
+      extreme(902);
       break;
     }
   }

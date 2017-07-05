@@ -77,7 +77,7 @@ body, html, .tornado {
 .particle {
   background-color: #66625f;
   position: absolute;
-  border-radius: 50%;
+  //border-radius: 50%;
   opacity: 0;
   transition: opacity 8.5s ease-in;
   animation-name: tornado-whirl;

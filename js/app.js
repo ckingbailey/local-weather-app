@@ -381,8 +381,8 @@ function snow(){
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__weather_snow__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__weather_thunder__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__weather_animateWeather__ = __webpack_require__(8);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return temperature; });
-/* unused harmony export requestWeather */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return temperature; });
+/* harmony export (immutable) */ __webpack_exports__["b"] = requestWeather;
 /* harmony export (immutable) */ __webpack_exports__["a"] = getLocalWeather;
 
 
@@ -402,17 +402,12 @@ var temperature;
 
 function requestWeather(loc){
 // building the uri weather query string
-  var url = "http://api.openweathermap.org/data/2.5/weather?";
-
-  var key = "&units=imperial&APPID=79aef489883f75aff91f8900796eb1ea";
-
-  var lat = "lat=" + loc.lat.toString().slice(0,loc.lat.toString().indexOf(".")+3);
-
-  var lon = "lon=" + loc.lon.toString().slice(0,loc.lon.toString().indexOf(".")+3);
+  var url = "http://api.openweathermap.org/data/2.5/weather?",
+      key = "&units=imperial&APPID=79aef489883f75aff91f8900796eb1ea",
+      lat = "lat=" + loc.lat.toString().slice(0,loc.lat.toString().indexOf(".")+3),
+      lon = "lon=" + loc.lon.toString().slice(0,loc.lon.toString().indexOf(".")+3);
 
   url += lat + "&" + lon + key;
-
-  //console.log("url =", url);
 
 /*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-
   AJAX weather request
@@ -451,16 +446,14 @@ function requestWeather(loc){
  then fire location-dependent fcns
  such as get weather fcn
 _-*-_-*-_-*-_-*-_-*-_-*-_-*/
-function getLocalWeather(locURL){
+function getLocalWeather(locURL, weatherFcn){
   $.ajax({
     url: locURL,
     type: 'GET',
     dataType: 'jsonp',
-
     success: function(json){
-      //console.log("location object =", json);
-      requestWeather(json);
       $(".locale").text(json.city + ", " + json.regionName + " " + json.zip + ", " + json.country);
+      weatherFcn(json);
     },
     xhrField: {
       withCredentials: true
@@ -525,7 +518,7 @@ function animateWeather(weatherId) {
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__extreme__["a" /* default */])(weatherId);
   }
   else if (weatherId > 950 && weatherId < 1000) {
-    other();
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__extreme__["b" /* other */])(weatherId);
   }
   else __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__clear__["a" /* default */])();
 }
@@ -577,6 +570,7 @@ function clear(){
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tornado__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__windy__ = __webpack_require__(14);
 /* harmony export (immutable) */ __webpack_exports__["a"] = extreme;
+/* harmony export (immutable) */ __webpack_exports__["b"] = other;
 
 
 
@@ -591,7 +585,7 @@ function extreme(id){
     case 900: {
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__tornado__["a" /* default */])();
       break;
-    } //done
+    } //complete
     case 901: { //'tropical-storm'
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__rain__["a" /* default */])('hurricane', 250, -40, 125);
       var drops = document.querySelectorAll('.rain-drop');
@@ -600,7 +594,7 @@ function extreme(id){
         el.style.animationName += ', wind-1';
       });
       break;
-    } //done
+    } //complete
     case 902: {
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__rain__["a" /* default */])('hurricane', 250, -40, 125);
       //add wind
@@ -609,11 +603,11 @@ function extreme(id){
         el.style.animationName += ', wind';
       });
       break;
-    } //done
+    } //complete
     case 903: {
       appendHere.classList.add('cold903');
       break;
-    }//done
+    }//complete
     case 904: {
       appendHere.classList.add('hot904');
       break;
@@ -636,42 +630,77 @@ function extreme(id){
 }
 
 function other(id) {
-  var appendHere = document.querySelector('.sky');
-  var appendMe;
+  //var appendHere = document.querySelector('.sky');
+  //var appendMe;
 
   switch (id) {
     case 951: {
       appendHere.classList.add('calm');
+      break;
     }
     case 952: {  //'light-breeze'
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__windy__["a" /* default */])(3);
+      document.querySelectorAll('.leaf').forEach(function(leaf){
+        leaf.classList.add('lo');
+      });
+      break;
     }
     case 953: { // 'gentle-breeze'
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__windy__["a" /* default */])(3);
+      document.querySelectorAll('.leaf').forEach(function(leaf){
+        leaf.classList.add('lo');
+      });
+      break;
     }
     case 954: { // 'moderate-breeze'
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__windy__["a" /* default */])(5);
+      document.querySelectorAll('.leaf').forEach(function(leaf){
+        leaf.classList.add('lo');
+      });
+      break;
     }
     case 955: { // 'fresh-breeze'
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__windy__["a" /* default */])(5);
+      document.querySelectorAll('.leaf').forEach(function(leaf){
+        leaf.classList.add('lo');
+      });
+      break;
     }
     case 956: { // 'strong-breeze'
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__windy__["a" /* default */])(7);
+      document.querySelectorAll('.leaf').forEach(function(leaf){
+        leaf.classList.add('lo');
+      });
+      break;
     }
     case 957: { // 'high-wind'
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__windy__["a" /* default */])(15);
+      document.querySelectorAll('.leaf').forEach(function(leaf){
+        leaf.classList.add('hi');
+      });
+      break;
     }
     case 958: { // 'gale'
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__windy__["a" /* default */])(15);
+      document.querySelectorAll('.leaf').forEach(function(leaf){
+        leaf.classList.add('hi');
+      });
+      break;
     }
-    case 959: { // 'sever-gale'
+    case 959: { // 'severe-gale'
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__windy__["a" /* default */])(20);
+      document.querySelectorAll('.leaf').forEach(function(leaf){
+        leaf.classList.add('hi');
+      });
+      break;
     }
     case 960: {
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__thunder__["a" /* default */])();
+      break;
     }
-    case 961: {
-      appendHere.classList.add('violent-storm');
+    case 961: { // 'violent-storm'
+      extreme(902);
+      break;
     }
     case 962: {
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__rain__["a" /* default */])('hurricane', 250, -40, 125);
@@ -796,8 +825,8 @@ var unitsBtn = document.querySelector('.switch');
 
 function convert(){
   if($(".temp").hasClass("degF")){
-    console.log('var temperature ==', __WEBPACK_IMPORTED_MODULE_0__ajax_fetchAPIs__["b" /* temperature */]);
-    c = Math.round((__WEBPACK_IMPORTED_MODULE_0__ajax_fetchAPIs__["b" /* temperature */] - 32) * 5 / 9);
+    console.log('var temperature ==', __WEBPACK_IMPORTED_MODULE_0__ajax_fetchAPIs__["c" /* temperature */]);
+    c = Math.round((__WEBPACK_IMPORTED_MODULE_0__ajax_fetchAPIs__["c" /* temperature */] - 32) * 5 / 9);
     console.log('c ==', c);
     $(".temp").removeClass("degF");
     $(".switch").text("F");
@@ -805,8 +834,8 @@ function convert(){
   }
 
   else {
-    console.log('var temperature ==', __WEBPACK_IMPORTED_MODULE_0__ajax_fetchAPIs__["b" /* temperature */]);
-    f = __WEBPACK_IMPORTED_MODULE_0__ajax_fetchAPIs__["b" /* temperature */];
+    console.log('var temperature ==', __WEBPACK_IMPORTED_MODULE_0__ajax_fetchAPIs__["c" /* temperature */]);
+    f = __WEBPACK_IMPORTED_MODULE_0__ajax_fetchAPIs__["c" /* temperature */];
 //    f = Math.round((t * 9 / 5) + 32);
     console.log(f);
     $(".temp").addClass("degF");
@@ -853,9 +882,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 var unitsBtn = document.querySelector('.switch');
 
-__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_11__ajax_fetchAPIs__["a" /* getLocalWeather */])('http://ip-api.com/json');
-
-//console.log("temperature = ", temperature);
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_11__ajax_fetchAPIs__["a" /* getLocalWeather */])('http://ip-api.com/json', __WEBPACK_IMPORTED_MODULE_11__ajax_fetchAPIs__["b" /* requestWeather */]);
 
 unitsBtn.addEventListener('click', __WEBPACK_IMPORTED_MODULE_12__utils_conversion__["a" /* default */]);
 
@@ -879,7 +906,9 @@ function windy(leafCt) {
       appendHere.appendChild(appendMe);
     });
     appendMe = appendHere;
-    appendHere = document.querySelector('.sky').classList.add('windy');
+    appendHere = document.querySelector('.sky');
+    appendHere.classList.add('windy');
+    console.log(appendHere);
     appendHere.appendChild(appendMe);
   }
 }

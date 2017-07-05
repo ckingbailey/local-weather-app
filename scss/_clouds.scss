@@ -6,9 +6,9 @@ $ray-wd: 2.5rem;
 $bump-top: -$ray-ht;
 $bump-left: ( $sun-ht - $ray-wd ) / 2;
 $rad: $sun-ht / 2;
-$anim-dur: 5s;
 
 .sky.clouds8xx {
+  $anim-dur: 5s;
   background-color: $main-sky-color;
 
   .sun {
