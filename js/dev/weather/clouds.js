@@ -12,11 +12,12 @@ export default function clouds(){
     appendMe.classList.add('cloud' + (i + 1));
     appendHere.appendChild(appendMe);
 
-    appendMe.addEventListener('animationiteration', function() {
+//make clouds loop back to offscreen left on first animation iteration
+    /*appendMe.addEventListener('animationiteration', function() {
       var w = window.getComputedStyle(this).width.match(/(\d+)(\D+)/);
-      
+
       this.style.left = -(parseInt(w[1], 10) + (parseInt(w[1], 10) * 0.05)) + w[2];
-    }, {once: true});
+    }, {once: true});*/
 
     appendMe = document.createElement('div');
   }

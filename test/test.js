@@ -42,4 +42,4 @@ var weatherTypes = {
   }
 };
 
-animateWeather(weatherTypes.extreme.hail);
+animateWeather(weatherTypes.clouds);

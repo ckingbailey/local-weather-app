@@ -140,6 +140,7 @@ $rad: $sun-ht / 2;
   .cloud1, .cloud2, .cloud3 {
     opacity: .9;
     position: absolute;
+    left: -12rem;
     border-radius: 40%;
     background-color: white;
     box-shadow: 0 0 .5rem .25rem white;
@@ -147,6 +148,7 @@ $rad: $sun-ht / 2;
     animation-name: cloud-walk, fade-in;
     animation-timing-function: linear, linear;
     animation-iteration-count: infinite, 1;
+    animation-delay: -35s, 0s;
 
     &:before, &:after {
       content: '';
@@ -162,7 +164,7 @@ $rad: $sun-ht / 2;
 
   .cloud1 {
     top: 6.75rem;
-    left: 15rem;
+    //left: -15rem;
     height: 2.75rem;
     width: 7rem;
     animation-duration: 300s, 10s;
@@ -184,7 +186,7 @@ $rad: $sun-ht / 2;
 
   .cloud2 {
     top: 8.5rem;
-    left: 7.5rem;
+    //left: -15rem;
     height: 2.35rem;
     width: 11rem;
     animation-duration: 180s, 10s;
@@ -206,7 +208,7 @@ $rad: $sun-ht / 2;
 
   .cloud3 {
     top: 2.75rem;
-    left: 4.25rem;
+    //left: -15rem;
     height: 3rem;
     width: 5rem;
     animation-duration: 240s, 10s;
