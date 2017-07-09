@@ -1,7 +1,9 @@
 import randomInt from '../utils/randomRolls';
 import randomFlt from '../utils/randomRolls';
+import clear from './clear';
 import clouds from './clouds';
 import drizzle from './drizzle';
+import extreme, {other} from './extreme';
 import fog from './fog';
 import rain from './rain';
 import snow from './snow';
@@ -12,10 +14,10 @@ export default function animateWeather(weatherId) {
     thunder();
   }
   else if (weatherId >= 300 && weatherId < 400) {
-    drizzle();
+    rain('drizzle', 50, 0, 100);
   }
   else if (weatherId >= 500 && weatherId < 600) {
-    rain();
+    rain('rain', 200, 0, 100);
   }
   else if (weatherId >= 600 && weatherId < 700) {
     snow();
@@ -30,10 +32,10 @@ export default function animateWeather(weatherId) {
     clouds();
   }
   else if (weatherId >= 900 && weatherId <= 950) {
-    extreme();
+    extreme(weatherId);
   }
   else if (weatherId > 950 && weatherId < 1000) {
-    other();
+    other(weatherId);
   }
   else clear();
 }

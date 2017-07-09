@@ -19,9 +19,9 @@ export default function snow(){
     appendHere = document.querySelector('.' + layers[i]);
 
     for(let j=1; j<dropsCount; j++){
-      var flakeTop = randomInt(-1,-8) + 'vh';
+      var flakeTop = randomInt(-1,-9) + 'vh';
       var flakeRight = randomFlt(0,100) + 'vw';
-      var animDelay = randomFlt(0,9) + i/4 + 's';
+      var animDelay = randomFlt(0 + i/4,10 + i) + 's';
       //var driftTime = randomFlt(3,6) + 's';
 
       appendMe = document.createElement('div');
@@ -29,7 +29,6 @@ export default function snow(){
       appendMe.style.left = flakeRight;
       appendMe.style.top = flakeTop;
       appendMe.style.animationDelay = animDelay;
-      appendMe.style.animationDuration = 12 + i/2 + 's';
       appendHere.appendChild(appendMe);
     }
   }

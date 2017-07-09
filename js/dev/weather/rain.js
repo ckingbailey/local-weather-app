@@ -1,11 +1,12 @@
+import randomInt, {randomFlt} from '../utils/randomRolls';
 
-export default function rain(){
-  var dropsCount = 200;
+export default function rain(weatherType, number, left, right){
+  var dropsCount = number;
   var appendHere = document.querySelector('.sky');
   var appendMe = document.createElement('div');
   var layers = ['foreground', 'midground', 'background'];
 
-  appendHere.classList.add('rain5xx');
+  appendHere.classList.add(weatherType);
 
   for(let i=0; i<layers.length; i++){
 
@@ -13,23 +14,15 @@ export default function rain(){
 
     for(let j=1; j<dropsCount; j++){
       var dropTop = randomInt(-120,99) + 'vh';
-      var dropRight = randomInt(0,100) + 'vw';
+      var dropRight = randomInt(left,right) + 'vw';
       var anim = 'rain-fall-' + randomInt(1,3);
 
       appendMe = document.createElement('div');
-      appendMe.className = 'rain-drop';
+      appendMe.classList.add('rain-drop');
       appendMe.style.left = dropRight;
       appendMe.style.top = dropTop;
-      appendMe.style.animationName = anim;
+      appendMe.style.animationName += anim;
       appendHere.appendChild(appendMe);
     }
   }
-}
-
-function randomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-function randomFlt(min, max) {
-  return Math.random() * (max - min + 1) + min;
 }

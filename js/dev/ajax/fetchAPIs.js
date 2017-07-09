@@ -16,17 +16,12 @@ export var temperature;
 
 export function requestWeather(loc){
 // building the uri weather query string
-  var url = "http://api.openweathermap.org/data/2.5/weather?";
-
-  var key = "&units=imperial&APPID=79aef489883f75aff91f8900796eb1ea";
-
-  var lat = "lat=" + loc.lat.toString().slice(0,loc.lat.toString().indexOf(".")+3);
-
-  var lon = "lon=" + loc.lon.toString().slice(0,loc.lon.toString().indexOf(".")+3);
+  var url = "http://api.openweathermap.org/data/2.5/weather?",
+      key = "&units=imperial&APPID=79aef489883f75aff91f8900796eb1ea",
+      lat = "lat=" + loc.lat.toString().slice(0,loc.lat.toString().indexOf(".")+3),
+      lon = "lon=" + loc.lon.toString().slice(0,loc.lon.toString().indexOf(".")+3);
 
   url += lat + "&" + lon + key;
-
-  //console.log("url =", url);
 
 /*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-*-_-
   AJAX weather request
@@ -65,16 +60,14 @@ export function requestWeather(loc){
  then fire location-dependent fcns
  such as get weather fcn
 _-*-_-*-_-*-_-*-_-*-_-*-_-*/
-export function getLocalWeather(locURL){
+export function getLocalWeather(locURL, weatherFcn){
   $.ajax({
     url: locURL,
     type: 'GET',
     dataType: 'jsonp',
-
     success: function(json){
-      //console.log("location object =", json);
-      requestWeather(json);
       $(".locale").text(json.city + ", " + json.regionName + " " + json.zip + ", " + json.country);
+      weatherFcn(json);
     },
     xhrField: {
       withCredentials: true
