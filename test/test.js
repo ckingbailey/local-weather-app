@@ -42,4 +42,4 @@ var weatherTypes = {
   }
 };
 
-animateWeather(weatherTypes.clouds);
+animateWeather(weatherTypes.thunder);
