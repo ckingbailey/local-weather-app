@@ -6,7 +6,7 @@ export default function clouds(){
   appendHere.classList.add('clouds8xx');
 
 //make clouds in css
-  for(let i=0; i<layers.length; i++){
+  for(var i=0; i<layers.length; i++){
     appendHere = document.querySelector('.' + layers[i]);
 
     appendMe.classList.add('cloud' + (i + 1));
@@ -34,21 +34,10 @@ export default function clouds(){
   appendHere = appendMe;
 
 //make rays of sun in css
-  for(let i = 1; i <= 10; i++) {
+  for(var i = 1; i <= 10; i++) {
     appendMe = document.createElement('div');
     appendMe.classList.add('ray');
     appendMe.classList.add('ray' + i);
     appendHere.appendChild(appendMe);
   }
-
-//make clouds start over from left side of screen on animationiteration
-/*  for(let i = 0; i<layers.length; i++){
-    appendMe = document.querySelector('.cloud' + (i + 1));
-    console.log(appendMe);
-    appendMe.addEventListener('animationiteration', function cloudLoop(){
-      var w = window.getComputedStyle(appendMe).width.match(/^(\d+)(\D+)/);
-      console.log(w);
-      appendMe.style.left = '-10px';
-    });
-  }*/
 }

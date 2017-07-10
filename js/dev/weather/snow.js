@@ -18,7 +18,7 @@ export default function snow(){
 
     appendHere = document.querySelector('.' + layers[i]);
 
-    for(let j=1; j<dropsCount; j++){
+    for(var j=1; j<dropsCount; j++){
       var flakeTop = randomInt(-1,-9) + 'vh';
       var flakeRight = randomFlt(0,100) + 'vw';
       var animDelay = randomFlt(0 + i/4,10 + i) + 's';

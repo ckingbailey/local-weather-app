@@ -42,4 +42,4 @@ var weatherTypes = {
   }
 };
 
-animateWeather(weatherTypes.thunder);
+animateWeather(weatherTypes.extreme.tornado);

@@ -16,7 +16,7 @@ export default function clear(){
 
   appendHere = appendMe;
 
-  for(let i = 1; i <= 10; i++) {
+  for(var i = 1; i <= 10; i++) {
     appendMe = document.createElement('div');
     appendMe.classList.add('ray');
     appendMe.classList.add('ray' + i);

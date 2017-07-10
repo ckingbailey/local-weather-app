@@ -8,11 +8,11 @@ export default function rain(weatherType, number, left, right){
 
   appendHere.classList.add(weatherType);
 
-  for(let i=0; i<layers.length; i++){
+  for(var i=0; i<layers.length; i++){
 
     appendHere = document.querySelector('.' + layers[i]);
 
-    for(let j=1; j<dropsCount; j++){
+    for(var j=1; j<dropsCount; j++){
       var dropTop = randomInt(-120,99) + 'vh';
       var dropRight = randomInt(left,right) + 'vw';
       var anim = 'rain-fall-' + randomInt(1,3);

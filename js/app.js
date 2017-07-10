@@ -96,7 +96,7 @@ function clouds(){
   appendHere.classList.add('clouds8xx');
 
 //make clouds in css
-  for(let i=0; i<layers.length; i++){
+  for(var i=0; i<layers.length; i++){
     appendHere = document.querySelector('.' + layers[i]);
 
     appendMe.classList.add('cloud' + (i + 1));
@@ -124,23 +124,12 @@ function clouds(){
   appendHere = appendMe;
 
 //make rays of sun in css
-  for(let i = 1; i <= 10; i++) {
+  for(var i = 1; i <= 10; i++) {
     appendMe = document.createElement('div');
     appendMe.classList.add('ray');
     appendMe.classList.add('ray' + i);
     appendHere.appendChild(appendMe);
   }
-
-//make clouds start over from left side of screen on animationiteration
-/*  for(let i = 0; i<layers.length; i++){
-    appendMe = document.querySelector('.cloud' + (i + 1));
-    console.log(appendMe);
-    appendMe.addEventListener('animationiteration', function cloudLoop(){
-      var w = window.getComputedStyle(appendMe).width.match(/^(\d+)(\D+)/);
-      console.log(w);
-      appendMe.style.left = '-10px';
-    });
-  }*/
 }
 
 
@@ -161,11 +150,11 @@ function rain(weatherType, number, left, right){
 
   appendHere.classList.add(weatherType);
 
-  for(let i=0; i<layers.length; i++){
+  for(var i=0; i<layers.length; i++){
 
     appendHere = document.querySelector('.' + layers[i]);
 
-    for(let j=1; j<dropsCount; j++){
+    for(var j=1; j<dropsCount; j++){
       var dropTop = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["a" /* default */])(-120,99) + 'vh';
       var dropRight = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["a" /* default */])(left,right) + 'vw';
       var anim = 'rain-fall-' + __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["a" /* default */])(1,3);
@@ -272,7 +261,7 @@ function clear(){
 
   appendHere = appendMe;
 
-  for(let i = 1; i <= 10; i++) {
+  for(var i = 1; i <= 10; i++) {
     appendMe = document.createElement('div');
     appendMe.classList.add('ray');
     appendMe.classList.add('ray' + i);
@@ -300,11 +289,11 @@ function drizzle(){
 
   appendHere.classList.add('drizzle3xx');
 
-  for(let i=0; i<layers.length; i++){
+  for(var i=0; i<layers.length; i++){
 
     appendHere = document.querySelector('.' + layers[i]);
 
-    for(let j=0; j<dropsCount; j++){
+    for(var j=0; j<dropsCount; j++){
       var dropTop = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["a" /* default */])(-120,129) + 'vh';
       var dropRight = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["a" /* default */])(0,100) + 'vw';
       var anim = 'drizzle-fall-' + __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils_randomRolls__["a" /* default */])(1,3);
@@ -333,7 +322,7 @@ function fog() {
 
   appendHere.classList.add('fog7xx');
 
-  for(let i=0; i<layers.length; i++){
+  for(var i=0; i<layers.length; i++){
     if(!document.querySelector('.' + layers[i])){
       appendMe.classList.add(layers[i]);
 
@@ -344,13 +333,13 @@ function fog() {
       else {
       appendHere.appendChild(appendMe);
       }
-      
+
       appendHere = appendMe;
     }
 
     else appendHere = document.querySelector('.' + layers[i]);
 
-    for(let j=1; j<=3; j++){
+    for(var j=1; j<=3; j++){
       appendMe = document.createElement('div');
       appendMe.classList.add('fog-' + j);
       appendHere.appendChild(appendMe);
@@ -387,7 +376,7 @@ function snow(){
 
     appendHere = document.querySelector('.' + layers[i]);
 
-    for(let j=1; j<dropsCount; j++){
+    for(var j=1; j<dropsCount; j++){
       var flakeTop = randomInt(-1,-9) + 'vh';
       var flakeRight = randomFlt(0,100) + 'vw';
       var animDelay = randomFlt(0 + i/4,10 + i) + 's';
@@ -724,7 +713,7 @@ function tornado() {
 
   appendHere.classList.add('tornado');
 
-  for(let i = 0; i < layerCt; i++) {
+  for(var i = 0; i < layerCt; i++) {
     appendMe = document.createElement('div');
     appendMe.classList.add('layer', 'layer-' + (i+1));
     appendHere.appendChild(appendMe);
@@ -745,7 +734,7 @@ function tornado() {
   }
 
   //grab layers and layer styles to contain particles
-  for(let i = 0; i < layerCt; i++) {
+  for(var i = 0; i < layerCt; i++) {
     appendHere = document.querySelector('.layer-' + (i+1));
     comSty = window.getComputedStyle(appendHere);
 
@@ -758,7 +747,7 @@ function tornado() {
     comSty.ht[1] = +(comSty.ht[1]);
 
   //create particles within current layer
-    for(let j = 0; j < partCt * comSty.wd[1] / comSty.ht[1]; j++) {
+    for(var j = 0; j < partCt * comSty.wd[1] / comSty.ht[1]; j++) {
       b = randomFlt(-1,20);
       c = (comSty.wd[1] - ((comSty.wd[1] - l) * 2))/2;
 
@@ -889,7 +878,7 @@ unitsBtn.addEventListener('click', __WEBPACK_IMPORTED_MODULE_12__utils_conversio
 function windy(leafCt) {
   var appendHere, appendMe;
 
-  for(let i = 0; i < leafCt; i++){
+  for(var i = 0; i < leafCt; i++){
     appendHere = document.createElement('div');
     appendHere.classList.add('leaf');
 

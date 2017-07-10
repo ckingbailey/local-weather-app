@@ -8,11 +8,11 @@ export default function drizzle(){
 
   appendHere.classList.add('drizzle3xx');
 
-  for(let i=0; i<layers.length; i++){
+  for(var i=0; i<layers.length; i++){
 
     appendHere = document.querySelector('.' + layers[i]);
 
-    for(let j=0; j<dropsCount; j++){
+    for(var j=0; j<dropsCount; j++){
       var dropTop = randomInt(-120,129) + 'vh';
       var dropRight = randomInt(0,100) + 'vw';
       var anim = 'drizzle-fall-' + randomInt(1,3);

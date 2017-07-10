@@ -7,7 +7,7 @@ export default function tornado() {
 
   appendHere.classList.add('tornado');
 
-  for(let i = 0; i < layerCt; i++) {
+  for(var i = 0; i < layerCt; i++) {
     appendMe = document.createElement('div');
     appendMe.classList.add('layer', 'layer-' + (i+1));
     appendHere.appendChild(appendMe);
@@ -28,7 +28,7 @@ export default function tornado() {
   }
 
   //grab layers and layer styles to contain particles
-  for(let i = 0; i < layerCt; i++) {
+  for(var i = 0; i < layerCt; i++) {
     appendHere = document.querySelector('.layer-' + (i+1));
     comSty = window.getComputedStyle(appendHere);
 
@@ -41,7 +41,7 @@ export default function tornado() {
     comSty.ht[1] = +(comSty.ht[1]);
 
   //create particles within current layer
-    for(let j = 0; j < partCt * comSty.wd[1] / comSty.ht[1]; j++) {
+    for(var j = 0; j < partCt * comSty.wd[1] / comSty.ht[1]; j++) {
       b = randomFlt(-1,20);
       c = (comSty.wd[1] - ((comSty.wd[1] - l) * 2))/2;
 

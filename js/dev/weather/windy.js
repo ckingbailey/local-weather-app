@@ -1,7 +1,7 @@
 export default function windy(leafCt) {
   var appendHere, appendMe;
 
-  for(let i = 0; i < leafCt; i++){
+  for(var i = 0; i < leafCt; i++){
     appendHere = document.createElement('div');
     appendHere.classList.add('leaf');
 
