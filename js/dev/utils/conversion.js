@@ -28,3 +28,5 @@ export default function convert(){
   }
   //console.log(temperature);
 }
+
+unitsBtn.addEventListener('click', convert);

@@ -13,8 +13,4 @@ import animateWeather from './weather/animateWeather';
 import {temperature, requestWeather, getLocalWeather} from './ajax/fetchAPIs';
 import convert, {unitsBtn} from './utils/conversion';
 
-var unitsBtn = document.querySelector('.switch');
-
 getLocalWeather('http://ip-api.com/json', requestWeather);
-
-unitsBtn.addEventListener('click', convert);
